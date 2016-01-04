@@ -5,6 +5,7 @@ MenuController.prototype.view = new MenuView();
 
 function MenuController() {
     Controller.call(this);
+    this.viewLoader.removeAllViews();
     this.loadView();
     this.setupListeners();
 }
@@ -19,12 +20,11 @@ MenuController.prototype.setupListeners = function() {
     var playButton = viewElements[this.view.PLAY_BUTTON];
     var helpButton = viewElements[this.view.HELP_BUTTON];
     
-    playButton.touchend = playButton.click = function(mouseData) {
+    this.registerListener(playButton, function() {
         console.log("Play button clicked!");
-    }
+    });
     
-    helpButton.touchend = helpButton.click = function(mouseData) {
-        console.log("Help button clicked!");
-    }
-    
+    this.registerListener(helpButton, function() {
+        var helpController = new HelpController();
+    });
 }

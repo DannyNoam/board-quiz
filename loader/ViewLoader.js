@@ -13,11 +13,11 @@ ViewLoader.prototype.loadView = function(view) {
 }
 
 ViewLoader.prototype.removeAllViews = function() {
-    container.removeChildren();
+    ViewLoader.topLevelContainer.removeChildren();
 }
 
 ViewLoader.prototype.removeView = function(view) {
-    container.removeChild(view);
+    ViewLoader.topLevelContainer.removeChild(view);
 }
 
 ViewLoader.prototype.animate = function() {
