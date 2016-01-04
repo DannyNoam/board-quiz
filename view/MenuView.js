@@ -1,10 +1,6 @@
 MenuView.constructor = MenuView;
 MenuView.prototype = Object.create(PIXI.Container.prototype);
 
-MenuView.prototype.boardQuizText = null;
-MenuView.prototype.playButton = null;
-MenuView.prototype.helpButton = null;
-
 MenuView.prototype.PLAY_BUTTON = 0;
 MenuView.prototype.HELP_BUTTON = 1;
 
