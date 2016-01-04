@@ -1,3 +1,2 @@
-var Controller = function() {
-    var ViewLoader = new ViewLoader();
-}
+function Controller() {};
+Controller.prototype.viewLoader = new ViewLoader();
