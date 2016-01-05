@@ -15,13 +15,27 @@ window.onload = function() {
     })();
      
     function startRendering() {
+        var viewLoader = new ViewLoader();
         var container = new PIXI.Container();
-        container.interactive = true;
-        ViewLoader.prototype.setContainer(container);
-        ViewLoader.prototype.setRenderer(new PIXI.autoDetectRenderer(Display.bucket.height, Display.bucket.width));
-        document.getElementById("game").appendChild(ViewLoader.prototype.renderer.view);
-        requestAnimationFrame(ViewLoader.prototype.animate);
+        setDependencies(viewLoader, container);
+        appendGameToDOM();
+        beginAnimation(viewLoader);
         beginGame();
+    }
+    
+    function appendGameToDOM() {
+        document.getElementById("game").appendChild(ViewLoader.prototype.renderer.view);
+    }
+    
+    function setDependencies(viewLoader, container) {
+        container.interactive = true;
+        viewLoader.setContainer(container);
+        viewLoader.setRenderer(new PIXI.autoDetectRenderer(Display.bucket.height, Display.bucket.width));
+        Controller.setViewLoader(viewLoader);
+    }
+    
+    function beginAnimation(viewLoader) {
+        requestAnimationFrame(viewLoader.animate);
     }
     
     function beginGame() {

@@ -1,6 +1,8 @@
 function Controller() {}
 
-Controller.prototype.viewLoader = new ViewLoader();
+Controller.setViewLoader = function(viewLoader) {
+    Controller.prototype.viewLoader = viewLoader;
+};
 
 Controller.prototype.registerListener = function(viewElement, action) {
     viewElement.touchend = viewElement.click = action;
