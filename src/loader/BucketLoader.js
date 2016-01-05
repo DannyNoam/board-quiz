@@ -1,5 +1,5 @@
 function BucketLoader (callback, errorCallback, context) {
-    console.log("BucketLoader");
+
     (function () {
         new JsonLoader("resource/bucket_sizes.json", calculateBestBucket);
     })();
