@@ -1,5 +1,5 @@
 {
   "BOARD_QUIZ" : {"text" : "Board Quiz!", "font" : "Arial", "size" : 15, "color" : "#FFFFFF"},
-  "PLAY_BUTTON" : {"x":100, "y":100},
-  "HELP_BUTTON" : {"x":200, "y":200}
+  "PLAY_BUTTON" : {"path" : "assets/play-button.gif", "x":100, "y":100},
+  "HELP_BUTTON" : {"path" : "assets/help.gif", "x":200, "y":200}
 }
