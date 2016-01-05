@@ -38,4 +38,4 @@ function BucketLoader (callback, errorCallback, context) {
             callback();
         }
     }
-};
+}

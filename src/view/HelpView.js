@@ -23,8 +23,8 @@ HelpView.prototype.setupViewElements = function() {
     this.backButton.anchor.y = 0.5;
     this.backButton.interactive = true;
     this.addChild(this.backButton);
-}
+};
 
 HelpView.prototype.getInteractiveViewElements = function() {
     return [this.backButton];
-}
+};

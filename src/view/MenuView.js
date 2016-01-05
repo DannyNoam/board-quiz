@@ -32,8 +32,8 @@ MenuView.prototype.setupViewElements = function() {
     this.helpButton.anchor.y = 0.5;
     this.helpButton.interactive = true;
     this.addChild(this.helpButton);
-}
+};
 
 MenuView.prototype.getInteractiveViewElements = function() {
     return [this.playButton, this.helpButton];
-}
+};

@@ -13,7 +13,7 @@ function MenuController() {
 MenuController.prototype.loadView = function() {
     this.view.setupViewElements();
     this.viewLoader.loadView(this.view);
-}
+};
 
 MenuController.prototype.setupListeners = function() {
     var viewElements = this.view.getInteractiveViewElements();  
@@ -27,4 +27,4 @@ MenuController.prototype.setupListeners = function() {
     this.registerListener(helpButton, function() {
         var helpController = new HelpController();
     });
-}
+};
