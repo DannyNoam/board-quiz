@@ -1,4 +1,5 @@
 function ViewLoader() {
+    ViewLoader.renderer = new PIXI.autoDetectRenderer(800, 600);
     document.getElementById("game").appendChild(ViewLoader.renderer.view);
     ViewLoader.topLevelContainer.interactive = true;
     requestAnimationFrame(this.animate);
