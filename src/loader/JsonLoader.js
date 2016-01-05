@@ -21,3 +21,5 @@ var JsonLoader = function (path, callback) {
         }
     };
 };
+
+module.exports = JsonLoader;

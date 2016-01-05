@@ -39,3 +39,5 @@ function BucketLoader (callback, errorCallback, context) {
         }
     }
 }
+
+module.exports = BucketLoader;

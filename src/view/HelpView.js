@@ -28,3 +28,5 @@ HelpView.prototype.setupViewElements = function() {
 HelpView.prototype.getInteractiveViewElements = function() {
     return [this.backButton];
 };
+
+module.exports = HelpView;

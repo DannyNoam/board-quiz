@@ -1,6 +1,5 @@
 HelpController.constructor = HelpController;
 HelpController.prototype = Object.create(Controller.prototype);
-
 HelpController.prototype.view = new HelpView();
 
 function HelpController() {
@@ -24,3 +23,5 @@ HelpController.prototype.setupListeners = function() {
     });
     
 };
+
+module.exports = HelpController;

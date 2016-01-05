@@ -24,3 +24,5 @@ ViewLoader.prototype.animate = function() {
     ViewLoader.renderer.render(ViewLoader.topLevelContainer);
     requestAnimationFrame(ViewLoader.prototype.animate);
 };
+
+module.exports = ViewLoader;

@@ -1,4 +1,12 @@
+ViewLoader = require('./loader/ViewLoader');
+Controller = require('./controller/Controller');
+HelpView = require('./view/HelpView');
+HelpController = require('./controller/HelpController');
+MenuView = require('./view/MenuView');
+MenuController = require('./controller/MenuController');
+BucketLoader = require('./loader/BucketLoader');
+JsonLoader = require('./loader/JsonLoader');
+
 window.onload = function() {
-    console.log("Instantiating Menu Controller");
     var menuController = new MenuController();
 };

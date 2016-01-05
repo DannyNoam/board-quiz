@@ -1,6 +1,5 @@
 MenuController.constructor = MenuController;
 MenuController.prototype = Object.create(Controller.prototype);
-
 MenuController.prototype.view = new MenuView();
 
 function MenuController() {
@@ -28,3 +27,5 @@ MenuController.prototype.setupListeners = function() {
         var helpController = new HelpController();
     });
 };
+
+module.exports = MenuController;

@@ -37,3 +37,5 @@ MenuView.prototype.setupViewElements = function() {
 MenuView.prototype.getInteractiveViewElements = function() {
     return [this.playButton, this.helpButton];
 };
+
+module.exports = MenuView;
