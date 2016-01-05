@@ -9,7 +9,8 @@ function MenuView() {
 }
 
 MenuView.prototype.setupViewElements = function() {
-    this.boardQuizText = new PIXI.Text("Board Quiz!", {font: "30px Arial", fill: "#FFFFFF"});
+    var layoutData = PIXI.Container.layoutData;
+    this.boardQuizText = new PIXI.Text(layoutData.BOARD_QUIZ.text, {font: layoutData.BOARD_QUIZ.size + "px " + layoutData.BOARD_QUIZ.font, fill: layoutData.BOARD_QUIZ.color});
     this.boardQuizText.position.x = 400;
     this.boardQuizText.position.y = 100;
     this.boardQuizText.interactive = true;
@@ -32,6 +33,7 @@ MenuView.prototype.setupViewElements = function() {
     this.helpButton.anchor.y = 0.5;
     this.helpButton.interactive = true;
     this.addChild(this.helpButton);
+    console.log(PIXI.Container.layoutData);
 };
 
 MenuView.prototype.getInteractiveViewElements = function() {

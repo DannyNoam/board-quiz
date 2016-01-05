@@ -21,7 +21,6 @@ ViewLoader.prototype.setContainer = function(container) {
 };
 
 ViewLoader.prototype.animate = function() {
-    console.log("Height: " + ViewLoader.prototype.renderer.height + " Width: " + ViewLoader.prototype.renderer.width);
     ViewLoader.prototype.renderer.render(ViewLoader.topLevelContainer);
     requestAnimationFrame(ViewLoader.prototype.animate);
 };

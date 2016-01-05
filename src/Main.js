@@ -11,9 +11,18 @@ MenuController = require('./controller/MenuController');
 window.onload = function() {
     
     (function() {
-        new BucketLoader(startRendering, bucketLoadingFailedMessage);
+        new BucketLoader(loadLayout, bucketLoadingFailedMessage);
     })();
      
+    function loadLayout() {
+        new JsonLoader('../resource/' + Display.bucket.width + 'x' + Display.bucket.height + '/layout.json', setLayoutDataInPIXI);
+    }
+    
+    function setLayoutDataInPIXI(layoutData) {
+        PIXI.Container.layoutData = layoutData;
+        startRendering();
+    }
+    
     function startRendering() {
         var viewLoader = new ViewLoader();
         var container = new PIXI.Container();
