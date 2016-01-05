@@ -1,0 +1,5 @@
+{
+  "BOARD_QUIZ_TEXT" : {"font" : "Arial", "size" : 15, "color" : "#FFFFFF"},
+  "PLAY_BUTTON" : {"x":100, "y":100},
+  "HELP_BUTTON" : {"x":200, "y":200}
+}
