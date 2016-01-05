@@ -1,7 +1,7 @@
 function BucketLoader (callback, errorCallback, context) {
-
+    console.log("BucketLoader");
     (function () {
-        new JsonLoader("resource/default/bucket_sizes.json", calculateBestBucket);
+        new JsonLoader("resource/bucket_sizes.json", calculateBestBucket);
     })();
 
     function calculateScale () {
