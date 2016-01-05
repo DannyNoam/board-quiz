@@ -4,14 +4,14 @@ HelpController.prototype.view = new HelpView();
 
 function HelpController() {
     Controller.call(this);
-    this.viewLoader.removeAllViews();
     this.loadView();
-    this.setupListeners();
 }
 
 HelpController.prototype.loadView = function() {
+    this.viewLoader.removeAllViews();
     this.view.setupViewElements();
     this.viewLoader.loadView(this.view);
+    this.setupListeners();
 };
 
 HelpController.prototype.setupListeners = function() {
