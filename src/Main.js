@@ -30,7 +30,7 @@ window.onload = function() {
     function setDependencies(viewLoader, container) {
         container.interactive = true;
         viewLoader.setContainer(container);
-        viewLoader.setRenderer(new PIXI.autoDetectRenderer(Display.bucket.height, Display.bucket.width));
+        viewLoader.setRenderer(new PIXI.autoDetectRenderer(Display.bucket.width, Display.bucket.height));
         Controller.setViewLoader(viewLoader);
     }
     
