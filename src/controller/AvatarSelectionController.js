@@ -45,8 +45,9 @@ AvatarSelectionController.prototype.setupListeners = function() {
     }.bind(this));
     
     this.registerListener(findGame, function() {
-        var findGameController = new FindGameController();
-    });
+        var avatar = this.avatars[this.currentAvatarIndex];
+        var findGameController = new FindGameController(avatar);
+    }.bind(this));
 };
 
 AvatarSelectionController.prototype.setupNextAvatar = function(direction) {

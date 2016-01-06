@@ -2,8 +2,9 @@ FindGameController.constructor = FindGameController;
 FindGameController.prototype = Object.create(Controller.prototype);
 FindGameController.prototype.view = new FindGameView();
 
-function FindGameController() {
+function FindGameController(avatar) {
     Controller.call(this);
+    console.log(avatar);
     this.loadView();
 }
 
@@ -19,7 +20,7 @@ FindGameController.prototype.setupListeners = function() {
     var backButton = viewElements[this.view.BACK_BUTTON];
     
     this.registerListener(backButton, function() {
-        var menuController = new MenuController();
+        var menuController = new AvatarSelectionController();
     });
     
 };
