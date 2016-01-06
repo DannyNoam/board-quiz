@@ -9,7 +9,7 @@ function MenuView() {
 }
 
 MenuView.prototype.setupViewElements = function() {
-    var layoutData = PIXI.Container.layoutData.MENU_VIEW;
+    var layoutData = PIXI.Container.layoutData.MENU;
     this.boardQuizText = new PIXI.Text(layoutData.BOARD_QUIZ.text, {font: layoutData.BOARD_QUIZ.size + "px " + layoutData.BOARD_QUIZ.font, fill: layoutData.BOARD_QUIZ.color});
     this.boardQuizText.position.x = layoutData.BOARD_QUIZ.x;
     this.boardQuizText.position.y = layoutData.BOARD_QUIZ.y;

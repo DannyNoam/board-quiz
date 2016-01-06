@@ -8,7 +8,7 @@ function HelpView() {
 }
 
 HelpView.prototype.setupViewElements = function() {
-    var layoutData = PIXI.Container.layoutData.HELP_VIEW;
+    var layoutData = PIXI.Container.layoutData.HELP;
     this.helpText = new PIXI.Text(layoutData.HELP_INFO.text, {font: layoutData.HELP_INFO.size + "px " + layoutData.HELP_INFO.font, fill: layoutData.HELP_INFO.color});
     this.helpText.position.x = layoutData.HELP_INFO.x;
     this.helpText.position.y = layoutData.HELP_INFO.y;

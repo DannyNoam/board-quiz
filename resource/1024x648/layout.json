@@ -1,12 +1,13 @@
 {
-    "MENU_VIEW" : {
+    "MENU" : {
       "BOARD_QUIZ" : {"text" : "Board Quiz!", "font" : "Arial", "size" : 80, "color" : "#FFFFFF", "x": 512, "y": 100},
       "PLAY_BUTTON" : {"path" : "assets/play-button.gif", "x":512, "y":200},
       "HELP_BUTTON" : {"path" : "assets/help.gif", "x":512, "y":450}
     },
     
-    "HELP_VIEW" : {
-        "HELP_INFO" : {"text" : "To play the game, simply click the back button below and click 'Play'!", "font" : "Arial", "size" : 25, "color" : "#FFFFFF", "x": 512, "y": 100},
+    "HELP" : {
+        "INFO" : {"text" : "To play the game, simply click the back button below and click 'Play'!", "font" : "Arial", "size" : 25, "color" : "#FFFFFF", "x": 512, "y": 100},
         "BACK_BUTTON" : {"path" : "assets/back-button.jpg", "x" : 512, "y": 300}
     }
+    
 }
