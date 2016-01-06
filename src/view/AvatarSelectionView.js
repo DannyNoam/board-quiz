@@ -4,6 +4,7 @@ AvatarSelectionView.prototype = Object.create(PIXI.Container.prototype);
 AvatarSelectionView.prototype.BACK_BUTTON = 0;
 AvatarSelectionView.prototype.SELECT_UP = 1;
 AvatarSelectionView.prototype.SELECT_DOWN = 2;
+AvatarSelectionView.prototype.FIND_GAME = 3;
 
 
 function AvatarSelectionView() {
@@ -44,10 +45,18 @@ AvatarSelectionView.prototype.setupViewElements = function() {
     this.selectDown.anchor.y = 0.5;
     this.selectDown.interactive = true;
     this.addChild(this.selectDown);
+    
+    this.findGame = new PIXI.Sprite.fromImage(layoutData.FIND_GAME.path);
+    this.findGame.position.x = layoutData.FIND_GAME.x;
+    this.findGame.position.y = layoutData.FIND_GAME.y;
+    this.findGame.anchor.x = 0.5;
+    this.findGame.anchor.y = 0.5;
+    this.findGame.interactive = true;
+    this.addChild(this.findGame);
 };
 
 AvatarSelectionView.prototype.getInteractiveViewElements = function() {
-    return [this.backButton, this.selectUp, this.selectDown];
+    return [this.backButton, this.selectUp, this.selectDown, this.findGame];
 };
 
 module.exports = AvatarSelectionView;

@@ -24,6 +24,7 @@ AvatarSelectionController.prototype.setupListeners = function() {
     var backButton = viewElements[this.view.BACK_BUTTON];
     var selectUp = viewElements[this.view.SELECT_UP];
     var selectDown = viewElements[this.view.SELECT_DOWN];
+    var findGame = viewElements[this.view.FIND_GAME];
     
     this.registerListener(backButton, function() {
         var menuController = new MenuController();
@@ -34,23 +35,29 @@ AvatarSelectionController.prototype.setupListeners = function() {
         this.setupNextAvatar(UP);
         this.viewLoader.removeView(this.selectedAvatarView);
         this.viewLoader.loadView(this.selectedAvatarView);
-        console.log("Up!");
     }.bind(this));
     
     this.registerListener(selectDown, function() {
         var DOWN = -1;
-        console.log("Down!");
+        this.setupNextAvatar(DOWN);
+        this.viewLoader.removeView(this.selectedAvatarView);
+        this.viewLoader.loadView(this.selectedAvatarView);
     }.bind(this));
+    
+    this.registerListener(findGame, function() {
+        var findGameController = new FindGameController();
+    });
 };
 
 AvatarSelectionController.prototype.setupNextAvatar = function(direction) {
     if(this.currentAvatarIndex >= (this.avatars.length - 1)) {
         this.currentAvatarIndex = 0;
-    } else if (this.currentAvatarIndex < 0) {
-        this.currentAvatarIndex = this.avatars.length;
+    } else if (this.currentAvatarIndex + direction < 0) {
+        this.currentAvatarIndex = (this.avatars.length - 1);
     } else {
         this.currentAvatarIndex = this.currentAvatarIndex + direction;
     }
+    console.log(this.currentAvatarIndex);
     this.selectedAvatarView.setupViewElements(this.avatars[this.currentAvatarIndex]);
 };
 
