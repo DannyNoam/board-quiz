@@ -14,10 +14,13 @@
     },
     
     "AVATAR_SELECTION" : {
-        "UP_TRIANGLE" : {"path" : "assets/up.png", "x": 512, "y": 300},
-        "DOWN_TRIANGLE" : {"path" : "assets/down.png", "x": 512, "y": 600},
-        "AVATAR_1" : {"path" : "assets/emoji-cry.jpg", "x" : 512, "y" : 450},
-        "AVATAR_2" : {"path" : "assets/emoji-angry.jpg", "x" : 512, "y" : 450}
+        "SELECT_UP" : {"path" : "assets/up.png", "x": 200, "y": 270},
+        "SELECT_DOWN" : {"path" : "assets/down.png", "x": 200, "y": 570}
+    },
+    
+    "AVATAR" : {
+        "EMOJI_CRY" : {"path" : "assets/emoji-cry.jpg", "x" : 200, "y" : 450},
+        "EMOJI_ANGRY" : {"path" : "assets/emoji-angry.jpg", "x" : 200, "y" : 450}
     }
     
 }

@@ -2,6 +2,9 @@ AvatarSelectionView.constructor = AvatarSelectionView;
 AvatarSelectionView.prototype = Object.create(PIXI.Container.prototype);
 
 AvatarSelectionView.prototype.BACK_BUTTON = 0;
+AvatarSelectionView.prototype.SELECT_UP = 1;
+AvatarSelectionView.prototype.SELECT_DOWN = 2;
+
 
 function AvatarSelectionView() {
     PIXI.Container.call(this);
@@ -26,25 +29,25 @@ AvatarSelectionView.prototype.setupViewElements = function() {
     this.backButton.interactive = true;
     this.addChild(this.backButton);
     
-    this.upArrow = new PIXI.Sprite.fromImage(layoutData.UP_TRIANGLE.path);
-    this.upArrow.position.x = layoutData.UP_TRIANGLE.x;
-    this.upArrow.position.y = layoutData.UP_TRIANGLE.y;
-    this.upArrow.anchor.x = 0.5;
-    this.upArrow.anchor.y = 0.5;
-    this.upArrow.interactive = true;
-    this.addChild(this.upArrow);
+    this.selectUp = new PIXI.Sprite.fromImage(layoutData.SELECT_UP.path);
+    this.selectUp.position.x = layoutData.SELECT_UP.x;
+    this.selectUp.position.y = layoutData.SELECT_UP.y;
+    this.selectUp.anchor.x = 0.5;
+    this.selectUp.anchor.y = 0.5;
+    this.selectUp.interactive = true;
+    this.addChild(this.selectUp);
     
-    this.downArrow = new PIXI.Sprite.fromImage(layoutData.DOWN_TRIANGLE.path);
-    this.downArrow.position.x = layoutData.DOWN_TRIANGLE.x;
-    this.downArrow.position.y = layoutData.DOWN_TRIANGLE.y;
-    this.downArrow.anchor.x = 0.5;
-    this.downArrow.anchor.y = 0.5;
-    this.downArrow.interactive = true;
-    this.addChild(this.downArrow);
+    this.selectDown = new PIXI.Sprite.fromImage(layoutData.SELECT_DOWN.path);
+    this.selectDown.position.x = layoutData.SELECT_DOWN.x;
+    this.selectDown.position.y = layoutData.SELECT_DOWN.y;
+    this.selectDown.anchor.x = 0.5;
+    this.selectDown.anchor.y = 0.5;
+    this.selectDown.interactive = true;
+    this.addChild(this.selectDown);
 };
 
 AvatarSelectionView.prototype.getInteractiveViewElements = function() {
-    return [this.backButton];
+    return [this.backButton, this.selectUp, this.selectDown];
 };
 
 module.exports = AvatarSelectionView;

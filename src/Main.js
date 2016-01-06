@@ -8,6 +8,7 @@ HelpController = require('./controller/HelpController');
 MenuView = require('./view/MenuView');
 MenuController = require('./controller/MenuController');
 AvatarSelectionView = require('./view/AvatarSelectionView');
+AvatarView = require('./view/AvatarView');
 AvatarSelectionController = require('./controller/AvatarSelectionController');
 
 window.onload = function() {
@@ -36,13 +37,18 @@ window.onload = function() {
         var renderer = new PIXI.autoDetectRenderer(Display.bucket.width, Display.bucket.height);
         renderer.backgroundColor = RENDERER_BACKGROUND_COLOUR;
         setDependencies(viewLoader, container, renderer);
-        appendGameToDOM();
+        appendGameToDOM(renderer);
+        setupPIXIDom(renderer);
         beginAnimation(viewLoader);
         beginGame();
     }
     
-    function appendGameToDOM() {
-        document.getElementById("game").appendChild(ViewLoader.prototype.renderer.view);
+    function appendGameToDOM(renderer) {
+        document.getElementById("game").appendChild(renderer.view);
+    }
+    
+    function setupPIXIDom(renderer) {
+        PIXI.DOM.Setup(renderer, true);
     }
     
     function setDependencies(viewLoader, container, renderer) {
