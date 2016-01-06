@@ -7,11 +7,14 @@ HelpView = require('./view/HelpView');
 HelpController = require('./controller/HelpController');
 MenuView = require('./view/MenuView');
 MenuController = require('./controller/MenuController');
+AvatarSelectionView = require('./view/AvatarSelectionView');
+AvatarSelectionController = require('./controller/AvatarSelectionController');
 
 window.onload = function() {
     
     var DEFAULT_WIDTH = 480;
     var DEFAULT_HEIGHT = 320;
+    var RENDERER_BACKGROUND_COLOUR = 0x333333;
     
     (function() {
         new BucketLoader(loadLayout, bucketLoadingFailedMessage);
@@ -29,7 +32,10 @@ window.onload = function() {
     function startRendering() {
         var viewLoader = new ViewLoader();
         var container = new PIXI.Container();
-        setDependencies(viewLoader, container);
+        container.interactive = true;
+        var renderer = new PIXI.autoDetectRenderer(Display.bucket.width, Display.bucket.height);
+        renderer.backgroundColor = RENDERER_BACKGROUND_COLOUR;
+        setDependencies(viewLoader, container, renderer);
         appendGameToDOM();
         beginAnimation(viewLoader);
         beginGame();
@@ -39,10 +45,9 @@ window.onload = function() {
         document.getElementById("game").appendChild(ViewLoader.prototype.renderer.view);
     }
     
-    function setDependencies(viewLoader, container) {
-        container.interactive = true;
+    function setDependencies(viewLoader, container, renderer) {
         viewLoader.setContainer(container);
-        viewLoader.setRenderer(new PIXI.autoDetectRenderer(Display.bucket.width, Display.bucket.height));
+        viewLoader.setRenderer(renderer);
         Controller.setViewLoader(viewLoader);
     }
     

@@ -20,7 +20,7 @@ MenuController.prototype.setupListeners = function() {
     var helpButton = viewElements[this.view.HELP_BUTTON];
     
     this.registerListener(playButton, function() {
-        console.log("Play button clicked!");
+        var avatarSelectionController = new AvatarSelectionController();
     });
     
     this.registerListener(helpButton, function() {
