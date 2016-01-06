@@ -10,6 +10,9 @@ MenuController = require('./controller/MenuController');
 
 window.onload = function() {
     
+    var DEFAULT_WIDTH = 480;
+    var DEFAULT_HEIGHT = 320;
+    
     (function() {
         new BucketLoader(loadLayout, bucketLoadingFailedMessage);
     })();
@@ -52,9 +55,9 @@ window.onload = function() {
     }
         
     function bucketLoadingFailedMessage() {
-        Display.bucket.height = 320;
-        Display.bucket.width = 480;
+        Display.bucket.height = DEFAULT_HEIGHT;
+        Display.bucket.width = DEFAULT_WIDTH;
         Display.scale = 1;
-        Display.resourcePath = "480x320";
+        Display.resourcePath = DEFAULT_WIDTH + 'x' + DEFAULT_HEIGHT;
     }
 };
