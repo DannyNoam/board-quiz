@@ -18,8 +18,6 @@ function BucketLoader (callback, errorCallback, context) {
 
         Display.scale = calculateScale(window.devicePixelRatio);
         Display.resourcePath = Display.bucket.width + 'x' + Display.bucket.height;
-        console.log("Display in calculateBestBucket");
-        console.log(Display);
         executeCallback();
     }
     
