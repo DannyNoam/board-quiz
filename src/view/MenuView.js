@@ -10,9 +10,10 @@ function MenuView() {
 
 MenuView.prototype.setupViewElements = function() {
     var layoutData = PIXI.Container.layoutData.MENU;
-    this.boardQuizText = new PIXI.Text(layoutData.BOARD_QUIZ.text, {font: layoutData.BOARD_QUIZ.size + "px " + layoutData.BOARD_QUIZ.font, fill: layoutData.BOARD_QUIZ.color});
-    this.boardQuizText.position.x = layoutData.BOARD_QUIZ.x;
-    this.boardQuizText.position.y = layoutData.BOARD_QUIZ.y;
+    var commonData = PIXI.Container.layoutData.COMMON;
+    this.boardQuizText = new PIXI.Text(commonData.BOARD_QUIZ.text, {font: commonData.BOARD_QUIZ.size + "px " + commonData.BOARD_QUIZ.font, fill: commonData.BOARD_QUIZ.color});
+    this.boardQuizText.position.x = commonData.BOARD_QUIZ.x;
+    this.boardQuizText.position.y = commonData.BOARD_QUIZ.y;
     this.boardQuizText.interactive = true;
     this.boardQuizText.anchor.x = 0.5;
     this.boardQuizText.anchor.y = 0.5;

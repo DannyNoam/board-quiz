@@ -1,13 +1,23 @@
 {
+    "COMMON" : {
+        "BACK_BUTTON" : {"path" : "assets/back-arrow.png", "x" : 130, "y": 100},
+        "BOARD_QUIZ" : {"text" : "Board Quiz!", "font" : "Arial", "size" : 80, "color" : "#FFFFFF", "x": 512, "y": 100}
+    },
+    
     "MENU" : {
-      "BOARD_QUIZ" : {"text" : "Board Quiz!", "font" : "Arial", "size" : 80, "color" : "#FFFFFF", "x": 512, "y": 100},
       "PLAY_BUTTON" : {"path" : "assets/play-button.gif", "x":512, "y":200},
       "HELP_BUTTON" : {"path" : "assets/help.gif", "x":512, "y":450}
     },
     
     "HELP" : {
-        "INFO" : {"text" : "To play the game, simply click the back button below and click 'Play'!", "font" : "Arial", "size" : 25, "color" : "#FFFFFF", "x": 512, "y": 100},
-        "BACK_BUTTON" : {"path" : "assets/back-button.jpg", "x" : 512, "y": 300}
+        "INFO" : {"text" : "To play the game, simply click the back button below and click 'Play'!", "font" : "Arial", "size" : 25, "color" : "#FFFFFF", "x": 512, "y": 50}
+    },
+    
+    "AVATAR_SELECTION" : {
+        "UP_TRIANGLE" : {"path" : "assets/up.png", "x": 512, "y": 300},
+        "DOWN_TRIANGLE" : {"path" : "assets/down.png", "x": 512, "y": 600},
+        "AVATAR_1" : {"path" : "assets/emoji-cry.jpg", "x" : 512, "y" : 450},
+        "AVATAR_2" : {"path" : "assets/emoji-angry.jpg", "x" : 512, "y" : 450}
     }
     
 }
