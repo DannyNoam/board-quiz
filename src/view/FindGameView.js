@@ -12,29 +12,51 @@ FindGameView.prototype.setupViewElements = function(avatar) {
     var commonData = PIXI.Container.layoutData.COMMON;
     var avatarData = PIXI.Container.layoutData.AVATAR;
     
-    this.findGameCaption = new PIXI.Text(layoutData.CAPTION.text, {font: layoutData.CAPTION.size + "px " + layoutData.CAPTION.font, fill: layoutData.CAPTION.color});
-    this.addElementToContainer(this.findGameCaption, layoutData.CAPTION);
-    
-    this.player1Avatar = new PIXI.Sprite.fromImage(avatarData[avatar].path);
-    this.addElementToContainer(this.player1Avatar, layoutData.PLAYER_1_AVATAR);
-    
-    this.versus = new PIXI.Text(layoutData.VERSUS.text, {font: layoutData.VERSUS.size + "px " + layoutData.VERSUS.font, fill:   layoutData.VERSUS.color});
-    this.addElementToContainer(this.versus, layoutData.VERSUS);
-    
-    this.player2UnknownAvatar = new PIXI.Sprite.fromImage(avatarData.PLAYER_2_UNKNOWN.path);
-    this.addElementToContainer(this.player2UnknownAvatar, layoutData.PLAYER_2_UNKNOWN);
-    
-    this.backButton = new PIXI.Sprite.fromImage(commonData.BACK_BUTTON.path);
-    this.addElementToContainer(this.backButton, commonData.BACK_BUTTON);
-    
-    this.player1 = new PIXI.Text(layoutData.PLAYER_1.text, {font: layoutData.PLAYER_1.size + "px " + layoutData.PLAYER_1.font, fill:   layoutData.PLAYER_1.color});
-    this.addElementToContainer(this.player1, layoutData.PLAYER_1);
-    
-    this.player2 = new PIXI.Text(layoutData.PLAYER_2.text, {font: layoutData.PLAYER_2.size + "px " + layoutData.PLAYER_2.font, fill:   layoutData.PLAYER_2.color});
-    this.addElementToContainer(this.player2, layoutData.PLAYER_2);
+    this.createFindGameCaption(layoutData.CAPTION);
+    this.createPlayer1Avatar(avatarData[avatar], layoutData.PLAYER_1_AVATAR);
+    this.createVersusText(layoutData.VERSUS);
+    this.createPlayer2UnknownAvatar(avatarData.PLAYER_2_UNKNOWN, layoutData.PLAYER_2_UNKNOWN);
+    this.createBackButton(commonData.BACK_BUTTON);
+    this.createPlayer1Text(layoutData.PLAYER_1);
+    this.createPlayer2Text(layoutData.PLAYER_2);
 };
 
-FindGameView.prototype.getInteractiveViewElements = function() {
+FindGameView.prototype.createFindGameCaption = function (data) {
+    var findGameCaption = this.createTextElement(data);
+    this.addElementToContainer(findGameCaption, data);
+};
+
+FindGameView.prototype.createPlayer1Avatar = function (avatar, data) {
+    var player1Avatar = this.createSpriteElement(avatar);
+    this.addElementToContainer(player1Avatar, data);
+};
+
+FindGameView.prototype.createVersusText = function (data) {
+    var versus = this.createTextElement(data);
+    this.addElementToContainer(versus, data);
+};
+
+FindGameView.prototype.createPlayer2UnknownAvatar = function (avatar, data) {
+    var player2UnknownAvatar = this.createSpriteElement(avatar);
+    this.addElementToContainer(player2UnknownAvatar, data);
+};
+
+FindGameView.prototype.createBackButton = function (data) {
+    this.backButton = this.createSpriteElement(data);
+    this.addElementToContainer(this.backButton, data);
+};
+
+FindGameView.prototype.createPlayer1Text = function (data) {
+    var player1 = this.createTextElement(data);
+    this.addElementToContainer(player1, data);
+};
+
+FindGameView.prototype.createPlayer2Text = function (data) {
+    var player2 = this.createTextElement(data);
+    this.addElementToContainer(player2, data);
+};
+
+FindGameView.prototype.getInteractiveViewElements = function () {
     return [this.backButton];
 };
 
