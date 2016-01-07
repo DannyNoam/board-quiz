@@ -21,10 +21,16 @@
     
     "AVATAR" : {
         "EMOJI_CRY" : {"path" : "assets/emoji-cry.jpg", "x" : 412, "y" : 450},
-        "EMOJI_ANGRY" : {"path" : "assets/emoji-angry.jpg", "x" : 412, "y" : 450}
+        "EMOJI_ANGRY" : {"path" : "assets/emoji-angry.jpg", "x" : 412, "y" : 450},
+        "PLAYER_2_UNKNOWN" : {"path" : "assets/player-2-unknown.png", "x" : 412, "y" : 450}
     },
     
     "FIND_GAME" : {
-        "CAPTION" : {"text" : "Finding game...", "size" : 20, "font" : "arial", "color" : "#FFFFFF", "x": 512, "y" : 100}
+        "CAPTION" : {"text" : "Finding game...", "size" : 20, "font" : "arial", "color" : "#FFFFFF", "x": 512, "y" : 100},
+        "PLAYER_1_AVATAR" : {"x" : 200, "y" : 400},
+        "PLAYER_2_UNKNOWN" : {"x" : 800, "y" : 400},
+        "VERSUS" : {"text" : "Vs.", "x" : 500, "y" : 400, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAYER_1" : {"text" : "Player 1", "x" : 200, "y" : 600, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAYER_2" : {"text" : "Player 2", "x" : 800, "y" : 600, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"}
     }
 }

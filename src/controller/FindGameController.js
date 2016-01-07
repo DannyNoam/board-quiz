@@ -4,13 +4,12 @@ FindGameController.prototype.view = new FindGameView();
 
 function FindGameController(avatar) {
     Controller.call(this);
-    console.log(avatar);
-    this.loadView();
+    this.loadView(avatar);
 }
 
-FindGameController.prototype.loadView = function() {
+FindGameController.prototype.loadView = function(avatar) {
     this.viewLoader.removeAllViews();
-    this.view.setupViewElements();
+    this.view.setupViewElements(avatar);
     this.viewLoader.loadView(this.view);
     this.setupListeners();
 };
