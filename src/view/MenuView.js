@@ -12,14 +12,24 @@ MenuView.prototype.setupViewElements = function() {
     var layoutData = PIXI.Container.layoutData.MENU;
     var commonData = PIXI.Container.layoutData.COMMON;
     
-    this.boardQuizText = new PIXI.Text(commonData.BOARD_QUIZ.text, {font: commonData.BOARD_QUIZ.size + "px " + commonData.BOARD_QUIZ.font, fill: commonData.BOARD_QUIZ.color});
-    this.addElementToContainer(this.boardQuizText, commonData.BOARD_QUIZ);
-    
-    this.playButton = new PIXI.Sprite.fromImage(layoutData.PLAY_BUTTON.path);
-    this.addElementToContainer(this.playButton, layoutData.PLAY_BUTTON);
-    
-    this.helpButton = new PIXI.Sprite.fromImage(layoutData.HELP_BUTTON.path);
-    this.addElementToContainer(this.helpButton, layoutData.HELP_BUTTON);
+    this.createBoardQuizText(commonData.BOARD_QUIZ);
+    this.createPlayButton(layoutData.PLAY_BUTTON);
+    this.createHelpButton(layoutData.HELP_BUTTON);
+};
+
+MenuView.prototype.createBoardQuizText = function (data) {
+    var boardQuizText = this.createTextElement(data);
+    this.addElementToContainer(boardQuizText, data);
+};
+
+MenuView.prototype.createPlayButton = function (data) {
+    this.playButton = this.createSpriteElement(data);
+    this.addElementToContainer(this.playButton, data);
+};
+
+MenuView.prototype.createHelpButton = function (data) {
+    this.helpButton = this.createSpriteElement(data);
+    this.addElementToContainer(this.helpButton, data);
 };
 
 MenuView.prototype.getInteractiveViewElements = function() {

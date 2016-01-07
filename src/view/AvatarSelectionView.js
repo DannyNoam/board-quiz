@@ -15,24 +15,40 @@ AvatarSelectionView.prototype.setupViewElements = function() {
     var layoutData = PIXI.Container.layoutData.AVATAR_SELECTION;
     var commonData = PIXI.Container.layoutData.COMMON;
     
-    this.boardQuizText = new PIXI.Text(commonData.BOARD_QUIZ.text, {font: commonData.BOARD_QUIZ.size + "px " + commonData.BOARD_QUIZ.font, fill: commonData.BOARD_QUIZ.color});
-    this.addElementToContainer(this.boardQuizText, commonData.BOARD_QUIZ);
-    
-    this.backButton = new PIXI.Sprite.fromImage(commonData.BACK_BUTTON.path);
-    this.addElementToContainer(this.backButton, commonData.BACK_BUTTON);
-    
-    this.selectUp = new PIXI.Sprite.fromImage(layoutData.SELECT_UP.path);
-    this.addElementToContainer(this.selectUp, layoutData.SELECT_UP);
-    
-    this.selectDown = new PIXI.Sprite.fromImage(layoutData.SELECT_DOWN.path);
-    this.addElementToContainer(this.selectDown, layoutData.SELECT_DOWN);
-    
-    this.findGame = new PIXI.Sprite.fromImage(layoutData.FIND_GAME.path);
-    this.addElementToContainer(this.findGame, layoutData.FIND_GAME);
+    this.createBoardQuizText(commonData.BOARD_QUIZ);
+    this.createBackButton(commonData.BACK_BUTTON);
+    this.createSelectDownButton(layoutData.SELECT_DOWN);
+    this.createSelectUpButton(layoutData.SELECT_UP);
+    this.createFindGameButton(layoutData.FIND_GAME);
+};
+
+AvatarSelectionView.prototype.createBoardQuizText = function (data) {
+    var boardQuizText = this.createTextElement(data);
+    this.addElementToContainer(boardQuizText, data);
+};
+
+AvatarSelectionView.prototype.createBackButton = function (data) {
+    this.backButton = this.createSpriteElement(data);
+    this.addElementToContainer(this.backButton, data);
+};
+
+AvatarSelectionView.prototype.createSelectDownButton = function (data) {
+    this.selectDownButton = this.createSpriteElement(data);
+    this.addElementToContainer(this.selectDownButton, data);
+};
+
+AvatarSelectionView.prototype.createSelectUpButton = function (data) {
+    this.selectUpButton = this.createSpriteElement(data);
+    this.addElementToContainer(this.selectUpButton, data);
+};
+
+AvatarSelectionView.prototype.createFindGameButton = function (data) {
+    this.findGameButton = this.createSpriteElement(data);
+    this.addElementToContainer(this.findGameButton, data);
 };
 
 AvatarSelectionView.prototype.getInteractiveViewElements = function() {
-    return [this.backButton, this.selectUp, this.selectDown, this.findGame];
+    return [this.backButton, this.selectUpButton, this.selectDownButton, this.findGameButton];
 };
 
 module.exports = AvatarSelectionView;
