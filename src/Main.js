@@ -1,4 +1,5 @@
 Display = require('./util/Display');
+View = require('./view/View');
 BucketLoader = require('./loader/BucketLoader');
 JsonLoader = require('./loader/JsonLoader');
 ViewLoader = require('./loader/ViewLoader');
