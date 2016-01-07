@@ -1,8 +1,6 @@
 function ViewLoader() {}
 
 ViewLoader.prototype.loadView = function(view) {
-    console.log("Adding child...");
-    console.log(view);
     ViewLoader.topLevelContainer.addChild(view);
 };
 

@@ -19,6 +19,7 @@ window.onload = function() {
     var DEFAULT_WIDTH = 480;
     var DEFAULT_HEIGHT = 320;
     var RENDERER_BACKGROUND_COLOUR = 0x333333;
+    var DIV_ID = "game";
     
     (function() {
         new BucketLoader(loadLayout, bucketLoadingFailedMessage);
@@ -46,7 +47,7 @@ window.onload = function() {
     }
     
     function appendGameToDOM(renderer) {
-        document.getElementById("game").appendChild(renderer.view);
+        document.getElementById(DIV_ID).appendChild(renderer.view);
     }
     
     function setDependencies(viewLoader, container, renderer) {

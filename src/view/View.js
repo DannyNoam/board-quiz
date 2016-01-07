@@ -1,5 +1,7 @@
 View.constructor = View;
 View.prototype = Object.create(PIXI.Container.prototype);
+View.prototype.INTERACTIVE = true;
+View.prototype.CENTER_ANCHOR = 0.5;
 
 function View() {
     PIXI.Container.call(this);
@@ -7,9 +9,9 @@ function View() {
 
 View.prototype.addElementToContainer = function(element, positionData) {
     this.setElementPosition(element, positionData);
-    element.anchor.x = 0.5;
-    element.anchor.y = 0.5;
-    element.interactive = true;
+    element.anchor.x = this.CENTER_ANCHOR;
+    element.anchor.y = this.CENTER_ANCHOR;
+    element.interactive = this.INTERACTIVE;
     this.addChild(element);
 };
 

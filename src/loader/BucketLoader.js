@@ -1,7 +1,10 @@
 function BucketLoader (callback, errorCallback, context) {
+    var PORTRAIT = "portrait",
+        LANDSCAPE = "landscape",
+        BUCKET_SIZE_JSON_PATH = "resource/bucket_sizes.json";
 
     (function () {
-        new JsonLoader("resource/bucket_sizes.json", calculateBestBucket);
+        new JsonLoader(BUCKET_SIZE_JSON_PATH, calculateBestBucket);
     })();
 
     function calculateScale () {
@@ -23,9 +26,9 @@ function BucketLoader (callback, errorCallback, context) {
     
     function calculateOrientation () {
         if (window.innerHeight > window.innerWidth) {
-            return "portrait";
+            return PORTRAIT;
         } else {
-            return "landscape";
+            return LANDSCAPE;
         }
     }
 
