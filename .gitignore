@@ -2,3 +2,4 @@
 node_modules/
 output/
 board-quiz.js
+/bin/

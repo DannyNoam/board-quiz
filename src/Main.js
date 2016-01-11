@@ -26,7 +26,7 @@ window.onload = function() {
     })();
      
     function loadLayout() {
-        new JsonLoader('../resource/' + Display.bucket.width + 'x' + Display.bucket.height + '/layout.json', setLayoutDataInPIXI);
+        new JsonLoader('./resource/' + Display.bucket.width + 'x' + Display.bucket.height + '/layout.json', setLayoutDataInPIXI);
     }
     
     function setLayoutDataInPIXI(layoutData) {
