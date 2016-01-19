@@ -28,5 +28,14 @@ View.prototype.createSpriteElement = function(data) {
     return new PIXI.Sprite.fromImage(data.path);
 };
 
+View.prototype.removeElement = function(element) {
+    this.removeChild(element);
+};
+
+View.prototype.updateElement = function(element) {
+    this.removeChild(element);
+    this.addChild(element);
+};
+
 module.exports = View;
 

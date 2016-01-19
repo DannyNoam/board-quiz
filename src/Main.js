@@ -9,10 +9,17 @@ HelpController = require('./controller/HelpController');
 MenuView = require('./view/MenuView');
 MenuController = require('./controller/MenuController');
 AvatarSelectionView = require('./view/AvatarSelectionView');
-AvatarView = require('./view/AvatarView');
+AvatarView = require('./view/subview/AvatarView');
 AvatarSelectionController = require('./controller/AvatarSelectionController');
 FindGameView = require('./view/FindGameView');
 FindGameController = require('./controller/FindGameController');
+DiceView = require('./view/subview/DiceView');
+DiceController = require('./controller/subcontroller/DiceController');
+QuestionView = require('./view/subview/QuestionView');
+QuestionController = require('./controller/subcontroller/QuestionController');
+PlayerView = require('./view/subview/PlayerView');
+PlayerController = require('./controller/subcontroller/PlayerController');
+GameController = require('./controller/GameController');
 
 window.onload = function() {
     
@@ -31,6 +38,16 @@ window.onload = function() {
     
     function setLayoutDataInPIXI(layoutData) {
         PIXI.Container.layoutData = layoutData;
+        new JsonLoader('./resource/questions.json', setQuestionDataInQuestionController);
+    }
+    
+    function setQuestionDataInQuestionController(questionData) {
+        QuestionController.prototype.questionData = questionData;
+        new JsonLoader('./resource/categories.json', setCategoryDataInQuestionController);
+    }
+    
+    function setCategoryDataInQuestionController(categoryData) {
+        QuestionController.prototype.categoryData = categoryData;
         startRendering();
     }
     
