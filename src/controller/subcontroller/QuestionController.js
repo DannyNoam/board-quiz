@@ -1,5 +1,5 @@
 QuestionController.constructor = QuestionController;
-QuestionController.prototype = Object.create(Controller.prototype);
+QuestionController.prototype = Object.create(GameController.prototype);
 QuestionController.prototype.view = new QuestionView();
 
 QuestionController.prototype.SOCKET_ON_RANDOM_CATEGORY = 'random-category';
@@ -17,8 +17,9 @@ QuestionController.prototype.ANSWERED_2 = 'ANSWERED_2';
 QuestionController.prototype.ANSWERED_3 = 'ANSWERED_3';
 QuestionController.prototype.ANSWERED_4 = 'ANSWERED_4';
 
-function QuestionController() {
+function QuestionController(playerController) {
     Controller.call(this);
+    this.playerController = playerController;
     this.registerSocketEvents();
 }
 
@@ -26,7 +27,7 @@ QuestionController.prototype.registerSocketEvents = function() {
     this.socket.on(this.SOCKET_ON_RANDOM_QUESTION, function(data) {
         this.question = data.question;
         this.category = data.category;
-        this.loadView();
+        //this.loadView();
     }.bind(this));
     
     this.socket.on(this.SOCKET_ON_DAMAGE_DEALT, function(playerData) {
@@ -41,16 +42,12 @@ QuestionController.prototype.registerSocketEvents = function() {
 };
 
 QuestionController.prototype.loadView = function() {
+    this.getRandomQuestion();
     this.shuffleAnswerIndices(function() {
         this.view.displayCategoryAndQuestion(this.category, this.question);
         this.setupListeners();
         this.viewLoader.loadView(this.view);
     }.bind(this));
-};
-
-QuestionController.prototype.getQuestionAndCategory = function(playerController) {
-    this.playerController = playerController;
-    this.getRandomQuestion();
 };
 
 QuestionController.prototype.getRandomQuestion = function() {

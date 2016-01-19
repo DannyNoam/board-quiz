@@ -13,13 +13,14 @@ AvatarView = require('./view/subview/AvatarView');
 AvatarSelectionController = require('./controller/AvatarSelectionController');
 FindGameView = require('./view/FindGameView');
 FindGameController = require('./controller/FindGameController');
+GameController = require('./controller/GameController');
 DiceView = require('./view/subview/DiceView');
 DiceController = require('./controller/subcontroller/DiceController');
 QuestionView = require('./view/subview/QuestionView');
 QuestionController = require('./controller/subcontroller/QuestionController');
 PlayerView = require('./view/subview/PlayerView');
 PlayerController = require('./controller/subcontroller/PlayerController');
-GameController = require('./controller/GameController');
+TurnController = require('./controller/TurnController');
 
 window.onload = function() {
     

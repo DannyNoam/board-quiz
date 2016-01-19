@@ -46,6 +46,7 @@ io.on('connection', function (socket) {
   });
     
   socket.on('roll-dice', function() {
+      console.log("Server: dice rolled");
       io.to(this.roomName).emit('dice-number', {number: Dice.roll()});
   });
     
