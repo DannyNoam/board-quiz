@@ -1,0 +1,159 @@
+{
+    "CATEGORIES" : {
+        "SPORT" : {
+            "QUESTION_1" : {
+                "text" : "Which nation won the World Cup in 1966?",
+                "right_answer" : "England",
+                "wrong_answer_1" : "West Germany",
+                "wrong_answer_2" : "Italy",
+                "wrong_answer_3" : "Belgium"
+            },
+            
+            "QUESTION_2" : {
+                "text" : "What country was Usain Bolt born in?",
+                "right_answer" : "Jamaica",
+                "wrong_answer_1" : "Bermuda",
+                "wrong_answer_2" : "Dominican Republic",
+                "wrong_answer_3" : "Nigeria"
+            },
+            
+            "QUESTION_3" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            }
+        },
+        
+        "HISTORY" : {
+            "QUESTION_1" : {
+                "text" : "Which nation won the World Cup in 1966?",
+                "right_answer" : "England",
+                "wrong_answer_1" : "West Germany",
+                "wrong_answer_2" : "Italy",
+                "wrong_answer_3" : "Belgium"
+            },
+            
+            "QUESTION_2" : {
+                "text" : "What country was Usain Bolt born in?",
+                "right_answer" : "Jamaica",
+                "wrong_answer_1" : "Bermuda",
+                "wrong_answer_2" : "Dominican Republic",
+                "wrong_answer_3" : "Nigeria"
+            },
+            
+            "QUESTION_3" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            }
+        },
+        
+        "SCIENCE" : {
+            "QUESTION_1" : {
+                "text" : "Which nation won the World Cup in 1966?",
+                "right_answer" : "England",
+                "wrong_answer_1" : "West Germany",
+                "wrong_answer_2" : "Italy",
+                "wrong_answer_3" : "Belgium"
+            },
+            
+            "QUESTION_2" : {
+                "text" : "What country was Usain Bolt born in?",
+                "right_answer" : "Jamaica",
+                "wrong_answer_1" : "Bermuda",
+                "wrong_answer_2" : "Dominican Republic",
+                "wrong_answer_3" : "Nigeria"
+            },
+            
+            "QUESTION_3" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            }
+        },
+        
+        "LITERATURE" : {
+            "QUESTION_1" : {
+                "text" : "Which nation won the World Cup in 1966?",
+                "right_answer" : "England",
+                "wrong_answer_1" : "West Germany",
+                "wrong_answer_2" : "Italy",
+                "wrong_answer_3" : "Belgium"
+            },
+            
+            "QUESTION_2" : {
+                "text" : "What country was Usain Bolt born in?",
+                "right_answer" : "Jamaica",
+                "wrong_answer_1" : "Bermuda",
+                "wrong_answer_2" : "Dominican Republic",
+                "wrong_answer_3" : "Nigeria"
+            },
+            
+            "QUESTION_3" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            }
+        },
+        
+        "ENTERTAINMENT" : {
+            "QUESTION_1" : {
+                "text" : "Which nation won the World Cup in 1966?",
+                "right_answer" : "England",
+                "wrong_answer_1" : "West Germany",
+                "wrong_answer_2" : "Italy",
+                "wrong_answer_3" : "Belgium"
+            },
+            
+            "QUESTION_2" : {
+                "text" : "What country was Usain Bolt born in?",
+                "right_answer" : "Jamaica",
+                "wrong_answer_1" : "Bermuda",
+                "wrong_answer_2" : "Dominican Republic",
+                "wrong_answer_3" : "Nigeria"
+            },
+            
+            "QUESTION_3" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            }
+        },
+        
+        "GEOGRAPHY" : {
+            "QUESTION_1" : {
+                "text" : "Which nation won the World Cup in 1966?",
+                "right_answer" : "England",
+                "wrong_answer_1" : "West Germany",
+                "wrong_answer_2" : "Italy",
+                "wrong_answer_3" : "Belgium"
+            },
+            
+            "QUESTION_2" : {
+                "text" : "What country was Usain Bolt born in?",
+                "right_answer" : "Jamaica",
+                "wrong_answer_1" : "Bermuda",
+                "wrong_answer_2" : "Dominican Republic",
+                "wrong_answer_3" : "Nigeria"
+            },
+            
+            "QUESTION_3" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            }
+        }
+    }
+}

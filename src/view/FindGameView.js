@@ -1,29 +1,25 @@
 FindGameView.constructor = FindGameView;
 FindGameView.prototype = Object.create(View.prototype);
 
-FindGameView.prototype.BACK_BUTTON = 0;
-
 function FindGameView() {
     PIXI.Container.call(this);
 }
 
 FindGameView.prototype.setupViewElements = function(avatar) {
     var layoutData = PIXI.Container.layoutData.FIND_GAME;
-    var commonData = PIXI.Container.layoutData.COMMON;
     var avatarData = PIXI.Container.layoutData.AVATAR;
     
     this.createFindGameCaption(layoutData.CAPTION);
     this.createPlayer1Avatar(avatarData[avatar], layoutData.PLAYER_1_AVATAR);
     this.createVersusText(layoutData.VERSUS);
-    this.createPlayer2UnknownAvatar(avatarData.PLAYER_2_UNKNOWN, layoutData.PLAYER_2_UNKNOWN);
-    this.createBackButton(commonData.BACK_BUTTON);
+    this.createPlayer2UnknownAvatar(avatarData.PLAYER_2_UNKNOWN, layoutData.PLAYER_2_AVATAR);
     this.createPlayer1Text(layoutData.PLAYER_1);
     this.createPlayer2Text(layoutData.PLAYER_2);
 };
 
 FindGameView.prototype.createFindGameCaption = function (data) {
-    var findGameCaption = this.createTextElement(data);
-    this.addElementToContainer(findGameCaption, data);
+    this.findGameCaption = this.createTextElement(data);
+    this.addElementToContainer(this.findGameCaption, data);
 };
 
 FindGameView.prototype.createPlayer1Avatar = function (avatar, data) {
@@ -37,13 +33,8 @@ FindGameView.prototype.createVersusText = function (data) {
 };
 
 FindGameView.prototype.createPlayer2UnknownAvatar = function (avatar, data) {
-    var player2UnknownAvatar = this.createSpriteElement(avatar);
-    this.addElementToContainer(player2UnknownAvatar, data);
-};
-
-FindGameView.prototype.createBackButton = function (data) {
-    this.backButton = this.createSpriteElement(data);
-    this.addElementToContainer(this.backButton, data);
+    this.player2UnknownAvatar = this.createSpriteElement(avatar);
+    this.addElementToContainer(this.player2UnknownAvatar, data);
 };
 
 FindGameView.prototype.createPlayer1Text = function (data) {
@@ -56,8 +47,16 @@ FindGameView.prototype.createPlayer2Text = function (data) {
     this.addElementToContainer(player2, data);
 };
 
-FindGameView.prototype.getInteractiveViewElements = function () {
-    return [this.backButton];
+FindGameView.prototype.createPlayer2ActualAvatar = function (avatar) {
+    this.removeElement(this.player2UnknownAvatar);
+    var player2UnknownAvatar = this.createSpriteElement(PIXI.Container.layoutData.AVATAR[avatar]);
+    this.addElementToContainer(player2UnknownAvatar, PIXI.Container.layoutData.FIND_GAME.PLAYER_2_AVATAR);
+};
+
+FindGameView.prototype.createGameFoundCaption = function () {
+    this.removeElement(this.findGameCaption);
+    var foundGameCaption = this.createTextElement(PIXI.Container.layoutData.FIND_GAME.FOUND_GAME_CAPTION);
+    this.addElementToContainer(foundGameCaption, PIXI.Container.layoutData.FIND_GAME.FOUND_GAME_CAPTION);
 };
 
 module.exports = FindGameView;

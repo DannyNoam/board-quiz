@@ -58,7 +58,6 @@ AvatarSelectionController.prototype.setupNextAvatar = function(direction) {
     } else {
         this.currentAvatarIndex = this.currentAvatarIndex + direction;
     }
-    console.log(this.currentAvatarIndex);
     this.selectedAvatarView.setupViewElements(this.avatars[this.currentAvatarIndex]);
 };
 

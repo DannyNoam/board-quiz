@@ -1,0 +1,10 @@
+{
+    "CATEGORIES" : {
+        "1" : "SPORT",
+        "2" : "SCIENCE",
+        "3" : "HISTORY",
+        "4" : "LITERATURE",
+        "5" : "ENTERTAINMENT",
+        "6" : "GEOGRAPHY"
+    }
+}

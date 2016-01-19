@@ -1,7 +1,6 @@
 var JsonLoader = function (path, callback) {
     var that = this,
         REQUEST_FINISHED = 4;
-
     (function loadJson() {
         var xhr = new XMLHttpRequest();
         xhr.overrideMimeType('application/json');

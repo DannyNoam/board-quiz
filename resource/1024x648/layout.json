@@ -27,10 +27,46 @@
     
     "FIND_GAME" : {
         "CAPTION" : {"text" : "Finding game...", "size" : 20, "font" : "arial", "color" : "#FFFFFF", "x": 512, "y" : 100},
+        "FOUND_GAME_CAPTION" : {"text" : "Game found!", "size" : 20, "font" : "arial", "color" : "#FFFFFF", "x": 512, "y" : 100},
         "PLAYER_1_AVATAR" : {"x" : 200, "y" : 400},
-        "PLAYER_2_UNKNOWN" : {"x" : 800, "y" : 400},
+        "PLAYER_2_AVATAR" : {"x" : 800, "y" : 400},
         "VERSUS" : {"text" : "Vs.", "x" : 500, "y" : 400, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
         "PLAYER_1" : {"text" : "Player 1", "x" : 200, "y" : 600, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
         "PLAYER_2" : {"text" : "Player 2", "x" : 800, "y" : 600, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"}
+    },
+    
+    "PLAYER" : {
+        "PLAYER_1_AVATAR" : {"x" : 206, "y" : 250},
+        "PLAYER_2_AVATAR" : {"x" : 824, "y" : 250},
+        "PLAYER_1_HEALTH" : {"text" : "Health: ", "x": 200, "y" : 50, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAYER_2_HEALTH" : {"text" : "Health: ", "x": 800, "y" : 50, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"}
+    },
+    
+    "DICE" : {
+        "COORDS" : {"x" : 500, "y" : 250},
+        "1" : {"path" : "assets/dice.png"},
+        "2" : {"path" : "assets/dice.png"},
+        "3" : {"path" : "assets/dice.png"},
+        "4" : {"path" : "assets/dice.png"},
+        "5" : {"path" : "assets/dice.png"},
+        "6" : {"path" : "assets/dice.png"}
+    },
+    
+    "QUESTION" : {
+        "QUESTION_POSITION" : {"x" : 512, "y" : 450, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "CATEGORY" : {"x" : 512, "y" : 400, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "ANSWER_BOX" : {"path" : ""},
+        "ANSWER_1" : {"x" : 206, "y" : 500, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "ANSWER_2" : {"x" : 412, "y" : 500, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "ANSWER_3" : {"x" : 618, "y" : 500, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "ANSWER_4" : {"x" : 824, "y" : 500, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "RIGHT_ANSWER_COLOUR" : "green",
+        "WRONG_ANSWER_COLOUR" : "red",
+        "PLAYER_1_ANSWERED" : {"text" : "(Player 1)", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAYER_2_ANSWERED" : {"text" : "(Player 2)", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "ANSWERED_1" : {"x" : 206, "y" : 525},
+        "ANSWERED_2" : {"x" : 412, "y" : 525},
+        "ANSWERED_3" : {"x" : 618, "y" : 525},
+        "ANSWERED_4" : {"x" : 824, "y" : 525}
     }
 }
