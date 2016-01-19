@@ -27,7 +27,6 @@ QuestionController.prototype.registerSocketEvents = function() {
     this.socket.on(this.SOCKET_ON_RANDOM_QUESTION, function(data) {
         this.question = data.question;
         this.category = data.category;
-        //this.loadView();
     }.bind(this));
     
     this.socket.on(this.SOCKET_ON_DAMAGE_DEALT, function(playerData) {
@@ -39,15 +38,18 @@ QuestionController.prototype.registerSocketEvents = function() {
             this.socket.emit(this.SOCKET_NEW_TURN);
         }
     }.bind(this));
-};
-
-QuestionController.prototype.loadView = function() {
-    this.getRandomQuestion();
-    this.shuffleAnswerIndices(function() {
+    
+    this.socket.on(this.SOCKET_ON_SHUFFLED_ANSWER_INDICES, function(data) {
+        this.view.setAnswerIndices(data);
         this.view.displayCategoryAndQuestion(this.category, this.question);
         this.setupListeners();
         this.viewLoader.loadView(this.view);
     }.bind(this));
+};
+
+QuestionController.prototype.loadView = function() {
+    this.getRandomQuestion();
+    this.shuffleAnswerIndices();
 };
 
 QuestionController.prototype.getRandomQuestion = function() {
@@ -99,11 +101,6 @@ QuestionController.prototype.shuffleAnswerIndices = function(callback) {
     if(this.isPlayer1()) {
         this.socket.emit(this.SOCKET_SHUFFLE_ANSWER_INDICES, {indices: [1,2,3,4]});
     }
-    
-    this.socket.on(this.SOCKET_ON_SHUFFLED_ANSWER_INDICES, function(data) {
-        this.view.setAnswerIndices(data);
-        callback();
-    }.bind(this));
 };
 
 QuestionController.prototype.setAnswerUpdateListener = function(answers) {

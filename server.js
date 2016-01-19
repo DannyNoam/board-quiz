@@ -57,7 +57,7 @@ io.on('connection', function (socket) {
   }.bind(this));
     
   socket.on('new-turn', function() {
-      io.to(this.roomName).emit('init-new-turn');
+      io.to(this.roomName).emit('init-new-turn', {player1Health: this.players["PLAYER_1"].getHealth(), player2Health: this.players["PLAYER_2"].getHealth()});
   }.bind(this));
     
   socket.on('deal-damage', function(data) {
@@ -106,12 +106,11 @@ var Player = function(id, avatar) {
     var avatar = avatar;
     var health = 30;
     
-    this.inflictHitOn = function(player, damage) {
-        player.takeHit(damage);
-    };
-    
     this.takeHit = function(damage) {
         health = health - damage;
+        if(health < 0) {
+            health = 0;
+        }
     };
     
     this.isAlive = function() {
