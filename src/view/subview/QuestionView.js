@@ -94,13 +94,7 @@ QuestionView.prototype.getInteractiveViewElements = function() {
 };
 
 QuestionView.prototype.cleanView = function() {
-    this.removeElement(this.playerWhoAnsweredElement);
-    this.removeElement(this.rightAnwer);
-    this.removeElement(this.wrongAnswer1);
-    this.removeElement(this.wrongAnswer2);
-    this.removeElement(this.wrongAnswer3);
-    this.removeElement(this.questionElement);
-    this.removeElement(this.categoryElement);
+    this.removeAllElements();
 };
 
 module.exports = QuestionView;

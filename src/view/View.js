@@ -37,5 +37,9 @@ View.prototype.updateElement = function(element) {
     this.addChild(element);
 };
 
+View.prototype.removeAllElements = function() {
+    this.removeChildren();
+};
+
 module.exports = View;
 
