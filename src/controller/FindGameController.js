@@ -24,7 +24,11 @@ FindGameController.prototype.setupServerInteraction = function() {
         this.assignAvatars(playerData);
         this.view.createGameFoundCaption();
         setTimeout(function() {
-            var gameController = new GameController(playerData);
+            this.viewLoader.removeAllViews();
+            var playerController = new PlayerController(playerData);
+            var diceController = new DiceController();
+            var questionController = new QuestionController(playerController);
+            var turnController = new TurnController(playerController, diceController, questionController);
         }.bind(this), this.TRANSITION_TO_GAME_TIME);
     }.bind(this));
     this.socket.emit(this.FINDING_GAME, {avatar: this.avatar});

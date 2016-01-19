@@ -1,9 +1,10 @@
 PlayerController.constructor = PlayerController;
-PlayerController.prototype = Object.create(Controller.prototype);
+PlayerController.prototype = Object.create(GameController.prototype);
 PlayerController.prototype.view = new PlayerView();
 
-function PlayerController() {
+function PlayerController(playerData) {
     Controller.call(this);
+    this.setPlayerData(playerData);
 }
 
 PlayerController.prototype.loadView = function() {

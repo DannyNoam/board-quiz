@@ -1,15 +1,8 @@
 GameController.constructor = GameController;
 GameController.prototype = Object.create(Controller.prototype);
-GameController.prototype.playerController = new PlayerController();
-GameController.prototype.diceController = new DiceController();
-GameController.prototype.questionController = new QuestionController();
 
 function GameController(playerData) {
     Controller.call(this);
-    this.registerSocketEvents();
-    this.setPlayerData(playerData);
-    this.viewLoader.removeAllViews();
-    this.startGame();
 }
 
 GameController.prototype.registerSocketEvents = function() {
@@ -18,20 +11,25 @@ GameController.prototype.registerSocketEvents = function() {
     }.bind(this));
 };
 
-GameController.prototype.startGame = function() {
-    this.playerController.loadView();
-    this.diceController.loadView();
-    this.questionController.getQuestionAndCategory(this.playerController);
+GameController.prototype.setPlayerData = function(playerData) {
+    GameController.prototype.playerData = playerData;
 };
 
-GameController.prototype.newTurn = function() {
-    // Only proceed if they're both above 30
-    console.log("Initiating new turn..");
-    this.diceController.cleanView();
-    this.questionController.cleanView();
-    this.diceController.loadView();
-    this.questionController.getQuestionAndCategory(this.playerController);
+GameController.prototype.setDiceNumber = function(diceNumber) {
+    GameController.prototype.diceNumber = diceNumber;
 };
 
+GameController.prototype.isPlayer1 = function() {
+    var socketPrefix = "/#";
+    return this.playerData.player1Id === (socketPrefix + GameController.prototype.socket.id);
+};
+
+GameController.prototype.getPlayer = function() {
+    return this.isPlayer1(this.playerData) ? "PLAYER_1" : "PLAYER_2";
+};
+
+GameController.prototype.getOpponent = function() {
+    return this.isPlayer1(this.playerData) ? "PLAYER_2" : "PLAYER_1";
+};
 
 module.exports = GameController;
