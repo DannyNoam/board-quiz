@@ -3,8 +3,6 @@ FindGameController.prototype = Object.create(Controller.prototype);
 FindGameController.prototype.view = new FindGameView();
 FindGameController.prototype.avatar = null;
 FindGameController.prototype.TRANSITION_TO_GAME_TIME = 3000;
-FindGameController.prototype.GAME_FOUND = 'game-found';
-FindGameController.prototype.FINDING_GAME = 'finding-game';
 
 function FindGameController(avatar) {
     Controller.call(this);
@@ -21,7 +19,7 @@ FindGameController.prototype.loadView = function() {
 };
 
 FindGameController.prototype.setupServerInteraction = function() {
-    this.socket.on(this.GAME_FOUND, function(playerData) {
+    this.socket.on(SocketConstants.on.GAME_FOUND, function(playerData) {
         this.assignAvatars(playerData);
         this.view.createGameFoundCaption();
         setTimeout(function() {
@@ -32,7 +30,7 @@ FindGameController.prototype.setupServerInteraction = function() {
             var turnController = new TurnController(playerController, diceController, questionController);
         }.bind(this), this.TRANSITION_TO_GAME_TIME);
     }.bind(this));
-    this.socket.emit(this.FINDING_GAME, {avatar: this.avatar});
+    this.socket.emit(SocketConstants.emit.FINDING_GAME, {avatar: this.avatar});
 };
 
 FindGameController.prototype.assignAvatars = function(data) {

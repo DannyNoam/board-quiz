@@ -16,14 +16,14 @@ PlayerController.prototype.loadView = function() {
 };
 
 PlayerController.prototype.registerSocketEvents = function() {
-    this.socket.on('players-health', function(playerData) {
+    this.socket.on(SocketConstants.on.PLAYERS_HEALTH, function(playerData) {
         this.view.setPlayer1Health(playerData.player1Health);
         this.view.setPlayer2Health(playerData.player2Health);
     }.bind(this));
 };
 
 PlayerController.prototype.updatePlayersHealth = function() {
-    this.socket.emit('get-players-health');
+    this.socket.emit(SocketConstants.emit.GET_PLAYERS_HEALTH);
 };
 
 PlayerController.prototype.cleanView = function() {

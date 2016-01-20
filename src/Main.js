@@ -1,4 +1,5 @@
 Display = require('./util/Display');
+SocketConstants = require('./SocketConstants');
 View = require('./view/View');
 BucketLoader = require('./loader/BucketLoader');
 JsonLoader = require('./loader/JsonLoader');

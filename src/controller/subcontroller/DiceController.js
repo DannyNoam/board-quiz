@@ -2,23 +2,20 @@ DiceController.constructor = DiceController;
 DiceController.prototype = Object.create(GameController.prototype);
 DiceController.prototype.view = new DiceView();
 
-DiceController.prototype.SOCKET_ON_DICE_NUMBER = 'dice-number';
-DiceController.prototype.SOCKET_ROLL_DICE = 'roll-dice';
-
 function DiceController() {
     Controller.call(this);
     this.registerSocketEvents();
 }
 
 DiceController.prototype.registerSocketEvents = function() {
-    this.socket.on(this.SOCKET_ON_DICE_NUMBER, function(dice) {
+    this.socket.on(SocketConstants.on.DICE_NUMBER, function(dice) {
         this.loadDice(dice.number);
     }.bind(this));
 };
 
 DiceController.prototype.rollDice = function() {
     if(this.isPlayer1()) {
-        this.socket.emit(this.SOCKET_ROLL_DICE);
+        this.socket.emit(SocketConstants.emit.ROLL_DICE);
     }
 };
 

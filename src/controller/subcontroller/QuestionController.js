@@ -2,16 +2,6 @@ QuestionController.constructor = QuestionController;
 QuestionController.prototype = Object.create(GameController.prototype);
 QuestionController.prototype.view = new QuestionView();
 
-QuestionController.prototype.SOCKET_ON_RANDOM_CATEGORY = 'random-category';
-QuestionController.prototype.SOCKET_ON_RANDOM_QUESTION = 'random-question';
-QuestionController.prototype.SOCKET_ON_DAMAGE_DEALT = 'damage-dealt';
-QuestionController.prototype.SOCKET_NEW_TURN = 'new-turn';
-QuestionController.prototype.SOCKET_GET_RANDOM_CATEGORY = 'get-random-category';
-QuestionController.prototype.SOCKET_GET_RANDOM_QUESTION = 'get-random-question';
-QuestionController.prototype.SOCKET_DEAL_DAMAGE = 'deal-damage';
-QuestionController.prototype.SOCKET_SHUFFLE_ANSWER_INDICES = 'shuffle-answer-indices';
-QuestionController.prototype.SOCKET_ON_SHUFFLED_ANSWER_INDICES = 'shuffled-answer-indices';
-
 QuestionController.prototype.ANSWERED_1 = 'ANSWERED_1';
 QuestionController.prototype.ANSWERED_2 = 'ANSWERED_2';
 QuestionController.prototype.ANSWERED_3 = 'ANSWERED_3';
@@ -24,22 +14,22 @@ function QuestionController(playerController) {
 }
 
 QuestionController.prototype.registerSocketEvents = function() {
-    this.socket.on(this.SOCKET_ON_RANDOM_QUESTION, function(data) {
+    this.socket.on(SocketConstants.on.RANDOM_QUESTION, function(data) {
         this.question = data.question;
         this.category = data.category;
     }.bind(this));
     
-    this.socket.on(this.SOCKET_ON_DAMAGE_DEALT, function(playerData) {
+    this.socket.on(SocketConstants.on.DAMAGE_DEALT, function(playerData) {
         this.view.setAnswerToColour(this.answers[playerData.answer], playerData.answer);
         this.view.setWhoAnsweredQuestion(this.answers[playerData.answer], playerData.answer, playerData.player_who_answered);
         this.view.turnOffInteractivityForAnswerElements();
         this.playerController.updatePlayersHealth();
         if(this.isPlayer1()) {
-            this.socket.emit(this.SOCKET_NEW_TURN);
+            this.socket.emit(SocketConstants.emit.NEW_TURN);
         }
     }.bind(this));
     
-    this.socket.on(this.SOCKET_ON_SHUFFLED_ANSWER_INDICES, function(data) {
+    this.socket.on(SocketConstants.on.SHUFFLED_ANSWER_INDICES, function(data) {
         this.view.setAnswerIndices(data);
         this.view.displayCategoryAndQuestion(this.category, this.question);
         this.setupListeners();
@@ -56,7 +46,7 @@ QuestionController.prototype.getRandomQuestion = function() {
     if(this.isPlayer1()) {
         var categories = this.categoryData.CATEGORIES;
         var questions = this.questionData.CATEGORIES;
-        this.socket.emit(this.SOCKET_GET_RANDOM_QUESTION, {categories: categories, questions: questions});
+        this.socket.emit(SocketConstants.emit.GET_RANDOM_QUESTION, {categories: categories, questions: questions});
     }
 };
 
@@ -99,7 +89,7 @@ QuestionController.prototype.setWrongAnswerListeners = function(answers) {
 
 QuestionController.prototype.shuffleAnswerIndices = function(callback) {
     if(this.isPlayer1()) {
-        this.socket.emit(this.SOCKET_SHUFFLE_ANSWER_INDICES, {indices: [1,2,3,4]});
+        this.socket.emit(SocketConstants.emit.SHUFFLE_ANSWER_INDICES, {indices: [1,2,3,4]});
     }
 };
 
@@ -108,11 +98,11 @@ QuestionController.prototype.setAnswerUpdateListener = function(answers) {
 };
 
 QuestionController.prototype.emitDealDamageToOpponentToSocket = function(answer) {
-    this.socket.emit(this.SOCKET_DEAL_DAMAGE, {player_who_answered: this.getPlayer(), player_to_damage: this.getOpponent(), damage: this.diceNumber, answer:        answer});
+    this.socket.emit(SocketConstants.emit.DEAL_DAMAGE, {player_who_answered: this.getPlayer(), player_to_damage: this.getOpponent(), damage: this.diceNumber, answer:        answer});
 };
 
 QuestionController.prototype.emitDealDamageToSelfToSocket = function(answer) {
-    this.socket.emit(this.SOCKET_DEAL_DAMAGE, {player_who_answered: this.getPlayer(), player_to_damage: this.getPlayer(), damage: this.diceNumber, answer:       answer});
+    this.socket.emit(SocketConstants.emit.DEAL_DAMAGE, {player_who_answered: this.getPlayer(), player_to_damage: this.getPlayer(), damage: this.diceNumber, answer:       answer});
 };
 
 QuestionController.prototype.cleanView = function() {

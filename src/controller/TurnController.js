@@ -15,21 +15,22 @@ function TurnController(playerController, diceController, questionController) {
 }
 
 TurnController.prototype.registerSocketEvents = function() {
-    this.socket.on('init-new-turn', function(playerData) {
+    this.socket.on(SocketConstants.on.INIT_NEW_TURN, function(playerData) {
         if(playerData.player1Health === 0) {
-            this.diceController.cleanView();
-            this.questionController.cleanView();
-            this.winView.createWinnerText("PLAYER_2");
-            this.viewLoader.loadView(this.winView);
+            this.loadWinView("PLAYER_2");
         } else if(playerData.player2Health === 0) {
-            this.diceController.cleanView();
-            this.questionController.cleanView();
-            this.winView.createWinnerText("PLAYER_1");
-            this.viewLoader.loadView(this.winView);
+            this.loadWinView("PLAYER_1");
         } else {
             this.newTurn();
         }
     }.bind(this));
+};
+
+TurnController.prototype.loadWinView = function(player) {
+    this.diceController.cleanView();
+    this.questionController.cleanView();
+    this.winView.createWinnerText(player);
+    this.viewLoader.loadView(this.winView);
 };
 
 TurnController.prototype.setupListeners = function() {
@@ -58,7 +59,7 @@ TurnController.prototype.cleanView = function() {
 };
 
 TurnController.prototype.checkPlayersHealth = function() {
-    this.socket.emit('get-players-health');
+    this.socket.emit(SocketConstants.emit.GET_PLAYERS_HEALTH);
 };
 
 module.exports = TurnController;

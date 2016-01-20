@@ -8,12 +8,10 @@ var express = require('express'),
 
 var NUMBER_OF_QUESTIONS_PER_CATEGORY = 10,
     PORT = 5000,
-    ROOM_NAME_PREFIX = 'Room_',
-    QUESTION_PREFIX = 'QUESTION_',
     PLAYER_1 = "PLAYER_1",
     PLAYER_2 = "PLAYER_2";
 
-var socketConstants = {
+var SocketConstants = {
     'emit' : {
         'PLAYERS_HEALTH' : 'players-health',
         'DICE_NUMBER' : 'dice-number',
@@ -44,11 +42,11 @@ var setupServer = (function() {
     io = socketIO(server);
 })();
 
-io.on(socketConstants.on.CONNECTION, function (socket) {
+io.on(SocketConstants.on.CONNECTION, function (socket) {
     
   this.players = {};
     
-  socket.on(socketConstants.on.FINDING_GAME, function (playerData) {
+  socket.on(SocketConstants.on.FINDING_GAME, function (playerData) {
       this.players[PLAYER_1] = new Player(socket.id, playerData.avatar);
       if(Lobby.getNumberOfPlayersWaiting() > 0) {
           this.roomName = Lobby.getFirstRoom().name;
@@ -64,40 +62,41 @@ io.on(socketConstants.on.CONNECTION, function (socket) {
       }
   }.bind(this));
     
-  socket.on(socketConstants.on.GET_PLAYERS_HEALTH, function() {
-      socket.emit(socketConstants.emit.PLAYERS_HEALTH, {player1Health: this.players[PLAYER_1].getHealth(), player2Health: this.players[PLAYER_2].getHealth()});
+  socket.on(SocketConstants.on.GET_PLAYERS_HEALTH, function() {
+      socket.emit(SocketConstants.emit.PLAYERS_HEALTH, {player1Health: this.players[PLAYER_1].getHealth(), player2Health: this.players[PLAYER_2].getHealth()});
   }.bind(this));
     
-  socket.on(socketConstants.on.DISCONNECT, function (playerData) {
+  socket.on(SocketConstants.on.DISCONNECT, function (playerData) {
       Lobby.removePlayer(socket.id);
       Lobby.removeRoom(socket.id);
   });
     
-  socket.on(socketConstants.on.ROLL_DICE, function() {
-      io.to(this.roomName).emit(socketConstants.emit.DICE_NUMBER, {number: Dice.roll()});
+  socket.on(SocketConstants.on.ROLL_DICE, function() {
+      io.to(this.roomName).emit(SocketConstants.emit.DICE_NUMBER, {number: Dice.roll()});
   });
     
-  socket.on(socketConstants.on.GET_RANDOM_QUESTION, function(data) {
+  socket.on(SocketConstants.on.GET_RANDOM_QUESTION, function(data) {
+      var questionPrefix = 'QUESTION_';
       var category = data.categories[Dice.roll()];
-      var question = data.questions[category][QUESTION_PREFIX + randomNumberBetween(1, NUMBER_OF_QUESTIONS_PER_CATEGORY)];
-     io.to(this.roomName).emit(socketConstants.emit.RANDOM_QUESTION, {category: category, question: question});
+      var question = data.questions[category][questionPrefix + randomNumberBetween(1, NUMBER_OF_QUESTIONS_PER_CATEGORY)];
+     io.to(this.roomName).emit(SocketConstants.emit.RANDOM_QUESTION, {category: category, question: question});
   }.bind(this));
     
-  socket.on(socketConstants.on.NEW_TURN, function() {
-      io.to(this.roomName).emit(socketConstants.emit.INIT_NEW_TURN, {player1Health: this.players[PLAYER_1].getHealth(), player2Health: this.players[PLAYER_2].getHealth()});
+  socket.on(SocketConstants.on.NEW_TURN, function() {
+      io.to(this.roomName).emit(SocketConstants.emit.INIT_NEW_TURN, {player1Health: this.players[PLAYER_1].getHealth(), player2Health: this.players[PLAYER_2].getHealth()});
   }.bind(this));
     
-  socket.on(socketConstants.on.DEAL_DAMAGE, function(data) {
+  socket.on(SocketConstants.on.DEAL_DAMAGE, function(data) {
       var playerToDamage = this.players[data.player_to_damage];
       playerToDamage.takeHit(data.damage);
-      io.to(this.roomName).emit(socketConstants.emit.DAMAGE_DEALT, {player_who_answered: data.player_who_answered, player1Health: this.players[PLAYER_1].getHealth(), player2Health: this.players[PLAYER_2].getHealth(), answer: data.answer});
+      io.to(this.roomName).emit(SocketConstants.emit.DAMAGE_DEALT, {player_who_answered: data.player_who_answered, player1Health: this.players[PLAYER_1].getHealth(), player2Health: this.players[PLAYER_2].getHealth(), answer: data.answer});
   }.bind(this));
     
-  socket.on(socketConstants.on.SHUFFLE_ANSWER_INDICES, function(data) {
+  socket.on(SocketConstants.on.SHUFFLE_ANSWER_INDICES, function(data) {
       var indices = data.indices.sort(function() {
           return 0.5 - Math.random();
       });
-      io.to(this.roomName).emit(socketConstants.emit.SHUFFLED_ANSWER_INDICES, data.indices); 
+      io.to(this.roomName).emit(SocketConstants.emit.SHUFFLED_ANSWER_INDICES, data.indices); 
   });
     
     
@@ -112,7 +111,7 @@ io.on(socketConstants.on.CONNECTION, function (socket) {
       var player2Id = player2.getId();
       var player1Avatar = player1.getAvatar();
       var player2Avatar = player2.getAvatar();
-      io.to(roomName).emit(socketConstants.emit.GAME_FOUND, {roomName: roomName, player1Id: player1Id, player2Id: player2Id, player1Avatar: player1Avatar, player2Avatar: player2Avatar});
+      io.to(roomName).emit(SocketConstants.emit.GAME_FOUND, {roomName: roomName, player1Id: player1Id, player2Id: player2Id, player1Avatar: player1Avatar, player2Avatar: player2Avatar});
   }
     
   function joinRoom(roomName) {
@@ -120,7 +119,8 @@ io.on(socketConstants.on.CONNECTION, function (socket) {
   }
     
   function generateRoomName() {
-      var roomName = ROOM_NAME_PREFIX + roomNumberSuffix;
+      var roomNamePrefix = 'Room_';
+      var roomName = roomNamePrefix + roomNumberSuffix;
       roomNumberSuffix++;
       return roomName;
   }
