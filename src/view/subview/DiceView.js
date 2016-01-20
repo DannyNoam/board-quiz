@@ -18,7 +18,7 @@ DiceView.prototype.createDiceElement = function(diceImage, dicePositionData) {
 };
 
 DiceView.prototype.cleanView = function() {
-    this.removeElement(this.diceElement);
+    this.removeAllElements();
 };
 
 module.exports = DiceView;

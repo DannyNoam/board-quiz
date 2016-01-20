@@ -5,12 +5,6 @@ function GameController(playerData) {
     Controller.call(this);
 }
 
-GameController.prototype.registerSocketEvents = function() {
-    this.socket.on('init-new-turn', function() {
-        this.newTurn();
-    }.bind(this));
-};
-
 GameController.prototype.setPlayerData = function(playerData) {
     GameController.prototype.playerData = playerData;
 };

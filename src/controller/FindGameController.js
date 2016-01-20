@@ -8,6 +8,7 @@ FindGameController.prototype.FINDING_GAME = 'finding-game';
 
 function FindGameController(avatar) {
     Controller.call(this);
+    this.cleanView();
     this.avatar = avatar;
     this.loadView();
 }
@@ -42,6 +43,11 @@ FindGameController.prototype.assignAvatars = function(data) {
     } else {
         this.view.createPlayer2ActualAvatar(data.player1Avatar);
     }
+};
+
+FindGameController.prototype.cleanView = function() {
+    this.viewLoader.removeView(this.view);
+    this.view.cleanView();
 };
 
 module.exports = FindGameController;

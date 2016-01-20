@@ -51,4 +51,8 @@ AvatarSelectionView.prototype.getInteractiveViewElements = function() {
     return [this.backButton, this.selectUpButton, this.selectDownButton, this.findGameButton];
 };
 
+AvatarSelectionView.prototype.cleanView = function() {
+    this.removeAllElements();
+};
+
 module.exports = AvatarSelectionView;

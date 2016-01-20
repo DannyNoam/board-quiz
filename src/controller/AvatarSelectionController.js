@@ -7,6 +7,7 @@ AvatarSelectionController.prototype.currentAvatarIndex = 0;
 
 function AvatarSelectionController() {
     Controller.call(this);
+    this.cleanView();
     this.loadView();
 }
 
@@ -59,6 +60,11 @@ AvatarSelectionController.prototype.setupNextAvatar = function(direction) {
         this.currentAvatarIndex = this.currentAvatarIndex + direction;
     }
     this.selectedAvatarView.setupViewElements(this.avatars[this.currentAvatarIndex]);
+};
+
+AvatarSelectionController.prototype.cleanView = function() {
+    this.viewLoader.removeView(this.view);
+    this.view.cleanView();
 };
 
 module.exports = AvatarSelectionController;

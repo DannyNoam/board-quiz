@@ -23,6 +23,62 @@
                 "wrong_answer_1" : "Manchester United",
                 "wrong_answer_2" : "Chelsea",
                 "wrong_answer_3" : "Arsenal"
+            },
+            
+            "QUESTION_4" : {
+                "text" : "Which English football club is moving to the Olympic Stadium, ahead of the 2015/16 season?",
+                "right_answer" : "West Ham United",
+                "wrong_answer_1" : "Tottenham Hotspur",
+                "wrong_answer_2" : "Leyton Orient",
+                "wrong_answer_3" : "Chelsea"
+            },
+            
+            "QUESTION_5" : {
+                "text" : "Wladimir Klitschko is a champion boxer from which country?",
+                "right_answer" : "Ukraine",
+                "wrong_answer_1" : "Russia",
+                "wrong_answer_2" : "Armenia",
+                "wrong_answer_3" : "United Kingdom"
+            },
+            
+            "QUESTION_6" : {
+                "text" : "In feet, how high is a basketball hoop?",
+                "right_answer" : "10 feet",
+                "wrong_answer_1" : "8 feet",
+                "wrong_answer_2" : "11 feet",
+                "wrong_answer_3" : "9 feet"
+            },
+            
+            "QUESTION_7" : {
+                "text" : "In 1971, what team did Kevin Keegan joined Liverpool from?",
+                "right_answer" : "Scunthorpe United",
+                "wrong_answer_1" : "Newcastle United",
+                "wrong_answer_2" : "Leicester City",
+                "wrong_answer_3" : "Barnsley"
+            },
+            
+            "QUESTION_8" : {
+                "text" : "Which club did rugby legend Martin Johnson play for?",
+                "right_answer" : "Leicester Tigers",
+                "wrong_answer_1" : "London Wasps",
+                "wrong_answer_2" : "Exeter Chiefs",
+                "wrong_answer_3" : "Harlequins"
+            },
+            
+            "QUESTION_9" : {
+                "text" : "Name the only major team sport in the USA with no game clock?",
+                "right_answer" : "Baseball",
+                "wrong_answer_1" : "Basketball",
+                "wrong_answer_2" : "American Football",
+                "wrong_answer_3" : "Soccer"
+            },
+            
+            "QUESTION_10" : {
+                "text" : "In cricket, how many matches generally make up an Ashes Test series?",
+                "right_answer" : "5",
+                "wrong_answer_1" : "4",
+                "wrong_answer_2" : "3",
+                "wrong_answer_3" : "7"
             }
         },
         
@@ -49,10 +105,148 @@
                 "wrong_answer_1" : "Manchester United",
                 "wrong_answer_2" : "Chelsea",
                 "wrong_answer_3" : "Arsenal"
+            },
+            
+            "QUESTION_4" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            },
+            
+            "QUESTION_5" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            },
+            
+            "QUESTION_6" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            },
+            
+            "QUESTION_7" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            },
+            
+            "QUESTION_8" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            },
+            
+            "QUESTION_9" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            },
+            
+            "QUESTION_10" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
             }
         },
         
         "SCIENCE" : {
+            "QUESTION_1" : {
+                "text" : "How many hearts does an octopus have?",
+                "right_answer" : "3",
+                "wrong_answer_1" : "0",
+                "wrong_answer_2" : "1",
+                "wrong_answer_3" : "2"
+            },
+            
+            "QUESTION_2" : {
+                "text" : "Which planet in the solar system is the hottest?",
+                "right_answer" : "Venus",
+                "wrong_answer_1" : "Mars",
+                "wrong_answer_2" : "Jupiter",
+                "wrong_answer_3" : "Earth"
+            },
+            
+            "QUESTION_3" : {
+                "text" : "Which country accounts for 70% of the world's platinum production?",
+                "right_answer" : "South Africa",
+                "wrong_answer_1" : "China",
+                "wrong_answer_2" : "India",
+                "wrong_answer_3" : "Nepal"
+            },
+            
+            "QUESTION_4" : {
+                "text" : "Which country accounts for 70% of the world's platinum production?",
+                "right_answer" : "South Africa",
+                "wrong_answer_1" : "China",
+                "wrong_answer_2" : "India",
+                "wrong_answer_3" : "Nepal"
+            },
+            
+            "QUESTION_5" : {
+                "text" : "Which country accounts for 70% of the world's platinum production?",
+                "right_answer" : "South Africa",
+                "wrong_answer_1" : "China",
+                "wrong_answer_2" : "India",
+                "wrong_answer_3" : "Nepal"
+            },
+            
+            "QUESTION_6" : {
+                "text" : "Which country accounts for 70% of the world's platinum production?",
+                "right_answer" : "South Africa",
+                "wrong_answer_1" : "China",
+                "wrong_answer_2" : "India",
+                "wrong_answer_3" : "Nepal"
+            },
+            
+            "QUESTION_7" : {
+                "text" : "Which country accounts for 70% of the world's platinum production?",
+                "right_answer" : "South Africa",
+                "wrong_answer_1" : "China",
+                "wrong_answer_2" : "India",
+                "wrong_answer_3" : "Nepal"
+            },
+            
+            "QUESTION_8" : {
+                "text" : "Which country accounts for 70% of the world's platinum production?",
+                "right_answer" : "South Africa",
+                "wrong_answer_1" : "China",
+                "wrong_answer_2" : "India",
+                "wrong_answer_3" : "Nepal"
+            },
+            
+            "QUESTION_9" : {
+                "text" : "Which country accounts for 70% of the world's platinum production?",
+                "right_answer" : "South Africa",
+                "wrong_answer_1" : "China",
+                "wrong_answer_2" : "India",
+                "wrong_answer_3" : "Nepal"
+            },
+            
+            "QUESTION_10" : {
+                "text" : "Which country accounts for 70% of the world's platinum production?",
+                "right_answer" : "South Africa",
+                "wrong_answer_1" : "China",
+                "wrong_answer_2" : "India",
+                "wrong_answer_3" : "Nepal"
+            }
+        },
+        
+        "LITERATURE" : {
             "QUESTION_1" : {
                 "text" : "Which nation won the World Cup in 1966?",
                 "right_answer" : "England",
@@ -75,27 +269,57 @@
                 "wrong_answer_1" : "Manchester United",
                 "wrong_answer_2" : "Chelsea",
                 "wrong_answer_3" : "Arsenal"
-            }
-        },
-        
-        "LITERATURE" : {
-            "QUESTION_1" : {
-                "text" : "Which nation won the World Cup in 1966?",
-                "right_answer" : "England",
-                "wrong_answer_1" : "West Germany",
-                "wrong_answer_2" : "Italy",
-                "wrong_answer_3" : "Belgium"
             },
             
-            "QUESTION_2" : {
-                "text" : "What country was Usain Bolt born in?",
-                "right_answer" : "Jamaica",
-                "wrong_answer_1" : "Bermuda",
-                "wrong_answer_2" : "Dominican Republic",
-                "wrong_answer_3" : "Nigeria"
+            "QUESTION_4" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
             },
             
-            "QUESTION_3" : {
+            "QUESTION_5" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            },
+            
+            "QUESTION_6" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            },
+            
+            "QUESTION_7" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            },
+            
+            "QUESTION_8" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            },
+            
+            "QUESTION_9" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            },
+            
+            "QUESTION_10" : {
                 "text" : "Which English football team has won the most European Cups?",
                 "right_answer" : "Liverpool",
                 "wrong_answer_1" : "Manchester United",
@@ -127,32 +351,144 @@
                 "wrong_answer_1" : "Manchester United",
                 "wrong_answer_2" : "Chelsea",
                 "wrong_answer_3" : "Arsenal"
-            }
-        },
-        
-        "GEOGRAPHY" : {
-            "QUESTION_1" : {
-                "text" : "Which nation won the World Cup in 1966?",
-                "right_answer" : "England",
-                "wrong_answer_1" : "West Germany",
-                "wrong_answer_2" : "Italy",
-                "wrong_answer_3" : "Belgium"
             },
             
-            "QUESTION_2" : {
-                "text" : "What country was Usain Bolt born in?",
-                "right_answer" : "Jamaica",
-                "wrong_answer_1" : "Bermuda",
-                "wrong_answer_2" : "Dominican Republic",
-                "wrong_answer_3" : "Nigeria"
-            },
-            
-            "QUESTION_3" : {
+            "QUESTION_4" : {
                 "text" : "Which English football team has won the most European Cups?",
                 "right_answer" : "Liverpool",
                 "wrong_answer_1" : "Manchester United",
                 "wrong_answer_2" : "Chelsea",
                 "wrong_answer_3" : "Arsenal"
+            },
+
+            "QUESTION_5" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            },
+            
+            "QUESTION_6" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            },
+            
+            "QUESTION_7" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            },
+            
+            "QUESTION_8" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            },
+            
+            "QUESTION_9" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            },
+            
+            "QUESTION_10" : {
+                "text" : "Which English football team has won the most European Cups?",
+                "right_answer" : "Liverpool",
+                "wrong_answer_1" : "Manchester United",
+                "wrong_answer_2" : "Chelsea",
+                "wrong_answer_3" : "Arsenal"
+            }
+        },
+        
+        "GEOGRAPHY" : {
+            "QUESTION_1" : {
+                "text" : "What is the capital of Uruguay?",
+                "right_answer" : "Montevideo",
+                "wrong_answer_1" : "Caracas",
+                "wrong_answer_2" : "Buenos Aires",
+                "wrong_answer_3" : "Santiago"
+            },
+            
+            "QUESTION_2" : {
+                "text" : "What is the capital city of Israel?",
+                "right_answer" : "Jerusalem",
+                "wrong_answer_1" : "Tel Aviv",
+                "wrong_answer_2" : "Haifa",
+                "wrong_answer_3" : "Netanya"
+            },
+            
+            "QUESTION_3" : {
+                "text" : "What is the capital city of Turkey?",
+                "right_answer" : "Ankara",
+                "wrong_answer_1" : "Istanbul",
+                "wrong_answer_2" : "Bursa",
+                "wrong_answer_3" : "Antalya"
+            },
+            
+            "QUESTION_4" : {
+                "text" : "In which county might you find the town of Market Harborough?",
+                "right_answer" : "Leicestershire",
+                "wrong_answer_1" : "Northamptonshire",
+                "wrong_answer_2" : "Lancashire",
+                "wrong_answer_3" : "Derbyshire"
+            },
+            
+            "QUESTION_5" : {
+                "text" : "Vaduz is the capital of which country?",
+                "right_answer" : "Liechtenstein",
+                "wrong_answer_1" : "Latvia",
+                "wrong_answer_2" : "Moldova",
+                "wrong_answer_3" : "Slovakia"
+            },
+            
+            "QUESTION_6" : {
+                "text" : "Which country runs along the southern border of Afghanistan?",
+                "right_answer" : "Pakistan",
+                "wrong_answer_1" : "Oman",
+                "wrong_answer_2" : "India",
+                "wrong_answer_3" : "Iraq"
+            },
+            
+            "QUESTION_7" : {
+                "text" : "Mount Vesuvius is close to which Italian city?",
+                "right_answer" : "Naples",
+                "wrong_answer_1" : "Milan",
+                "wrong_answer_2" : "Rome",
+                "wrong_answer_3" : "Venice"
+            },
+            
+            "QUESTION_8" : {
+                "text" : "What country's language is Magyar?",
+                "right_answer" : "Hungary",
+                "wrong_answer_1" : "Myanmar",
+                "wrong_answer_2" : "Norway",
+                "wrong_answer_3" : "Sweden"
+            },
+            
+            "QUESTION_9" : {
+                "text" : "Arnold, Beeston and Long Eaton are districts of which British city?",
+                "right_answer" : "Nottingham",
+                "wrong_answer_1" : "Leicester",
+                "wrong_answer_2" : "Derby",
+                "wrong_answer_3" : "Coventry"
+            },
+            
+            "QUESTION_10" : {
+                "text" : "The Ganges flows through India and which other country?",
+                "right_answer" : "Bangladesh",
+                "wrong_answer_1" : "Pakistan",
+                "wrong_answer_2" : "Nepal",
+                "wrong_answer_3" : "Myanmar"
             }
         }
     }

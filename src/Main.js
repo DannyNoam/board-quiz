@@ -20,6 +20,7 @@ QuestionView = require('./view/subview/QuestionView');
 QuestionController = require('./controller/subcontroller/QuestionController');
 PlayerView = require('./view/subview/PlayerView');
 PlayerController = require('./controller/subcontroller/PlayerController');
+WinView = require('./view/subview/WinView');
 TurnController = require('./controller/TurnController');
 
 window.onload = function() {

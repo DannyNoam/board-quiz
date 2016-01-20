@@ -59,4 +59,8 @@ FindGameView.prototype.createGameFoundCaption = function () {
     this.addElementToContainer(foundGameCaption, PIXI.Container.layoutData.FIND_GAME.FOUND_GAME_CAPTION);
 };
 
+FindGameView.prototype.cleanView = function() {
+    this.removeAllElements();
+};
+
 module.exports = FindGameView;

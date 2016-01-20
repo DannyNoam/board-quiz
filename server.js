@@ -3,75 +3,101 @@ var express = require('express'),
     http = require('http'),
     socketIO = require('socket.io'),
     server, io,
-    PORT = 5000,
     rooms = [],
-    currentRoomNumber = 0,
-    NUMBER_OF_QUESTIONS = 3;
+    roomNumberSuffix = 0;
 
-app.use("/", express.static(__dirname + '/'));
+var NUMBER_OF_QUESTIONS_PER_CATEGORY = 10,
+    PORT = 5000,
+    ROOM_NAME_PREFIX = 'Room_',
+    QUESTION_PREFIX = 'QUESTION_',
+    PLAYER_1 = "PLAYER_1",
+    PLAYER_2 = "PLAYER_2";
 
-server = http.Server(app);
-server.listen(PORT);
+var socketConstants = {
+    'emit' : {
+        'PLAYERS_HEALTH' : 'players-health',
+        'DICE_NUMBER' : 'dice-number',
+        'RANDOM_QUESTION' : 'random-question',
+        'INIT_NEW_TURN' : 'init-new-turn',
+        'DAMAGE_DEALT' : 'damage-dealt',
+        'SHUFFLED_ANSWER_INDICES' : 'shuffled-answer-indices',
+        'GAME_FOUND' : 'game-found'
+    },
+    
+    'on' : {
+        'CONNECTION' : 'connection',
+        'FINDING_GAME' : 'finding-game',
+        'GET_PLAYERS_HEALTH' : 'get-players-health',
+        'DISCONNECT' : 'disconnect',
+        'ROLL_DICE' : 'roll-dice',
+        'GET_RANDOM_QUESTION' : 'get-random-question',
+        'NEW_TURN' : 'new-turn',
+        'DEAL_DAMAGE' : 'deal-damage',
+        'SHUFFLE_ANSWER_INDICES' : 'shuffle-answer-indices'
+    }
+};
 
-io = socketIO(server);
+var setupServer = (function() {
+    app.use("/", express.static(__dirname + '/'));
+    server = http.Server(app);
+    server.listen(PORT);
+    io = socketIO(server);
+})();
 
-io.on('connection', function (socket) {
+io.on(socketConstants.on.CONNECTION, function (socket) {
     
   this.players = {};
     
-  socket.on('finding-game', function (playerData) {
-      this.players["PLAYER_1"] = new Player(socket.id, playerData.avatar);
+  socket.on(socketConstants.on.FINDING_GAME, function (playerData) {
+      this.players[PLAYER_1] = new Player(socket.id, playerData.avatar);
       if(Lobby.getNumberOfPlayersWaiting() > 0) {
           this.roomName = Lobby.getFirstRoom().name;
-          this.players["PLAYER_2"] = Lobby.getFirstRoom().player;
+          this.players[PLAYER_2] = Lobby.getFirstRoom().player;
           joinRoom(this.roomName);
           cleanUpLobbyForGameFound();
-          initiateGame(this.roomName, this.players["PLAYER_1"], this.players["PLAYER_2"]);
+          initiateGame(this.roomName, this.players[PLAYER_1], this.players[PLAYER_2]);
       } else {
           var roomName = generateRoomName();
           joinRoom(this.roomName);
-          Lobby.addRoom(this.roomName, this.players["PLAYER_1"]);
-          Lobby.addPlayer(this.players["PLAYER_1"]);
+          Lobby.addRoom(this.roomName, this.players[PLAYER_1]);
+          Lobby.addPlayer(this.players[PLAYER_1]);
       }
   }.bind(this));
     
-  socket.on('get-players-health', function() {
-      console.log("Getting players' health!")
-      socket.emit('players-health', {player1Health: this.players["PLAYER_1"].getHealth(), player2Health: this.players["PLAYER_2"].getHealth()});
+  socket.on(socketConstants.on.GET_PLAYERS_HEALTH, function() {
+      socket.emit(socketConstants.emit.PLAYERS_HEALTH, {player1Health: this.players[PLAYER_1].getHealth(), player2Health: this.players[PLAYER_2].getHealth()});
   }.bind(this));
     
-  socket.on('disconnect', function (playerData) {
+  socket.on(socketConstants.on.DISCONNECT, function (playerData) {
       Lobby.removePlayer(socket.id);
       Lobby.removeRoom(socket.id);
   });
     
-  socket.on('roll-dice', function() {
-      console.log("Server: dice rolled");
-      io.to(this.roomName).emit('dice-number', {number: Dice.roll()});
+  socket.on(socketConstants.on.ROLL_DICE, function() {
+      io.to(this.roomName).emit(socketConstants.emit.DICE_NUMBER, {number: Dice.roll()});
   });
     
-  socket.on('get-random-question', function(data) {
+  socket.on(socketConstants.on.GET_RANDOM_QUESTION, function(data) {
       var category = data.categories[Dice.roll()];
-      var question = data.questions[category]["QUESTION_" + randomNumberBetween(1, NUMBER_OF_QUESTIONS)];
-     io.to(this.roomName).emit('random-question', {category: category, question: question});
+      var question = data.questions[category][QUESTION_PREFIX + randomNumberBetween(1, NUMBER_OF_QUESTIONS_PER_CATEGORY)];
+     io.to(this.roomName).emit(socketConstants.emit.RANDOM_QUESTION, {category: category, question: question});
   }.bind(this));
     
-  socket.on('new-turn', function() {
-      io.to(this.roomName).emit('init-new-turn', {player1Health: this.players["PLAYER_1"].getHealth(), player2Health: this.players["PLAYER_2"].getHealth()});
+  socket.on(socketConstants.on.NEW_TURN, function() {
+      io.to(this.roomName).emit(socketConstants.emit.INIT_NEW_TURN, {player1Health: this.players[PLAYER_1].getHealth(), player2Health: this.players[PLAYER_2].getHealth()});
   }.bind(this));
     
-  socket.on('deal-damage', function(data) {
+  socket.on(socketConstants.on.DEAL_DAMAGE, function(data) {
       var playerToDamage = this.players[data.player_to_damage];
       playerToDamage.takeHit(data.damage);
-      io.to(this.roomName).emit('damage-dealt', {player_who_answered: data.player_who_answered, player1Health: this.players["PLAYER_1"].getHealth(), player2Health: this.players["PLAYER_2"].getHealth(), answer: data.answer});
+      io.to(this.roomName).emit(socketConstants.emit.DAMAGE_DEALT, {player_who_answered: data.player_who_answered, player1Health: this.players[PLAYER_1].getHealth(), player2Health: this.players[PLAYER_2].getHealth(), answer: data.answer});
   }.bind(this));
     
-  socket.on('shuffle-answer-indices', function(data) {
+  socket.on(socketConstants.on.SHUFFLE_ANSWER_INDICES, function(data) {
       var indices = data.indices.sort(function() {
           return 0.5 - Math.random();
       });
-      console.log(indices);
-      io.to(this.roomName).emit('shuffled-answer-indices', data.indices); 
+      io.to(this.roomName).emit(socketConstants.emit.SHUFFLED_ANSWER_INDICES, data.indices); 
   });
     
     
@@ -86,7 +112,7 @@ io.on('connection', function (socket) {
       var player2Id = player2.getId();
       var player1Avatar = player1.getAvatar();
       var player2Avatar = player2.getAvatar();
-      io.to(roomName).emit('game-found', {roomName: roomName, player1Id: player1Id, player2Id: player2Id, player1Avatar: player1Avatar, player2Avatar: player2Avatar});
+      io.to(roomName).emit(socketConstants.emit.GAME_FOUND, {roomName: roomName, player1Id: player1Id, player2Id: player2Id, player1Avatar: player1Avatar, player2Avatar: player2Avatar});
   }
     
   function joinRoom(roomName) {
@@ -94,8 +120,8 @@ io.on('connection', function (socket) {
   }
     
   function generateRoomName() {
-      var roomName = 'Room_' + currentRoomNumber;
-      currentRoomNumber++;
+      var roomName = ROOM_NAME_PREFIX + roomNumberSuffix;
+      roomNumberSuffix++;
       return roomName;
   }
     
@@ -169,7 +195,7 @@ var Lobby = {
 
 var Dice = {
     roll : function() {
-        return Math.floor(Math.random() * 6) + 1;
+        return randomNumberBetween(1,6);
     }
 };
 

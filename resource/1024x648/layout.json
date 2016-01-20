@@ -68,5 +68,12 @@
         "ANSWERED_2" : {"x" : 412, "y" : 525},
         "ANSWERED_3" : {"x" : 618, "y" : 525},
         "ANSWERED_4" : {"x" : 824, "y" : 525}
+    },
+    
+    "WIN" : {
+        "WIN_TEXT_POSITION" : {"x" : 512, "y" : 450},
+        "PLAYER_1_WINS" : {"text" : "Player 1 Wins!", "size" : 50, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAYER_2_WINS" : {"text" : "Player 2 Wins!", "size" : 50, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAY_AGAIN" : {"path" : "assets/play-again-button.png", "x" : 512, "y" : 570}
     }
 }

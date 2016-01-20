@@ -50,4 +50,8 @@ PlayerView.prototype.setPlayer2Health = function(health) {
     this.player2HealthText.text = player2HealthData.text + health;
 };
 
+PlayerView.prototype.cleanView = function() {
+    this.removeAllElements();
+};
+
 module.exports = PlayerView;
