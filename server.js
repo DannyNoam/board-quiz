@@ -102,8 +102,8 @@ io.on(SocketConstants.on.CONNECTION, function (socket) {
       io.to(this.roomName).emit(SocketConstants.emit.SHUFFLED_ANSWER_INDICES, data.indices); 
   });
     
-socket.on(SocketConstants.on.GAME_ENDED, function() {
-    io.to(this.roomName).emit(SocketConstants.emit.GAME_STATS, {player1CorrectAnswerPercentage: this.players[PLAYER_1].calculateCorrectAnswerPercentage(), player1BestCategory: this.players[PLAYER_1].calculateBestCategory().name, player1BestCategoryPercentage: this.players[PLAYER_1].calculateBestCategory().percentageCorrect, player2CorrectAnswerPercentage: this.players[PLAYER_2].calculateCorrectAnswerPercentage(), player2BestCategory: this.players[PLAYER_2].calculateBestCategory().name, player2BestCategoryPercentage: this.players[PLAYER_2].calculateBestCategory().percentageCorrect});
+socket.on(SocketConstants.on.GAME_ENDED, function(data) {
+    io.to(this.roomName).emit(SocketConstants.emit.GAME_STATS, {player1CorrectAnswerPercentage: this.players[PLAYER_1].calculateCorrectAnswerPercentage(), player1BestCategory: this.players[PLAYER_1].calculateBestCategory().name, player1BestCategoryPercentage: this.players[PLAYER_1].calculateBestCategory().percentageCorrect, player2CorrectAnswerPercentage: this.players[PLAYER_2].calculateCorrectAnswerPercentage(), player2BestCategory: this.players[PLAYER_2].calculateBestCategory().name, player2BestCategoryPercentage: this.players[PLAYER_2].calculateBestCategory().percentageCorrect, winner: data.winner});
 }.bind(this));
     
     

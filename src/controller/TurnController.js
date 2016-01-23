@@ -18,21 +18,22 @@ TurnController.prototype.registerSocketEvents = function() {
     this.socket.on(SocketConstants.on.INIT_NEW_TURN, function(playerData) {
         if(playerData.player1Health === 0) {
             if(this.isPlayer1()) {
-                this.socket.emit(SocketConstants.emit.GAME_ENDED);
-                this.socket.on(SocketConstants.on.GAME_STATS, function(data) {
-                    this.loadWinView("PLAYER_2", data);
-                }.bind(this));
+                console.log("Emitted winner PLAYER_2");
+                this.socket.emit(SocketConstants.emit.GAME_ENDED, {winner: "PLAYER_2"});
             }
         } else if(playerData.player2Health === 0) {
             if(this.isPlayer1()) {
-                this.socket.emit(SocketConstants.emit.GAME_ENDED);
-                this.socket.on(SocketConstants.on.GAME_STATS, function(data) {
-                    this.loadWinView("PLAYER_1", data);
-                }.bind(this));
+                console.log("Emitted winner PLAYER_1");
+                this.socket.emit(SocketConstants.emit.GAME_ENDED, {winner: "PLAYER_1"});
             }
         } else {
             this.newTurn();
         }
+    }.bind(this));
+    
+    this.socket.on(SocketConstants.on.GAME_STATS, function(data) {
+        console.log("ON GAME STATS");
+        this.loadWinView(data.winner, data);
     }.bind(this));
 };
 
