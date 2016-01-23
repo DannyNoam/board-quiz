@@ -8,14 +8,13 @@ function MenuView() {
     PIXI.Container.call(this);
 }
 
-MenuView.prototype.setupViewElements = function(callback, context) {
+MenuView.prototype.setupViewElements = function() {
     var layoutData = PIXI.Container.layoutData.MENU;
     var commonData = PIXI.Container.layoutData.COMMON;
     
     this.createBoardQuizText(commonData.BOARD_QUIZ);
     this.createPlayButton(layoutData.PLAY_BUTTON);
     this.createHelpButton(layoutData.HELP_BUTTON);
-    callback.apply(context);
 };
 
 MenuView.prototype.createBoardQuizText = function (data) {

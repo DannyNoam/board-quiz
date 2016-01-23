@@ -8,15 +8,12 @@ AvatarSelectionController.prototype.currentAvatarIndex = 0;
 function AvatarSelectionController() {
     Controller.call(this);
     this.cleanView();
-    this.initController();
+    this.loadView();
 }
 
-AvatarSelectionController.prototype.initController = function() {
-    this.viewLoader.removeAllViews();
-    this.view.setupViewElements(this.loadView, this);
-};
-
 AvatarSelectionController.prototype.loadView = function() {
+    this.viewLoader.removeAllViews();
+    this.view.setupViewElements();
     this.selectedAvatarView.setupViewElements(this.avatars[this.currentAvatarIndex]);
     this.viewLoader.loadView(this.view);
     this.viewLoader.loadView(this.selectedAvatarView);
