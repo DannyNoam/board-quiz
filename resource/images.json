@@ -1,0 +1,16 @@
+{
+    "IMAGES" : {
+        "path" : "assets/back-arrow.png",
+        "path" : "assets/back-button.jpg",
+        "path" : "assets/dice.png",
+        "path" : "assets/down.png",
+        "path" : "assets/emoji-angry.jpg",
+        "path" : "assets/emoji-cry.jpg",
+        "path" : "assets/find-game.jpg",
+        "path" : "assets/help.gif",
+        "path" : "assets/play-again-button.png",
+        "path" : "assets/play-button.gif",
+        "path" : "assets/player-2-unknown.png",
+        "path" : "assets/up.png"
+    }
+}

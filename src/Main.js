@@ -3,6 +3,7 @@ SocketConstants = require('./SocketConstants');
 View = require('./view/View');
 BucketLoader = require('./loader/BucketLoader');
 JsonLoader = require('./loader/JsonLoader');
+ImageLoader = require('./loader/ImageLoader');
 ViewLoader = require('./loader/ViewLoader');
 Controller = require('./controller/Controller');
 HelpView = require('./view/HelpView');
@@ -51,7 +52,11 @@ window.onload = function() {
     
     function setCategoryDataInQuestionController(categoryData) {
         QuestionController.prototype.categoryData = categoryData;
-        startRendering();
+        loadImages();
+    }
+    
+    function loadImages() {
+        new ImageLoader('./resource/images.json', startRendering);
     }
     
     function startRendering() {
