@@ -4,14 +4,17 @@ MenuController.prototype.view = new MenuView();
 
 function MenuController() {
     Controller.call(this);
-    this.loadView();
+    this.initController();
 }
 
-MenuController.prototype.loadView = function() {
+MenuController.prototype.initController = function() {
     this.viewLoader.removeAllViews();
-    this.view.setupViewElements();
-    this.viewLoader.loadView(this.view);
+    this.view.setupViewElements(this.loadView, this);
     this.setupListeners();
+};
+
+MenuController.prototype.loadView = function() {
+    this.viewLoader.loadView(this.view);
 };
 
 MenuController.prototype.setupListeners = function() {
