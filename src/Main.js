@@ -39,10 +39,12 @@ window.onload = function() {
     })();
     
     function loadLayout() {
+        console.log("Loading layout");
         new JsonLoader('./resource/' + Display.bucket.width + 'x' + Display.bucket.height + '/layout.json', setLayoutDataInPIXI);
     }
     
     function setLayoutDataInPIXI(layoutData) {
+        console.log("Setting layout.");
         PIXI.Container.layoutData = layoutData;
         startRendering();
     }
