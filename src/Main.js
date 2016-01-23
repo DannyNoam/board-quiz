@@ -34,8 +34,17 @@ window.onload = function() {
     var DIV_ID = "game";
     
     (function() {
-        new BucketLoader(startRendering, bucketLoadingFailedMessage);
+        new BucketLoader(loadLayout, bucketLoadingFailedMessage);
     })();
+    
+    function loadLayout() {
+        new JsonLoader('./resource/' + Display.bucket.width + 'x' + Display.bucket.height + '/layout.json', setLayoutDataInPIXI);
+    }
+    
+    function setLayoutDataInPIXI(layoutData) {
+        PIXI.Container.layoutData = layoutData;
+        startRendering();
+    }
     
     function startRendering() {
         var viewLoader = new ViewLoader();
@@ -47,15 +56,6 @@ window.onload = function() {
         appendGameToDOM(renderer);
         beginAnimation(viewLoader);
         addLoadingViewToScreen(viewLoader);
-        loadLayout();
-    }
-     
-    function loadLayout() {
-        new JsonLoader('./resource/' + Display.bucket.width + 'x' + Display.bucket.height + '/layout.json', setLayoutDataInPIXI);
-    }
-    
-    function setLayoutDataInPIXI(layoutData) {
-        PIXI.Container.layoutData = layoutData;
         new JsonLoader('./resource/questions.json', setQuestionDataInQuestionController);
     }
     
@@ -93,6 +93,7 @@ window.onload = function() {
     
     function addLoadingViewToScreen(viewLoader) {
         var loadingView = new LoadingView();
+        loadingView.setupViewElements();
         viewLoader.loadView(loadingView);
     }
         
