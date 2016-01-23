@@ -11,7 +11,7 @@ function AvatarSelectionView() {
     PIXI.Container.call(this);
 }
 
-AvatarSelectionView.prototype.setupViewElements = function() {
+AvatarSelectionView.prototype.setupViewElements = function(callback, context) {
     var layoutData = PIXI.Container.layoutData.AVATAR_SELECTION;
     var commonData = PIXI.Container.layoutData.COMMON;
     
@@ -20,6 +20,7 @@ AvatarSelectionView.prototype.setupViewElements = function() {
     this.createSelectDownButton(layoutData.SELECT_DOWN);
     this.createSelectUpButton(layoutData.SELECT_UP);
     this.createFindGameButton(layoutData.FIND_GAME);
+    callback.apply(context);
 };
 
 AvatarSelectionView.prototype.createBoardQuizText = function (data) {
