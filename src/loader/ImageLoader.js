@@ -1,13 +1,14 @@
 var ImageLoader = function(imageJsonPath, callback) {
     var jsonLoader = new JsonLoader(imageJsonPath, loadImages);
+    var imagesLoaded = 0;
+    var totalImages = 0;
     
     function loadImages(imageData) {
         var images = imageData.IMAGES;
-        console.log(images);
-        for(var imagePath in images) {
-            loadImage(images[imagePath]);
+        countNumberOfImages(images);
+        for(var image in images) {
+            loadImage(images[image].path);
         }
-        callback();
     }
     
     function loadImage(imagePath) {
@@ -18,8 +19,25 @@ var ImageLoader = function(imageJsonPath, callback) {
         xhr.onreadystatechange = function () {
           if (xhr.readyState === REQUEST_FINISHED) {
               console.log("Finished loading image path: " + imagePath);
+              imagesLoaded++;
+              checkIfAllImagesLoaded();
           }
         };
+    }
+    
+    function countNumberOfImages(images) {
+        for(var image in images) {
+            totalImages++;
+        }
+    }
+    
+    function checkIfAllImagesLoaded() {
+        if(imagesLoaded === totalImages) {
+            console.log("All images loaded!");
+            callback();
+        } else {
+            console.log("Only " + imagesLoaded + " are loaded.");
+        }
     }
 };
 

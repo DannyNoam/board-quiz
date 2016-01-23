@@ -1,16 +1,16 @@
 {
     "IMAGES" : {
-        "1" : "assets/back-arrow.png",
-        "2" : "assets/back-button.jpg",
-        "3" : "assets/dice.png",
-        "4" : "assets/down.png",
-        "5" : "assets/emoji-angry.jpg",
-        "6" : "assets/emoji-cry.jpg",
-        "7" : "assets/find-game.jpg",
-        "8" : "assets/help.gif",
-        "9" : "assets/play-again-button.png",
-        "10" : "assets/play-button.gif",
-        "11" : "assets/player-2-unknown.png",
-        "12" : "assets/up.png"
+        "1" : {"path": "assets/back-arrow.png", "loaded": false},
+        "2" : {"path": "assets/back-button.jpg", "loaded": false},
+        "3" : {"path": "assets/dice.png", "loaded": false},
+        "4" : {"path": "assets/down.png", "loaded": false},
+        "5" : {"path": "assets/emoji-angry.jpg", "loaded": false},
+        "6" : {"path": "assets/emoji-cry.jpg", "loaded": false},
+        "7" : {"path": "assets/find-game.jpg", "loaded": false},
+        "8" : {"path": "assets/help.gif", "loaded": false},
+        "9" : {"path": "assets/play-again-button.png", "loaded": false},
+        "10" : {"path": "assets/play-button.gif", "loaded": false},
+        "11" : {"path": "assets/player-2-unknown.png", "loaded": false},
+        "12" : {"path": "assets/up.png", "loaded": false}
     }
 }
