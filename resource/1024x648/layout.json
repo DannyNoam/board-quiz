@@ -79,5 +79,9 @@
         "PLAY_AGAIN" : {"path" : "assets/play-again-button.png", "x" : 512, "y" : 570},
         "PLAYER_1_CORRECT_PERCENTAGE" : {"text" : "Player 1 - Correct Answers: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF", "x" : 206, "y" : 500},
         "PLAYER_2_CORRECT_PERCENTAGE" : {"text" : "Player 2 - Correct Answers: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF", "x" : 824, "y" : 500}
+    },
+    
+    "LOADING" : {
+        "LOADING_TEXT" : {"text" : "Loading...", "size" : 50, "font" : "Arial", "color" : "#FFFFFF"}
     }
 }

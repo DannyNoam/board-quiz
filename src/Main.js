@@ -1,6 +1,7 @@
 Display = require('./util/Display');
 SocketConstants = require('./SocketConstants');
 View = require('./view/View');
+LoadingView = require('./view/LoadingView');
 BucketLoader = require('./loader/BucketLoader');
 JsonLoader = require('./loader/JsonLoader');
 ImageLoader = require('./loader/ImageLoader');
@@ -33,8 +34,21 @@ window.onload = function() {
     var DIV_ID = "game";
     
     (function() {
-        new BucketLoader(loadLayout, bucketLoadingFailedMessage);
+        new BucketLoader(startRendering, bucketLoadingFailedMessage);
     })();
+    
+    function startRendering() {
+        var viewLoader = new ViewLoader();
+        var container = new PIXI.Container();
+        container.interactive = true;
+        var renderer = new PIXI.autoDetectRenderer(Display.bucket.width, Display.bucket.height);
+        renderer.backgroundColor = RENDERER_BACKGROUND_COLOUR;
+        setDependencies(viewLoader, container, renderer);
+        appendGameToDOM(renderer);
+        beginAnimation(viewLoader);
+        addLoadingViewToScreen(viewLoader);
+        loadLayout();
+    }
      
     function loadLayout() {
         new JsonLoader('./resource/' + Display.bucket.width + 'x' + Display.bucket.height + '/layout.json', setLayoutDataInPIXI);
@@ -56,19 +70,7 @@ window.onload = function() {
     }
     
     function loadImages() {
-        new ImageLoader('./resource/images.json', startRendering);
-    }
-    
-    function startRendering() {
-        var viewLoader = new ViewLoader();
-        var container = new PIXI.Container();
-        container.interactive = true;
-        var renderer = new PIXI.autoDetectRenderer(Display.bucket.width, Display.bucket.height);
-        renderer.backgroundColor = RENDERER_BACKGROUND_COLOUR;
-        setDependencies(viewLoader, container, renderer);
-        appendGameToDOM(renderer);
-        beginAnimation(viewLoader);
-        beginGame();
+        new ImageLoader('./resource/images.json', beginGame);
     }
     
     function appendGameToDOM(renderer) {
@@ -87,6 +89,11 @@ window.onload = function() {
     
     function beginGame() {
         var menuController = new MenuController(); 
+    }
+    
+    function addLoadingViewToScreen(viewLoader) {
+        var loadingView = new LoadingView();
+        viewLoader.loadView(loadingView);
     }
         
     function bucketLoadingFailedMessage() {
