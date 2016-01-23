@@ -330,83 +330,83 @@
         
         "ENTERTAINMENT" : {
             "QUESTION_1" : {
-                "text" : "Which nation won the World Cup in 1966?",
-                "right_answer" : "England",
-                "wrong_answer_1" : "West Germany",
-                "wrong_answer_2" : "Italy",
-                "wrong_answer_3" : "Belgium"
+                "text" : "Which musician's original name was Declan McManus?",
+                "right_answer" : "Elvis Costello",
+                "wrong_answer_1" : "David Bowie",
+                "wrong_answer_2" : "Jimi Hendrix",
+                "wrong_answer_3" : "Tupac Shakur"
             },
             
             "QUESTION_2" : {
-                "text" : "What country was Usain Bolt born in?",
-                "right_answer" : "Jamaica",
-                "wrong_answer_1" : "Bermuda",
-                "wrong_answer_2" : "Dominican Republic",
-                "wrong_answer_3" : "Nigeria"
+                "text" : "What colour were the slippers in the original Wizard of Oz?",
+                "right_answer" : "Silver",
+                "wrong_answer_1" : "Yellow",
+                "wrong_answer_2" : "Red",
+                "wrong_answer_3" : "White"
             },
             
             "QUESTION_3" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "'You Give Love a Bad Name' and 'Livin’ on a Prayer' were early hits for which band?",
+                "right_answer" : "Bon Jovi",
+                "wrong_answer_1" : "The Police",
+                "wrong_answer_2" : "Radiohead",
+                "wrong_answer_3" : "Busted"
             },
             
             "QUESTION_4" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "Who was the lead singer of T. Rex?",
+                "right_answer" : "Marc Bolan",
+                "wrong_answer_1" : "David Byran",
+                "wrong_answer_2" : "Mickey Finn",
+                "wrong_answer_3" : "Steve Currie"
             },
 
             "QUESTION_5" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "How many red balloons did Nena take into the pop charts?",
+                "right_answer" : "99",
+                "wrong_answer_1" : "10",
+                "wrong_answer_2" : "50",
+                "wrong_answer_3" : "100"
             },
             
             "QUESTION_6" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "In what sort of music might you hear scat singing?",
+                "right_answer" : "Jazz",
+                "wrong_answer_1" : "R&B",
+                "wrong_answer_2" : "Classical",
+                "wrong_answer_3" : "Pop"
             },
             
             "QUESTION_7" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "Who plays the character 'Red' in the film 'Shawshank Redemption'?",
+                "right_answer" : "Morgan Freeman",
+                "wrong_answer_1" : "Tim Robbins",
+                "wrong_answer_2" : "Brad Pitt",
+                "wrong_answer_3" : "Bill Murray"
             },
             
             "QUESTION_8" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "The series Smallville is about the early years of which superhero?",
+                "right_answer" : "Superman",
+                "wrong_answer_1" : "Batman",
+                "wrong_answer_2" : "Elektra",
+                "wrong_answer_3" : "Iron Man"
             },
             
             "QUESTION_9" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "David Dickinson is a television expert on which subject?",
+                "right_answer" : "Antiques",
+                "wrong_answer_1" : "Football",
+                "wrong_answer_2" : "Real Estate",
+                "wrong_answer_3" : "Dating"
             },
             
             "QUESTION_10" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "What was Elvis Presley’s middle name?",
+                "right_answer" : "Aron",
+                "wrong_answer_1" : "James",
+                "wrong_answer_2" : "Robert",
+                "wrong_answer_3" : "Oli"
             }
         },
         

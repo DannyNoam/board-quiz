@@ -1,5 +1,5 @@
 Display = require('./util/Display');
-SocketConstants = require('./SocketConstants');
+SocketConstants = require('./constant/SocketConstants');
 View = require('./view/View');
 LoadingView = require('./view/LoadingView');
 BucketLoader = require('./loader/BucketLoader');
@@ -30,7 +30,7 @@ window.onload = function() {
     
     var DEFAULT_WIDTH = 480;
     var DEFAULT_HEIGHT = 320;
-    var RENDERER_BACKGROUND_COLOUR = 0x333333;
+    var RENDERER_BACKGROUND_COLOUR = 0x000000;
     var DIV_ID = "game";
     
     (function() {

@@ -1,62 +1,62 @@
 {
     "COMMON" : {
-        "BACK_BUTTON" : {"path" : "assets/back-arrow.png", "x" : 130, "y": 100},
+        "BACK_BUTTON" : {"path" : "./resource/1024x648/image/back-arrow.png", "x" : 130, "y": 100},
         "BOARD_QUIZ" : {"text" : "Board Quiz!", "font" : "Arial", "size" : 80, "color" : "#FFFFFF", "x": 512, "y": 100}
     },
     
     "MENU" : {
-      "PLAY_BUTTON" : {"path" : "assets/play-button.gif", "x":512, "y":200},
-      "HELP_BUTTON" : {"path" : "assets/help.gif", "x":512, "y":450}
+      "PLAY_BUTTON" : {"path" : "./resource/1024x648/image/play-button.gif", "x":512, "y":200},
+      "HELP_BUTTON" : {"path" : "./resource/1024x648/image/help.gif", "x":512, "y":450}
     },
     
     "HELP" : {
-        "INFO" : {"text" : "The game is simple: prior to each question, a dice is rolled which determines the damage you'll inflict on your opponent - or yourself - when you answer a question. Answering the question correctly will inflict that damage on your opponent; getting it wrong will inflict it on yourself.", "font" : "Arial", "size" : 25, "color" : "#FFFFFF", "x": 512, "y": 50}
+        "INFO" : {"text" : "Just go back, and click 'Play'!", "font" : "Arial", "size" : 25, "color" : "#FFFFFF", "x": 512, "y": 50}
     },
     
     "AVATAR_SELECTION" : {
-        "SELECT_UP" : {"path" : "assets/up.png", "x": 412, "y": 270},
-        "SELECT_DOWN" : {"path" : "assets/down.png", "x": 412, "y": 570},
-        "FIND_GAME" : {"path" : "assets/find-game.jpg", "x": 800, "y": 400}
+        "SELECT_UP" : {"path" : "./resource/1024x648/image/up.png", "x": 412, "y": 270},
+        "SELECT_DOWN" : {"path" : "./resource/1024x648/image/down.png", "x": 412, "y": 570},
+        "FIND_GAME" : {"path" : "./resource/1024x648/image/find-game.jpg", "x": 800, "y": 400}
     },
     
     "AVATAR" : {
-        "EMOJI_CRY" : {"path" : "assets/emoji-cry.jpg", "x" : 412, "y" : 450},
-        "EMOJI_ANGRY" : {"path" : "assets/emoji-angry.jpg", "x" : 412, "y" : 450},
-        "PLAYER_2_UNKNOWN" : {"path" : "assets/player-2-unknown.png", "x" : 412, "y" : 450}
+        "EMOJI_CRY" : {"path" : "./resource/1024x648/image/emoji-cry.jpg", "x" : 412, "y" : 450},
+        "EMOJI_ANGRY" : {"path" : "./resource/1024x648/image/emoji-angry.jpg", "x" : 412, "y" : 450},
+        "PLAYER_2_UNKNOWN" : {"path" : "./resource/1024x648/image/player-2-unknown.png", "x" : 412, "y" : 450}
     },
     
     "FIND_GAME" : {
-        "CAPTION" : {"text" : "Finding game...", "size" : 20, "font" : "arial", "color" : "#FFFFFF", "x": 512, "y" : 100},
-        "FOUND_GAME_CAPTION" : {"text" : "Game found!", "size" : 20, "font" : "arial", "color" : "#FFFFFF", "x": 512, "y" : 100},
-        "PLAYER_1_AVATAR" : {"x" : 200, "y" : 400},
-        "PLAYER_2_AVATAR" : {"x" : 800, "y" : 400},
-        "VERSUS" : {"text" : "Vs.", "x" : 500, "y" : 400, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "PLAYER_1" : {"text" : "Player 1", "x" : 200, "y" : 600, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "PLAYER_2" : {"text" : "Player 2", "x" : 800, "y" : 600, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"}
+        "CAPTION" : {"text" : "Finding game...", "size" : 40, "font" : "Helvetica", "color" : "#FFFFFF", "x": 512, "y" : 100},
+        "FOUND_GAME_CAPTION" : {"text" : "Game found!", "size" : 50, "font" : "arial", "color" : "#FFFFFF", "x": 512, "y" : 100},
+        "PLAYER_1_AVATAR" : {"x" : 206, "y" : 400},
+        "PLAYER_2_AVATAR" : {"x" : 824, "y" : 400},
+        "VERSUS" : {"text" : "Vs.", "x" : 512, "y" : 400, "size" : 30, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAYER_1" : {"text" : "You", "x" : 206, "y" : 600, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAYER_2" : {"text" : "Opponent", "x" : 824, "y" : 600, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"}
     },
     
     "PLAYER" : {
         "PLAYER_1_AVATAR" : {"x" : 206, "y" : 250},
         "PLAYER_2_AVATAR" : {"x" : 824, "y" : 250},
-        "PLAYER_1_HEALTH" : {"text" : "Health: ", "x": 200, "y" : 50, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "PLAYER_2_HEALTH" : {"text" : "Health: ", "x": 800, "y" : 50, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAYER_1_HEALTH" : {"text" : "Health: ", "x": 200, "y" : 50, "size" : 20, "font" : "Arial", "color" : "red"},
+        "PLAYER_2_HEALTH" : {"text" : "Health: ", "x": 800, "y" : 50, "size" : 20, "font" : "Arial", "color" : "red"},
         "PLAYER_1_TEXT" : {"text" : "Player 1", "x": 206, "y" : 420, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
         "PLAYER_2_TEXT" : {"text" : "Player 2", "x": 824, "y" : 420, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"}
     },
     
     "DICE" : {
         "COORDS" : {"x" : 500, "y" : 250},
-        "1" : {"path" : "assets/dice.png"},
-        "2" : {"path" : "assets/dice.png"},
-        "3" : {"path" : "assets/dice.png"},
-        "4" : {"path" : "assets/dice.png"},
-        "5" : {"path" : "assets/dice.png"},
-        "6" : {"path" : "assets/dice.png"}
+        "1" : {"path" : "./resource/1024x648/image/dice.png"},
+        "2" : {"path" : "./resource/1024x648/image/dice.png"},
+        "3" : {"path" : "./resource/1024x648/image/dice.png"},
+        "4" : {"path" : "./resource/1024x648/image/dice.png"},
+        "5" : {"path" : "./resource/1024x648/image/dice.png"},
+        "6" : {"path" : "./resource/1024x648/image/dice.png"}
     },
     
     "QUESTION" : {
-        "QUESTION_POSITION" : {"x" : 512, "y" : 500, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "CATEGORY" : {"x" : 512, "y" : 440, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "QUESTION_POSITION" : {"x" : 512, "y" : 485, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "CATEGORY" : {"x" : 512, "y" : 440, "size" : 30, "font" : "Arial", "color" : "#FFFFFF"},
         "ANSWER_BOX" : {"path" : ""},
         "ANSWER_1" : {"x" : 206, "y" : 530, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
         "ANSWER_2" : {"x" : 412, "y" : 530, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
@@ -66,17 +66,17 @@
         "WRONG_ANSWER_COLOUR" : "red",
         "PLAYER_1_ANSWERED" : {"text" : "(Player 1)", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
         "PLAYER_2_ANSWERED" : {"text" : "(Player 2)", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "ANSWERED_1" : {"x" : 206, "y" : 525},
-        "ANSWERED_2" : {"x" : 412, "y" : 525},
-        "ANSWERED_3" : {"x" : 618, "y" : 525},
-        "ANSWERED_4" : {"x" : 824, "y" : 525}
+        "ANSWERED_1" : {"x" : 206, "y" : 550},
+        "ANSWERED_2" : {"x" : 412, "y" : 550},
+        "ANSWERED_3" : {"x" : 618, "y" : 550},
+        "ANSWERED_4" : {"x" : 824, "y" : 550}
     },
     
     "WIN" : {
         "WIN_TEXT_POSITION" : {"x" : 512, "y" : 450},
         "PLAYER_1_WINS" : {"text" : "Player 1 Wins!", "size" : 50, "font" : "Arial", "color" : "#FFFFFF"},
         "PLAYER_2_WINS" : {"text" : "Player 2 Wins!", "size" : 50, "font" : "Arial", "color" : "#FFFFFF"},
-        "PLAY_AGAIN" : {"path" : "assets/play-again-button.png", "x" : 512, "y" : 570},
+        "PLAY_AGAIN" : {"path" : "./resource/1024x648/image/play-again-button.png", "x" : 512, "y" : 570},
         "PLAYER_1_CORRECT_PERCENTAGE" : {"text" : "Player 1 - Correct Answers: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF", "x" : 206, "y" : 500},
         "PLAYER_2_CORRECT_PERCENTAGE" : {"text" : "Player 2 - Correct Answers: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF", "x" : 824, "y" : 500}
     },

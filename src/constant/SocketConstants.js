@@ -7,7 +7,6 @@ var SocketConstants = {
         'DAMAGE_DEALT' : 'damage-dealt',
         'SHUFFLED_ANSWER_INDICES' : 'shuffled-answer-indices',
         'GAME_FOUND' : 'game-found',
-        'GAME_STATS' : 'game-stats'
     },
     
     'emit' : {
