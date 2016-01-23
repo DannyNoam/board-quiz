@@ -34,6 +34,7 @@ window.onload = function() {
     var DIV_ID = "game";
     
     (function() {
+        console.log("Initiated bucket loader.")
         new BucketLoader(loadLayout, bucketLoadingFailedMessage);
     })();
     
