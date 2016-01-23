@@ -13,6 +13,11 @@ var ImageLoader = function(imageJsonPath, callback) {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', imagePath, true);
         xhr.send();
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === REQUEST_FINISHED) {
+              console.log("Finished loading image path: " + imagePath);
+          }
+        };
     }
 };
 
