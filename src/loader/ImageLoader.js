@@ -10,6 +10,7 @@ var ImageLoader = function(imageJsonPath, callback) {
     }
     
     function loadImage(imagePath) {
+        var REQUEST_FINISHED = 4;
         var xhr = new XMLHttpRequest();
         xhr.open('GET', imagePath, true);
         xhr.send();
