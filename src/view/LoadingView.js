@@ -12,6 +12,7 @@ LoadingView.prototype.setupViewElements = function() {
 };
 
 LoadingView.prototype.createLoadingText = function (data) {
+    console.log("Creating loading text...");
     var loadingText = this.createTextElement(data);
     this.addElementToContainer(loadingText, data);
 };

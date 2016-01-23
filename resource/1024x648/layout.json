@@ -82,6 +82,6 @@
     },
     
     "LOADING" : {
-        "LOADING_TEXT" : {"text" : "Loading...", "size" : 50, "font" : "Arial", "color" : "#FFFFFF"}
+        "LOADING_TEXT" : {"text" : "Loading...", "size" : 50, "font" : "Arial", "color" : "#FFFFFF", "x" : 512, "y" : 324}
     }
 }
