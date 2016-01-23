@@ -10,7 +10,7 @@
     },
     
     "HELP" : {
-        "INFO" : {"text" : "To play the game, simply click the back button below and click 'Play'!", "font" : "Arial", "size" : 25, "color" : "#FFFFFF", "x": 512, "y": 50}
+        "INFO" : {"text" : "The game is simple: prior to each question, a dice is rolled which determines the damage you'll inflict on your opponent - or yourself - when you answer a question. Answering the question correctly will inflict that damage on your opponent; getting it wrong will inflict it on yourself.", "font" : "Arial", "size" : 25, "color" : "#FFFFFF", "x": 512, "y": 50}
     },
     
     "AVATAR_SELECTION" : {
@@ -39,7 +39,9 @@
         "PLAYER_1_AVATAR" : {"x" : 206, "y" : 250},
         "PLAYER_2_AVATAR" : {"x" : 824, "y" : 250},
         "PLAYER_1_HEALTH" : {"text" : "Health: ", "x": 200, "y" : 50, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "PLAYER_2_HEALTH" : {"text" : "Health: ", "x": 800, "y" : 50, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"}
+        "PLAYER_2_HEALTH" : {"text" : "Health: ", "x": 800, "y" : 50, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAYER_1_TEXT" : {"text" : "Player 1", "x": 206, "y" : 420, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAYER_2_TEXT" : {"text" : "Player 2", "x": 824, "y" : 420, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"}
     },
     
     "DICE" : {
@@ -53,13 +55,13 @@
     },
     
     "QUESTION" : {
-        "QUESTION_POSITION" : {"x" : 512, "y" : 450, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "CATEGORY" : {"x" : 512, "y" : 400, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "QUESTION_POSITION" : {"x" : 512, "y" : 500, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "CATEGORY" : {"x" : 512, "y" : 440, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
         "ANSWER_BOX" : {"path" : ""},
-        "ANSWER_1" : {"x" : 206, "y" : 500, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "ANSWER_2" : {"x" : 412, "y" : 500, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "ANSWER_3" : {"x" : 618, "y" : 500, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "ANSWER_4" : {"x" : 824, "y" : 500, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "ANSWER_1" : {"x" : 206, "y" : 530, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "ANSWER_2" : {"x" : 412, "y" : 530, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "ANSWER_3" : {"x" : 618, "y" : 530, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "ANSWER_4" : {"x" : 824, "y" : 530, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
         "RIGHT_ANSWER_COLOUR" : "green",
         "WRONG_ANSWER_COLOUR" : "red",
         "PLAYER_1_ANSWERED" : {"text" : "(Player 1)", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
@@ -74,6 +76,8 @@
         "WIN_TEXT_POSITION" : {"x" : 512, "y" : 450},
         "PLAYER_1_WINS" : {"text" : "Player 1 Wins!", "size" : 50, "font" : "Arial", "color" : "#FFFFFF"},
         "PLAYER_2_WINS" : {"text" : "Player 2 Wins!", "size" : 50, "font" : "Arial", "color" : "#FFFFFF"},
-        "PLAY_AGAIN" : {"path" : "assets/play-again-button.png", "x" : 512, "y" : 570}
+        "PLAY_AGAIN" : {"path" : "assets/play-again-button.png", "x" : 512, "y" : 570},
+        "PLAYER_1_CORRECT_PERCENTAGE" : {"text" : "Player 1 - Correct Answers: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF", "x" : 206, "y" : 500},
+        "PLAYER_2_CORRECT_PERCENTAGE" : {"text" : "Player 2 - Correct Answers: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF", "x" : 824, "y" : 500}
     }
 }

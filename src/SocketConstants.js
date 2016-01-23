@@ -6,7 +6,8 @@ var SocketConstants = {
         'INIT_NEW_TURN' : 'init-new-turn',
         'DAMAGE_DEALT' : 'damage-dealt',
         'SHUFFLED_ANSWER_INDICES' : 'shuffled-answer-indices',
-        'GAME_FOUND' : 'game-found'
+        'GAME_FOUND' : 'game-found',
+        'GAME_STATS' : 'game-stats'
     },
     
     'emit' : {
@@ -18,7 +19,8 @@ var SocketConstants = {
         'GET_RANDOM_QUESTION' : 'get-random-question',
         'NEW_TURN' : 'new-turn',
         'DEAL_DAMAGE' : 'deal-damage',
-        'SHUFFLE_ANSWER_INDICES' : 'shuffle-answer-indices'
+        'SHUFFLE_ANSWER_INDICES' : 'shuffle-answer-indices',
+        'GAME_ENDED' : 'game-ended'
     }
 };
 

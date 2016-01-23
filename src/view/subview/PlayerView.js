@@ -18,6 +18,9 @@ PlayerView.prototype.setupViewElements = function() {
     
     this.createPlayer2Avatar(avatarData[this.playerData.player2Avatar], playerLayoutData.PLAYER_2_AVATAR);
     this.createPlayer2Health(playerLayoutData.PLAYER_2_HEALTH);
+    
+    this.createPlayer1Text(playerLayoutData.PLAYER_1_TEXT);
+    this.createPlayer2Text(playerLayoutData.PLAYER_2_TEXT);
 };
 
 PlayerView.prototype.createPlayer1Avatar = function(avatar, avatarPosition) {
@@ -38,6 +41,16 @@ PlayerView.prototype.createPlayer1Health = function(healthData) {
 PlayerView.prototype.createPlayer2Health = function(healthData) {
     this.player2HealthText = this.createTextElement(healthData);
     this.addElementToContainer(this.player2HealthText, healthData);
+};
+
+PlayerView.prototype.createPlayer1Text = function(playerData) {
+    this.player1Text = this.createTextElement(playerData);
+    this.addElementToContainer(this.player1Text, playerData);
+};
+
+PlayerView.prototype.createPlayer2Text = function(playerData) {
+    this.player2Text = this.createTextElement(playerData);
+    this.addElementToContainer(this.player2Text, playerData);
 };
 
 PlayerView.prototype.setPlayer1Health = function(health) {

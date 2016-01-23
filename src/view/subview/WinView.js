@@ -7,9 +7,10 @@ function WinView() {
     PIXI.Container.call(this);
     this.setupViewElements();
 }
-WinView.prototype.createWinnerText = function(playerWhoWon) {
+WinView.prototype.createWinnerText = function(playerWhoWon, statData) {
     var winData = PIXI.Container.layoutData.WIN;
     this.createWinText(winData[playerWhoWon + "_WINS"], winData.WIN_TEXT_POSITION);
+    this.createPlayerStatsText(winData, statData);
 };
 
 WinView.prototype.setupViewElements = function(playerWhoWon) {
@@ -20,6 +21,16 @@ WinView.prototype.setupViewElements = function(playerWhoWon) {
 WinView.prototype.createWinText = function (data, positionData) {
     var winText = this.createTextElement(data);
     this.addElementToContainer(winText, positionData);
+};
+
+WinView.prototype.createPlayerStatsText = function(layoutData, statData) {
+    layoutData.PLAYER_1_CORRECT_PERCENTAGE.text = layoutData.PLAYER_1_CORRECT_PERCENTAGE.text + statData.player1CorrectAnswerPercentage;
+    var player1CorrectAnswerPercentageText = this.createTextElement(layoutData.PLAYER_1_CORRECT_PERCENTAGE);
+    this.addElementToContainer(player1CorrectAnswerPercentageText, layoutData.PLAYER_1_CORRECT_PERCENTAGE);
+    
+        layoutData.PLAYER_2_CORRECT_PERCENTAGE.text = layoutData.PLAYER_2_CORRECT_PERCENTAGE.text + statData.player2CorrectAnswerPercentage;
+    var player2CorrectAnswerPercentageText = this.createTextElement(layoutData.PLAYER_2_CORRECT_PERCENTAGE);
+    this.addElementToContainer(player2CorrectAnswerPercentageText, layoutData.PLAYER_2_CORRECT_PERCENTAGE);
 };
 
 WinView.prototype.createPlayAgainButton = function (data) {

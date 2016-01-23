@@ -98,11 +98,11 @@ QuestionController.prototype.setAnswerUpdateListener = function(answers) {
 };
 
 QuestionController.prototype.emitDealDamageToOpponentToSocket = function(answer) {
-    this.socket.emit(SocketConstants.emit.DEAL_DAMAGE, {player_who_answered: this.getPlayer(), player_to_damage: this.getOpponent(), damage: this.diceNumber, answer:        answer});
+    this.socket.emit(SocketConstants.emit.DEAL_DAMAGE, {player_who_answered: this.getPlayer(), player_to_damage: this.getOpponent(), damage: this.diceNumber, answer: answer, answerStatus: 'correct', category: this.category});
 };
 
 QuestionController.prototype.emitDealDamageToSelfToSocket = function(answer) {
-    this.socket.emit(SocketConstants.emit.DEAL_DAMAGE, {player_who_answered: this.getPlayer(), player_to_damage: this.getPlayer(), damage: this.diceNumber, answer:       answer});
+    this.socket.emit(SocketConstants.emit.DEAL_DAMAGE, {player_who_answered: this.getPlayer(), player_to_damage: this.getPlayer(), damage: this.diceNumber, answer: answer, answerStatus: 'incorrect', category: this.category});
 };
 
 QuestionController.prototype.cleanView = function() {

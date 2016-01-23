@@ -1,5 +1,5 @@
 TurnController.constructor = TurnController;
-TurnController.prototype = Object.create(Controller.prototype);
+TurnController.prototype = Object.create(GameController.prototype);
 
 function TurnController(playerController, diceController, questionController) {
     Controller.call(this);
@@ -17,19 +17,29 @@ function TurnController(playerController, diceController, questionController) {
 TurnController.prototype.registerSocketEvents = function() {
     this.socket.on(SocketConstants.on.INIT_NEW_TURN, function(playerData) {
         if(playerData.player1Health === 0) {
-            this.loadWinView("PLAYER_2");
+            if(this.isPlayer1()) {
+                this.socket.emit(SocketConstants.emit.GAME_ENDED);
+                this.socket.on(SocketConstants.on.GAME_STATS, function(data) {
+                    this.loadWinView("PLAYER_2", data);
+                }.bind(this));
+            }
         } else if(playerData.player2Health === 0) {
-            this.loadWinView("PLAYER_1");
+            if(this.isPlayer1()) {
+                this.socket.emit(SocketConstants.emit.GAME_ENDED);
+                this.socket.on(SocketConstants.on.GAME_STATS, function(data) {
+                    this.loadWinView("PLAYER_1", data);
+                }.bind(this));
+            }
         } else {
             this.newTurn();
         }
     }.bind(this));
 };
 
-TurnController.prototype.loadWinView = function(player) {
+TurnController.prototype.loadWinView = function(player, data) {
     this.diceController.cleanView();
     this.questionController.cleanView();
-    this.winView.createWinnerText(player);
+    this.winView.createWinnerText(player, data);
     this.viewLoader.loadView(this.winView);
 };
 
