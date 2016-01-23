@@ -1,16 +1,16 @@
 {
     "IMAGES" : {
-        "path" : "assets/back-arrow.png",
-        "path" : "assets/back-button.jpg",
-        "path" : "assets/dice.png",
-        "path" : "assets/down.png",
-        "path" : "assets/emoji-angry.jpg",
-        "path" : "assets/emoji-cry.jpg",
-        "path" : "assets/find-game.jpg",
-        "path" : "assets/help.gif",
-        "path" : "assets/play-again-button.png",
-        "path" : "assets/play-button.gif",
-        "path" : "assets/player-2-unknown.png",
-        "path" : "assets/up.png"
+        "1" : "assets/back-arrow.png",
+        "2" : "assets/back-button.jpg",
+        "3" : "assets/dice.png",
+        "4" : "assets/down.png",
+        "5" : "assets/emoji-angry.jpg",
+        "6" : "assets/emoji-cry.jpg",
+        "7" : "assets/find-game.jpg",
+        "8" : "assets/help.gif",
+        "9" : "assets/play-again-button.png",
+        "10" : "assets/play-button.gif",
+        "11" : "assets/player-2-unknown.png",
+        "12" : "assets/up.png"
     }
 }

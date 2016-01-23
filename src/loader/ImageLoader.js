@@ -3,6 +3,7 @@ var ImageLoader = function(imageJsonPath, callback) {
     
     function loadImages(imageData) {
         var images = imageData.IMAGES;
+        console.log(images);
         for(var imagePath in images) {
             loadImage(images[imagePath]);
         }
