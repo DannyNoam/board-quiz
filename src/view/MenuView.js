@@ -12,14 +12,14 @@ MenuView.prototype.setupViewElements = function() {
     var layoutData = PIXI.Container.layoutData.MENU;
     var commonData = PIXI.Container.layoutData.COMMON;
     
-    this.createBoardQuizText(commonData.BOARD_QUIZ);
+    this.createLogo(commonData.LOGO);
     this.createPlayButton(layoutData.PLAY_BUTTON);
     this.createHelpButton(layoutData.HELP_BUTTON);
 };
 
-MenuView.prototype.createBoardQuizText = function (data) {
-    var boardQuizText = this.createTextElement(data);
-    this.addElementToContainer(boardQuizText, data);
+MenuView.prototype.createLogo = function (data) {
+    var logo = this.createSpriteElement(data);
+    this.addElementToContainer(logo, data);
 };
 
 MenuView.prototype.createPlayButton = function (data) {

@@ -218,7 +218,7 @@ var Player = function(id, avatar) {
     this.calculateCorrectAnswerPercentage = function() {
         var totalNumberOfAnswers = correctAnswers + wrongAnswers;
         var correctAnswerPercentage = ((correctAnswers/totalNumberOfAnswers)*100).toFixed(0);
-        return correctAnswerPercentage + "%";
+        return correctAnswerPercentage !== "NaN" ? correctAnswerPercentage + "%" : "0%";
     };
     
     this.calculateBestCategory = function() {
@@ -232,11 +232,13 @@ var Player = function(id, avatar) {
             var numberOfWrongAnswers = categoryAnswerData[categories[i]].wrong;
             var totalAnswers = numberOfRightAnswers + numberOfWrongAnswers;
             var correctAnswerPercentage = ((numberOfRightAnswers/totalAnswers)*100).toFixed(0);
-            if(correctAnswerPercentage > (bestCategory.percentageCorrect)) {
-                bestCategory.name = categories[i];
-                bestCategory.percentageCorrect = correctAnswerPercentage;
-            } else if(correctAnswerPercentage === bestCategory.percentageCorrect) {
-                bestCategory.name = bestCategory.name + "/" + categories[i];
+            if(correctAnswerPercentage !== 'NaN') {
+                if(correctAnswerPercentage > (bestCategory.percentageCorrect)) {
+                    bestCategory.name = categories[i];
+                    bestCategory.percentageCorrect = correctAnswerPercentage;
+                } else if(correctAnswerPercentage === bestCategory.percentageCorrect) {
+                    bestCategory.name = bestCategory.name + "/" + categories[i];
+                }
             }
         }
         

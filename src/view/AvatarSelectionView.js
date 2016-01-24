@@ -15,16 +15,16 @@ AvatarSelectionView.prototype.setupViewElements = function() {
     var layoutData = PIXI.Container.layoutData.AVATAR_SELECTION;
     var commonData = PIXI.Container.layoutData.COMMON;
     
-    this.createBoardQuizText(commonData.BOARD_QUIZ);
+    this.createLogo(commonData.LOGO);
     this.createBackButton(commonData.BACK_BUTTON);
     this.createSelectDownButton(layoutData.SELECT_DOWN);
     this.createSelectUpButton(layoutData.SELECT_UP);
     this.createFindGameButton(layoutData.FIND_GAME);
 };
 
-AvatarSelectionView.prototype.createBoardQuizText = function (data) {
-    var boardQuizText = this.createTextElement(data);
-    this.addElementToContainer(boardQuizText, data);
+AvatarSelectionView.prototype.createLogo = function (data) {
+    var logo = this.createSpriteElement(data);
+    this.addElementToContainer(logo, data);
 };
 
 AvatarSelectionView.prototype.createBackButton = function (data) {

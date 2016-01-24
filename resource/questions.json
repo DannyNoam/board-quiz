@@ -84,83 +84,83 @@
         
         "HISTORY" : {
             "QUESTION_1" : {
-                "text" : "Which nation won the World Cup in 1966?",
-                "right_answer" : "England",
-                "wrong_answer_1" : "West Germany",
-                "wrong_answer_2" : "Italy",
-                "wrong_answer_3" : "Belgium"
+                "text" : "In which year was the Prohibition in the United States repealed?",
+                "right_answer" : "1933",
+                "wrong_answer_1" : "1932",
+                "wrong_answer_2" : "1934",
+                "wrong_answer_3" : "1935"
             },
             
             "QUESTION_2" : {
-                "text" : "What country was Usain Bolt born in?",
-                "right_answer" : "Jamaica",
-                "wrong_answer_1" : "Bermuda",
-                "wrong_answer_2" : "Dominican Republic",
-                "wrong_answer_3" : "Nigeria"
+                "text" : "In what was the World War 1 armistice signed?",
+                "right_answer" : "Railway carriage",
+                "wrong_answer_1" : "Aeroplane hangar",
+                "wrong_answer_2" : "Army canteen",
+                "wrong_answer_3" : "Hotel lobby"
             },
             
             "QUESTION_3" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "From which island did Axis forces withdraw in August 1943?",
+                "right_answer" : "Sicily",
+                "wrong_answer_1" : "Cyprus",
+                "wrong_answer_2" : "Greenland",
+                "wrong_answer_3" : "Madagascar"
             },
             
             "QUESTION_4" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "Who replaced Roosevelt as President of the USA in April 1945?",
+                "right_answer" : "Truman",
+                "wrong_answer_1" : "Eisenhower",
+                "wrong_answer_2" : "MacArthur",
+                "wrong_answer_3" : "Wavell"
             },
             
             "QUESTION_5" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "Which movement for parliamentary reform was based on the 1838 People's Charter?",
+                "right_answer" : "Chartism",
+                "wrong_answer_1" : "Charterism",
+                "wrong_answer_2" : "Parliamentarianism",
+                "wrong_answer_3" : "Populism"
             },
             
             "QUESTION_6" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "At which royal home did Queen Victoria die?",
+                "right_answer" : "Osborne",
+                "wrong_answer_1" : "Balmoral",
+                "wrong_answer_2" : "Holyrood",
+                "wrong_answer_3" : "Sandringham"
             },
             
             "QUESTION_7" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "Which famous adventurer and writer was born in Devon in 1554?",
+                "right_answer" : "Walter Raleigh",
+                "wrong_answer_1" : "Francis Drake",
+                "wrong_answer_2" : "James Cook",
+                "wrong_answer_3" : "John Cabot"
             },
             
             "QUESTION_8" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "Which country was partitioned by Austria, Russia and Prussia throughout the 1800s?",
+                "right_answer" : "Poland",
+                "wrong_answer_1" : "Finland",
+                "wrong_answer_2" : "Romania",
+                "wrong_answer_3" : "Switzerland"
             },
             
             "QUESTION_9" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "What was the name of the regime in Germany between 1918 and 1933?",
+                "right_answer" : "Weimar Republic",
+                "wrong_answer_1" : "North German Confederation",
+                "wrong_answer_2" : "Second German Empire",
+                "wrong_answer_3" : "Third Reich"
             },
             
             "QUESTION_10" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "How was the 'Kingdom of Serbs, Croats and Slovenes' re-named in 1929?",
+                "right_answer" : "Yugoslavia",
+                "wrong_answer_1" : "Bulgaria",
+                "wrong_answer_2" : "Czechoslovakia",
+                "wrong_answer_3" : "Romania"
             }
         },
         
@@ -248,83 +248,83 @@
         
         "LITERATURE" : {
             "QUESTION_1" : {
-                "text" : "Which nation won the World Cup in 1966?",
-                "right_answer" : "England",
-                "wrong_answer_1" : "West Germany",
-                "wrong_answer_2" : "Italy",
-                "wrong_answer_3" : "Belgium"
+                "text" : "Who was the youngest of the three Brontë writing sisters?",
+                "right_answer" : "Anne",
+                "wrong_answer_1" : "Emily",
+                "wrong_answer_2" : "Charlotte",
+                "wrong_answer_3" : "Maria"
             },
             
             "QUESTION_2" : {
-                "text" : "What country was Usain Bolt born in?",
-                "right_answer" : "Jamaica",
-                "wrong_answer_1" : "Bermuda",
-                "wrong_answer_2" : "Dominican Republic",
-                "wrong_answer_3" : "Nigeria"
+                "text" : "What was the pen-name of Charles Lutwidge Dodgson?",
+                "right_answer" : "Lewis Carroll",
+                "wrong_answer_1" : "Ebenezer Elliott",
+                "wrong_answer_2" : "Arthur Conan Doyle",
+                "wrong_answer_3" : "William Watson"
             },
             
             "QUESTION_3" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "Who wrote the 1845 poem The Pied Piper of Hamelin?",
+                "right_answer" : "Robert Browning",
+                "wrong_answer_1" : "Thomas Hardy",
+                "wrong_answer_2" : "James Joyce",
+                "wrong_answer_3" : "Rudyard Kipling"
             },
             
             "QUESTION_4" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "Which acclaimed Atheist wrote the book 'The God Delusion'?",
+                "right_answer" : "Richard Dawkins",
+                "wrong_answer_1" : "Christopher Hitchens",
+                "wrong_answer_2" : "Iain Banks",
+                "wrong_answer_3" : "Stephen Fry"
             },
             
             "QUESTION_5" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "Who wrote the book 'To Kill A Mockingbird'?",
+                "right_answer" : "Harper Lee",
+                "wrong_answer_1" : "Charles Dickens",
+                "wrong_answer_2" : "Jane Eyre",
+                "wrong_answer_3" : "Atticus Finch"
             },
             
             "QUESTION_6" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "Philosopher and writer Jeremy Bentham, 1748-1832, is associated with what school of thought?",
+                "right_answer" : "Utilitarianism",
+                "wrong_answer_1" : "Totalitarianism",
+                "wrong_answer_2" : "Marxism",
+                "wrong_answer_3" : "Communism"
             },
             
             "QUESTION_7" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "In the early 1900s a thriller was instead more commonly referred to as what sort of book?",
+                "right_answer" : "Shocker",
+                "wrong_answer_1" : "Sensation",
+                "wrong_answer_2" : "Heart Stopper",
+                "wrong_answer_3" : "Scary"
             },
             
             "QUESTION_8" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "In what decade were ISBN numbers introduced to the UK?",
+                "right_answer" : "1960s",
+                "wrong_answer_1" : "1970s",
+                "wrong_answer_2" : "1980s",
+                "wrong_answer_3" : "1950s"
             },
             
             "QUESTION_9" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "In what city does Leo Tolstoy's novel War and Peace begin?",
+                "right_answer" : "Saint Petersburg",
+                "wrong_answer_1" : "Moscow",
+                "wrong_answer_2" : "Kiev",
+                "wrong_answer_3" : "Samara"
             },
             
             "QUESTION_10" : {
-                "text" : "Which English football team has won the most European Cups?",
-                "right_answer" : "Liverpool",
-                "wrong_answer_1" : "Manchester United",
-                "wrong_answer_2" : "Chelsea",
-                "wrong_answer_3" : "Arsenal"
+                "text" : "What is the main dog character called in Norton Juster's 1961 popular children's book The Phantom Tollbooth?",
+                "right_answer" : "Tock",
+                "wrong_answer_1" : "Rover",
+                "wrong_answer_2" : "Kerry",
+                "wrong_answer_3" : "Chewie"
             }
         },
         

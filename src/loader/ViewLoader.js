@@ -2,7 +2,6 @@ function ViewLoader() {}
 
 ViewLoader.prototype.loadView = function(view) {
     ViewLoader.topLevelContainer.addChild(view);
-    console.log(view);
 };
 
 ViewLoader.prototype.removeAllViews = function() {

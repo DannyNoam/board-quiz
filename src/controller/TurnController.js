@@ -18,18 +18,23 @@ TurnController.prototype.registerSocketEvents = function() {
     this.socket.on(SocketConstants.on.INIT_NEW_TURN, function(playerData) {
         if(playerData.player1Health === 0) {
             if(this.isPlayer1()) {
+                console.log("Emitted player 2 as winner!");
                 this.socket.emit(SocketConstants.emit.GAME_ENDED, {winner: "PLAYER_2"});
             }
         } else if(playerData.player2Health === 0) {
             if(this.isPlayer1()) {
+                console.log("Emitted player 1 as winner!");
                 this.socket.emit(SocketConstants.emit.GAME_ENDED, {winner: "PLAYER_1"});
             }
         } else {
-            this.newTurn();
+            setTimeout(function() {
+                this.newTurn();
+            }.bind(this), 1500);
         }
     }.bind(this));
     
     this.socket.on(SocketConstants.on.GAME_STATS, function(data) {
+        console.log("Loading win view!");
         this.loadWinView(data.winner, data);
     }.bind(this));
 };
@@ -56,8 +61,12 @@ TurnController.prototype.setupListeners = function() {
 TurnController.prototype.newTurn = function() {
     this.diceController.cleanView();
     this.questionController.cleanView();
-    this.diceController.rollDice();
-    this.questionController.loadView();
+    setTimeout(function() {
+        this.diceController.rollDice();
+    }.bind(this), 2000);
+    setTimeout(function() {
+        this.questionController.loadView();
+    }.bind(this), 3000);
 };
 
 TurnController.prototype.cleanView = function() {

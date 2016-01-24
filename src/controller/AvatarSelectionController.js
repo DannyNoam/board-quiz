@@ -2,7 +2,7 @@ AvatarSelectionController.constructor = AvatarSelectionController;
 AvatarSelectionController.prototype = Object.create(Controller.prototype);
 AvatarSelectionController.prototype.view = new AvatarSelectionView();
 AvatarSelectionController.prototype.selectedAvatarView = new AvatarView();
-AvatarSelectionController.prototype.avatars = ['EMOJI_CRY', 'EMOJI_ANGRY'];
+AvatarSelectionController.prototype.avatars = ['EMOJI_ANGEL', 'EMOJI_BIG_SMILE', 'EMOJI_COOL', 'EMOJI_GRIN', 'EMOJI_HAPPY', 'EMOJI_KISS', 'EMOJI_LAUGHING', 'EMOJI_LOVE', 'EMOJI_MONKEY', 'EMOJI_POO', 'EMOJI_SCREAM', 'EMOJI_SLEEP', 'EMOJI_SMILE', 'EMOJI_SWEET', 'EMOJI_WINK'];
 AvatarSelectionController.prototype.currentAvatarIndex = 0;
 
 function AvatarSelectionController() {
@@ -59,6 +59,7 @@ AvatarSelectionController.prototype.setupNextAvatar = function(direction) {
     } else {
         this.currentAvatarIndex = this.currentAvatarIndex + direction;
     }
+   
     this.selectedAvatarView.setupViewElements(this.avatars[this.currentAvatarIndex]);
 };
 

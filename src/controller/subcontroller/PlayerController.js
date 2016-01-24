@@ -17,8 +17,15 @@ PlayerController.prototype.loadView = function() {
 
 PlayerController.prototype.registerSocketEvents = function() {
     this.socket.on(SocketConstants.on.PLAYERS_HEALTH, function(playerData) {
+        this.clearIntervals();
         this.view.setPlayer1Health(playerData.player1Health);
         this.view.setPlayer2Health(playerData.player2Health);
+        if(playerData.player1Health <= 5) {
+            this.view.flashPlayer1Health();
+        }
+        if(playerData.player2Health <= 5) {
+            this.view.flashPlayer2Health();
+        }
     }.bind(this));
 };
 
@@ -29,6 +36,10 @@ PlayerController.prototype.updatePlayersHealth = function() {
 PlayerController.prototype.cleanView = function() {
     this.viewLoader.removeView(this.view);
     this.view.cleanView();
+};
+
+PlayerController.prototype.clearIntervals = function() {
+    this.view.clearIntervals();
 };
 
 module.exports = PlayerController;

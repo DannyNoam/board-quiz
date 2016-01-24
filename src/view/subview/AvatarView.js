@@ -15,8 +15,9 @@ AvatarView.prototype.setupViewElements = function(avatarName) {
 };
 
 AvatarView.prototype.createAvatar = function (data) {
-    var avatar = this.createSpriteElement(data);
-    this.addElementToContainer(avatar, data);
+    this.removeElement(this.avatar);
+    this.avatar = this.createSpriteElement(data);
+    this.addElementToContainer(this.avatar, data);
 };
 
 module.exports = AvatarView;

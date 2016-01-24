@@ -1,7 +1,6 @@
 DiceController.constructor = DiceController;
 DiceController.prototype = Object.create(GameController.prototype);
 DiceController.prototype.view = new DiceView();
-DiceController.prototype.DICE_ROLL_TIME = 2000;
 
 function DiceController() {
     Controller.call(this);
@@ -10,9 +9,7 @@ function DiceController() {
 
 DiceController.prototype.registerSocketEvents = function() {
     this.socket.on(SocketConstants.on.DICE_NUMBER, function(dice) {
-        setTimeout(function() {
-            this.loadDice(dice.number);
-        }.bind(this), this.DICE_ROLL_TIME);
+        this.loadDice(dice.number);
     }.bind(this));
 };
 

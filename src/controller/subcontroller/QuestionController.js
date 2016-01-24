@@ -7,6 +7,8 @@ QuestionController.prototype.ANSWERED_2 = 'ANSWERED_2';
 QuestionController.prototype.ANSWERED_3 = 'ANSWERED_3';
 QuestionController.prototype.ANSWERED_4 = 'ANSWERED_4';
 
+QuestionController.prototype.TIME_TO_ANSWER_QUESTION = 10;
+
 function QuestionController(playerController) {
     Controller.call(this);
     this.playerController = playerController;
@@ -21,10 +23,12 @@ QuestionController.prototype.registerSocketEvents = function() {
     
     this.socket.on(SocketConstants.on.DAMAGE_DEALT, function(playerData) {
         this.view.setAnswerToColour(this.answers[playerData.answer], playerData.answer);
+        this.view.setAnswerToColour(this.answers[this.ANSWERED_1], this.ANSWERED_1);
         this.view.setWhoAnsweredQuestion(this.answers[playerData.answer], playerData.answer, playerData.player_who_answered);
         this.view.turnOffInteractivityForAnswerElements();
         this.playerController.updatePlayersHealth();
         if(this.isPlayer1()) {
+            clearInterval(this.timerIntervalId);
             this.socket.emit(SocketConstants.emit.NEW_TURN);
         }
     }.bind(this));
@@ -38,8 +42,26 @@ QuestionController.prototype.registerSocketEvents = function() {
 };
 
 QuestionController.prototype.loadView = function() {
+    clearInterval(this.timerIntervalId);
     this.getRandomQuestion();
     this.shuffleAnswerIndices();
+    this.updateTimer();
+};
+
+QuestionController.prototype.updateTimer = function() {
+    var timeRemaining = 10;
+    var timer = function() {
+        if(timeRemaining >= 0) {
+            this.view.updateQuestionTimer(timeRemaining);
+            timeRemaining--;
+        } else {
+            if(this.isPlayer1()) {
+                this.socket.emit(SocketConstants.emit.NEW_TURN);
+            }
+            clearInterval(this.timerIntervalId);
+        }
+    }.bind(this);
+    this.timerIntervalId = setInterval(timer, 1000);
 };
 
 QuestionController.prototype.getRandomQuestion = function() {
@@ -69,20 +91,24 @@ QuestionController.prototype.getViewAnswers = function() {
 
 QuestionController.prototype.setRightAnswerListener = function(answers) {
     this.registerListener(answers.ANSWERED_1, function() {
+        this.soundManager.playCorrectAnswerSound();
         this.emitDealDamageToOpponentToSocket(this.ANSWERED_1);
     }.bind(this));
 };
 
 QuestionController.prototype.setWrongAnswerListeners = function(answers) {
     this.registerListener(answers.ANSWERED_2, function() {
+        this.soundManager.playWrongAnswerSound();
         this.emitDealDamageToSelfToSocket(this.ANSWERED_2);
     }.bind(this));
     
     this.registerListener(answers.ANSWERED_3, function() {
+        this.soundManager.playWrongAnswerSound();
         this.emitDealDamageToSelfToSocket(this.ANSWERED_3);
     }.bind(this));
     
     this.registerListener(answers.ANSWERED_4, function() {
+        this.soundManager.playWrongAnswerSound();
         this.emitDealDamageToSelfToSocket(this.ANSWERED_4);
     }.bind(this));
 };

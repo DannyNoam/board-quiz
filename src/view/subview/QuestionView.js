@@ -82,6 +82,14 @@ QuestionView.prototype.setWhoAnsweredQuestion = function(answerElement, answer, 
     this.addElementToContainer(this.playerWhoAnsweredElement, questionData[this.ANSWERED_PREFIX + this.answerIndices[answerOnScreen]]); 
 };
 
+QuestionView.prototype.updateQuestionTimer = function(timeRemaining) {
+    this.removeElement(this.timer);
+    var timerData = PIXI.Container.layoutData.QUESTION.TIMER;
+    timerData.text = timeRemaining;
+    this.timer = this.createTextElement(timerData);
+    this.addElementToContainer(this.timer, timerData);
+};
+
 QuestionView.prototype.turnOffInteractivityForAnswerElements = function() {
     this.rightAnswer.interactive = false;
     this.wrongAnswer1.interactive = false;

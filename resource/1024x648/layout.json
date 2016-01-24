@@ -1,12 +1,12 @@
 {
     "COMMON" : {
         "BACK_BUTTON" : {"path" : "./resource/1024x648/image/back-arrow.png", "x" : 130, "y": 100},
-        "BOARD_QUIZ" : {"text" : "Board Quiz!", "font" : "Arial", "size" : 80, "color" : "#FFFFFF", "x": 512, "y": 100}
+        "LOGO" : {"path" : "./resource/1024x648/image/logo.jpg", "x": 512, "y": 100}
     },
     
     "MENU" : {
-      "PLAY_BUTTON" : {"path" : "./resource/1024x648/image/play-button.gif", "x":512, "y":200},
-      "HELP_BUTTON" : {"path" : "./resource/1024x648/image/help.gif", "x":512, "y":450}
+      "PLAY_BUTTON" : {"path" : "./resource/1024x648/image/play-button.jpg", "x":512, "y":295},
+      "HELP_BUTTON" : {"path" : "./resource/1024x648/image/help-button.jpg", "x":512, "y":510}
     },
     
     "HELP" : {
@@ -20,8 +20,21 @@
     },
     
     "AVATAR" : {
-        "EMOJI_CRY" : {"path" : "./resource/1024x648/image/emoji-cry.jpg", "x" : 412, "y" : 450},
-        "EMOJI_ANGRY" : {"path" : "./resource/1024x648/image/emoji-angry.jpg", "x" : 412, "y" : 450},
+        "EMOJI_ANGEL" : {"path" : "./resource/1024x648/image/avatar/emoji-angel.png", "x" : 412, "y" : 450},
+        "EMOJI_BIG_SMILE" : {"path" : "./resource/1024x648/image/avatar/emoji-big-smile.png", "x" : 412, "y" : 450},
+        "EMOJI_COOL" : {"path" : "./resource/1024x648/image/avatar/emoji-cool.png", "x" : 412, "y" : 450},
+        "EMOJI_GRIN" : {"path" : "./resource/1024x648/image/avatar/emoji-grin.png", "x" : 412, "y" : 450},
+        "EMOJI_HAPPY" : {"path" : "./resource/1024x648/image/avatar/emoji-happy.png", "x" : 412, "y" : 450},
+        "EMOJI_KISS" : {"path" : "./resource/1024x648/image/avatar/emoji-kiss.png", "x" : 412, "y" : 450},
+        "EMOJI_LAUGHING" : {"path" : "./resource/1024x648/image/avatar/emoji-laughing.png", "x" : 412, "y" : 450},
+        "EMOJI_LOVE" : {"path" : "./resource/1024x648/image/avatar/emoji-love.png", "x" : 412, "y" : 450},
+        "EMOJI_MONKEY" : {"path" : "./resource/1024x648/image/avatar/emoji-monkey.png", "x" : 412, "y" : 450},
+        "EMOJI_POO" : {"path" : "./resource/1024x648/image/avatar/emoji-poo.png", "x" : 412, "y" : 450},
+        "EMOJI_SCREAM" : {"path" : "./resource/1024x648/image/avatar/emoji-scream.png", "x" : 412, "y" : 450},
+        "EMOJI_SLEEP" : {"path" : "./resource/1024x648/image/avatar/emoji-sleep.png", "x" : 412, "y" : 450},
+        "EMOJI_SMILE" : {"path" : "./resource/1024x648/image/avatar/emoji-smile.png", "x" : 412, "y" : 450},
+        "EMOJI_SWEET" : {"path" : "./resource/1024x648/image/avatar/emoji-sweet.png", "x" : 412, "y" : 450},
+        "EMOJI_WINK" : {"path" : "./resource/1024x648/image/avatar/emoji-wink.png", "x" : 412, "y" : 450},
         "PLAYER_2_UNKNOWN" : {"path" : "./resource/1024x648/image/player-2-unknown.png", "x" : 412, "y" : 450}
     },
     
@@ -69,7 +82,8 @@
         "ANSWERED_1" : {"x" : 206, "y" : 550},
         "ANSWERED_2" : {"x" : 412, "y" : 550},
         "ANSWERED_3" : {"x" : 618, "y" : 550},
-        "ANSWERED_4" : {"x" : 824, "y" : 550}
+        "ANSWERED_4" : {"x" : 824, "y" : 550},
+        "TIMER" : {"x" : 1000, "y" : 620, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"}
     },
     
     "WIN" : {
@@ -77,8 +91,10 @@
         "PLAYER_1_WINS" : {"text" : "Player 1 Wins!", "size" : 50, "font" : "Arial", "color" : "#FFFFFF"},
         "PLAYER_2_WINS" : {"text" : "Player 2 Wins!", "size" : 50, "font" : "Arial", "color" : "#FFFFFF"},
         "PLAY_AGAIN" : {"path" : "./resource/1024x648/image/play-again-button.png", "x" : 512, "y" : 570},
-        "PLAYER_1_CORRECT_PERCENTAGE" : {"text" : "Player 1 - Correct Answers: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF", "x" : 206, "y" : 500},
-        "PLAYER_2_CORRECT_PERCENTAGE" : {"text" : "Player 2 - Correct Answers: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF", "x" : 824, "y" : 500}
+        "PLAYER_1_CORRECT_PERCENTAGE" : {"text" : "Correct Answers: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF", "x" : 206, "y" : 500},
+        "PLAYER_2_CORRECT_PERCENTAGE" : {"text" : "Correct Answers: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF", "x" : 824, "y" : 500},
+        "PLAYER_1_BEST_CATEGORY" : {"text" : "Best Category: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF", "x" : 206, "y" : 520},
+        "PLAYER_2_BEST_CATEGORY" : {"text" : "Best Category: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF", "x" : 824, "y" : 520}
     },
     
     "LOADING" : {

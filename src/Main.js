@@ -16,6 +16,7 @@ AvatarView = require('./view/subview/AvatarView');
 AvatarSelectionController = require('./controller/AvatarSelectionController');
 FindGameView = require('./view/FindGameView');
 FindGameController = require('./controller/FindGameController');
+SoundManager = require('./SoundManager');
 GameController = require('./controller/GameController');
 DiceView = require('./view/subview/DiceView');
 DiceController = require('./controller/subcontroller/DiceController');
