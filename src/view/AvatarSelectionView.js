@@ -16,7 +16,7 @@ AvatarSelectionView.prototype.setupViewElements = function() {
     var commonData = PIXI.Container.layoutData.COMMON;
     
     this.createLogo(commonData.LOGO);
-    this.createBackButton(commonData.BACK_BUTTON);
+    this.createBackButton(layoutData.BACK_BUTTON);
     this.createSelectDownButton(layoutData.SELECT_DOWN);
     this.createSelectUpButton(layoutData.SELECT_UP);
     this.createFindGameButton(layoutData.FIND_GAME);

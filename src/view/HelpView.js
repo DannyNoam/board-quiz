@@ -9,10 +9,9 @@ function HelpView() {
 
 HelpView.prototype.setupViewElements = function() {
     var layoutData = PIXI.Container.layoutData.HELP;
-    var commonData = PIXI.Container.layoutData.COMMON;
     
     this.createHelpText(layoutData.INFO);
-    this.createBackButton(commonData.BACK_BUTTON);
+    this.createBackButton(layoutData.BACK_BUTTON);
 };
 
 HelpView.prototype.createHelpText = function (data) {

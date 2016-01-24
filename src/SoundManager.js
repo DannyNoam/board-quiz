@@ -3,6 +3,7 @@ function SoundManager() {
         this.correctAnswerSound = new Howl({urls: ["resource/sound/correct-answer.mp3"]});
         this.wrongAnswerSound = new Howl({urls: ["resource/sound/wrong-answer.mp3"]});
         this.rollDiceSound = new Howl({urls: ["resource/sound/roll-dice.mp3"]});
+        this.tickSound = new Howl({urls: ["resource/sound/tick.mp3"]});
     }.bind(this))();
     
     this.playCorrectAnswerSound = function() {
@@ -15,6 +16,10 @@ function SoundManager() {
     
     this.playRollDiceSound = function() {
         this.rollDiceSound.play();
+    };
+    
+    this.playTickSound = function() {
+        this.tickSound.play();
     };
 }
 

@@ -53,6 +53,7 @@ QuestionController.prototype.updateTimer = function() {
     var timer = function() {
         if(timeRemaining >= 0) {
             this.view.updateQuestionTimer(timeRemaining);
+            this.soundManager.playTickSound();
             timeRemaining--;
         } else {
             if(this.isPlayer1()) {

@@ -9,6 +9,7 @@ function DiceController() {
 
 DiceController.prototype.registerSocketEvents = function() {
     this.socket.on(SocketConstants.on.DICE_NUMBER, function(dice) {
+        this.soundManager.playRollDiceSound();
         this.loadDice(dice.number);
     }.bind(this));
 };
