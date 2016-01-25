@@ -54,7 +54,7 @@ window.onload = function() {
         var viewLoader = new ViewLoader();
         var container = new PIXI.Container();
         container.interactive = true;
-        var renderer = new PIXI.autoDetectRenderer((Display.bucket.width * Display.scale), (Display.bucket.height * Display.scale));
+        var renderer = new PIXI.autoDetectRenderer(Display.bucket.width, Display.bucket.height);
         renderer.backgroundColor = RENDERER_BACKGROUND_COLOUR;
         renderer.roundPixels = true;
         setDependencies(viewLoader, container, renderer);
