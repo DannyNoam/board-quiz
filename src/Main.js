@@ -76,7 +76,8 @@ window.onload = function() {
     }
     
     function loadImages() {
-        new ImageLoader('./resource/images.json', beginGame);
+        console.log("Display resource path: " + Display.resourcePath);
+        new ImageLoader('./resource/' + Display.resourcePath + '/images.json', beginGame);
     }
     
     function appendGameToDOM(renderer) {
