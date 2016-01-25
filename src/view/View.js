@@ -7,8 +7,7 @@ function View() {
     PIXI.Container.call(this);
 }
 
-View.prototype.addElementToContainer = function(element, positionData) {
-    this.setElementPosition(element, positionData);
+View.prototype.addElementToContainer = function(element) {
     element.anchor.x = this.CENTER_ANCHOR;
     element.anchor.y = this.CENTER_ANCHOR;
     element.interactive = this.INTERACTIVE;
@@ -39,6 +38,11 @@ View.prototype.updateElement = function(element) {
 
 View.prototype.removeAllElements = function() {
     this.removeChildren();
+};
+
+View.prototype.setElementPositionInPercent = function(element, widthPercentage, heightPercentage) {
+    element.x = (window.innerWidth / 100) * widthPercentage;
+    element.y = (window.innerHeight / 100) * heightPercentage;   
 };
 
 module.exports = View;

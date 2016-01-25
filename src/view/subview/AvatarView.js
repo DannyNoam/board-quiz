@@ -17,6 +17,7 @@ AvatarView.prototype.setupViewElements = function(avatarName) {
 AvatarView.prototype.createAvatar = function (data) {
     this.removeElement(this.avatar);
     this.avatar = this.createSpriteElement(data);
+    this.setElementPositionInPercent(this.avatar, 24, 60);
     this.addElementToContainer(this.avatar, data);
 };
 

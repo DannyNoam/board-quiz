@@ -19,16 +19,19 @@ MenuView.prototype.setupViewElements = function() {
 
 MenuView.prototype.createLogo = function (data) {
     var logo = this.createSpriteElement(data);
+    this.setElementPositionInPercent(logo, 50,10);
     this.addElementToContainer(logo, data);
 };
 
 MenuView.prototype.createPlayButton = function (data) {
     this.playButton = this.createSpriteElement(data);
+    this.setElementPositionInPercent(this.playButton, 50, 35);
     this.addElementToContainer(this.playButton, data);
 };
 
 MenuView.prototype.createHelpButton = function (data) {
     this.helpButton = this.createSpriteElement(data);
+    this.setElementPositionInPercent(this.helpButton, 50, 63);
     this.addElementToContainer(this.helpButton, data);
 };
 

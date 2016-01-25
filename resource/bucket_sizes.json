@@ -20,7 +20,7 @@
     "portrait": [
         {
             "width": 320,
-            "height": 480
+            "height": 432
         },
         {
             "width": 412,
@@ -29,10 +29,6 @@
         {
             "width": 678,
             "height": 876
-        },
-        {
-            "width": 648,
-            "height": 1024
         }
     ]
 }

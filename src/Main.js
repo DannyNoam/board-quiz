@@ -51,12 +51,16 @@ window.onload = function() {
     }
     
     function startRendering() {
+        var rendererOptions = {
+            antialiasing:false,
+            resolution:1,
+            backgroundColor:RENDERER_BACKGROUND_COLOUR
+        };
         var viewLoader = new ViewLoader();
         var container = new PIXI.Container();
         container.interactive = true;
-        var renderer = new PIXI.autoDetectRenderer(Display.bucket.width, Display.bucket.height);
+        var renderer = new PIXI.autoDetectRenderer(window.innerWidth * Display.scale, window.innerHeight * Display.scale, rendererOptions);
         console.log("Scale is " + Display.scale);
-        renderer.backgroundColor = RENDERER_BACKGROUND_COLOUR;
         renderer.roundPixels = true;
         setDependencies(viewLoader, container, renderer);
         appendGameToDOM(renderer);
