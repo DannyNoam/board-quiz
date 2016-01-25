@@ -22,10 +22,9 @@ function BucketLoader (callback, errorCallback, context) {
             }
         });
         
-        console.log("Chosen bucket is ");
-        console.log(Display.bucket);
         Display.scale = calculateScale(window.devicePixelRatio);
         Display.resourcePath = Display.bucket.width + 'x' + Display.bucket.height;
+        Display.orientation = orientation;
         executeCallback();
     }
     

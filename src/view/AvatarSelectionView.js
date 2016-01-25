@@ -30,7 +30,11 @@ AvatarSelectionView.prototype.createLogo = function (data) {
 
 AvatarSelectionView.prototype.createBackButton = function (data) {
     this.backButton = this.createSpriteElement(data);
-    this.setElementPositionInPercent(this.backButton, 69, 80);
+    if(Display.orientation === 'landscape') {
+        this.setElementPositionInPercent(this.backButton, 69, 80);
+    } else {
+        this.setElementPositionInPercent(this.backButton, 50, 90);
+    }
     this.addElementToContainer(this.backButton, data);
 };
 
@@ -48,7 +52,11 @@ AvatarSelectionView.prototype.createSelectUpButton = function (data) {
 
 AvatarSelectionView.prototype.createFindGameButton = function (data) {
     this.findGameButton = this.createSpriteElement(data);
-    this.setElementPositionInPercent(this.findGameButton, 69, 48);
+    if(Display.orientation === 'landscape') {
+        this.setElementPositionInPercent(this.findGameButton, 69, 48);
+    } else {
+        this.setElementPositionInPercent(this.findGameButton, 50, 75);
+    }
     this.addElementToContainer(this.findGameButton, data);
 };
 
