@@ -16,12 +16,12 @@ View.prototype.addElementToContainer = function(element, positionData) {
 };
 
 View.prototype.setElementPosition = function(element, positionData) {
-    element.position.x = positionData.x;
-    element.position.y = positionData.y;
+    element.position.x = positionData.x * Display.scale;
+    element.position.y = positionData.y * Display.scale;
 };
 
 View.prototype.createTextElement = function(data) {
-    return new PIXI.Text(data.text, {font: data.size + "px " + data.font, fill: data.color});
+    return new PIXI.Text(data.text, {font: (data.size * Display.scale) + "px " + data.font, fill: data.color});
 };
 
 View.prototype.createSpriteElement = function(data) {
