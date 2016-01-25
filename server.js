@@ -231,14 +231,14 @@ var Player = function(id, avatar) {
             var numberOfRightAnswers = categoryAnswerData[categories[i]].right;
             var numberOfWrongAnswers = categoryAnswerData[categories[i]].wrong;
             var totalAnswers = numberOfRightAnswers + numberOfWrongAnswers;
-            var correctAnswerPercentage = ((numberOfRightAnswers/totalAnswers)*100).toFixed(0);
-            if(correctAnswerPercentage !== 'NaN') {
-                if(correctAnswerPercentage > (bestCategory.percentageCorrect)) {
-                    bestCategory.name = categories[i];
-                    bestCategory.percentageCorrect = correctAnswerPercentage;
-                } else if(correctAnswerPercentage === bestCategory.percentageCorrect) {
-                    bestCategory.name = bestCategory.name + "/" + categories[i];
-                }
+            var correctAnswerPercentage = numberOfRightAnswers > 0 ? ((numberOfRightAnswers/totalAnswers)*100).toFixed(0) : 0;
+            console.log("Category: " + categories[i]);
+            console.log("Percentage correct: " + correctAnswerPercentage);
+            if(correctAnswerPercentage > (bestCategory.percentageCorrect)) {
+                bestCategory.name = categories[i];
+                bestCategory.percentageCorrect = correctAnswerPercentage;
+            } else if(correctAnswerPercentage === bestCategory.percentageCorrect) {
+                bestCategory.name = bestCategory.name + "/" + categories[i];
             }
         }
         
