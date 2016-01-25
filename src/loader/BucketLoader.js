@@ -13,8 +13,11 @@ function BucketLoader (callback, errorCallback, context) {
 
     function calculateBestBucket (bucketData) {
         var orientation = calculateOrientation();
+        console.log("Orientation is " + orientation);
         bucketData[orientation].forEach(function (bucket) {
-            if (bucket.height <= window.innerHeight) {
+            console.log("Bucket height: " + bucket.height);
+            console.log("Window height: " + screen.height);
+            if (bucket.height <= screen.height) {
                 Display.bucket = bucket;
             }
         });
