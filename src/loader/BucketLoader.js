@@ -16,12 +16,14 @@ function BucketLoader (callback, errorCallback, context) {
         console.log("Orientation is " + orientation);
         bucketData[orientation].forEach(function (bucket) {
             console.log("Bucket height: " + bucket.height);
-            console.log("Window height: " + screen.height);
-            if (bucket.height <= screen.height) {
+            console.log("Window height: " + window.innerHeight);
+            if (bucket.height <= window.innerHeight) {
                 Display.bucket = bucket;
             }
         });
-
+        
+        console.log("Chosen bucket is ");
+        console.log(Display.bucket);
         Display.scale = calculateScale(window.devicePixelRatio);
         Display.resourcePath = Display.bucket.width + 'x' + Display.bucket.height;
         executeCallback();
