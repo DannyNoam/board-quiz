@@ -13,26 +13,26 @@ PlayerView.prototype.setupViewElements = function() {
     var playerLayoutData = PIXI.Container.layoutData.PLAYER;
     var avatarData = PIXI.Container.layoutData.AVATAR;
     
-    this.createPlayer1Avatar(avatarData[this.playerData.player1Avatar], playerLayoutData.PLAYER_1_AVATAR);
+    this.createPlayer1Avatar(this.playerData.player1Avatar);
     this.createPlayer1Health(playerLayoutData.PLAYER_1_HEALTH);
     
-    this.createPlayer2Avatar(avatarData[this.playerData.player2Avatar], playerLayoutData.PLAYER_2_AVATAR);
+    this.createPlayer2Avatar(this.playerData.player2Avatar);
     this.createPlayer2Health(playerLayoutData.PLAYER_2_HEALTH);
     
     this.createPlayer1Text(playerLayoutData.PLAYER_1_TEXT);
     this.createPlayer2Text(playerLayoutData.PLAYER_2_TEXT);
 };
 
-PlayerView.prototype.createPlayer1Avatar = function(avatar, avatarPosition) {
-    this.player1Avatar = this.createSpriteElement(avatar);
+PlayerView.prototype.createPlayer1Avatar = function(avatar) {
+    this.player1Avatar = this.createSpriteElement(Display.resourcePath + '/avatar/' + avatar);
     this.setElementPositionInPercent(this.player1Avatar, 25, 25);
-    this.addElementToContainer(this.player1Avatar, avatarPosition);
+    this.addElementToContainer(this.player1Avatar);
 };
 
-PlayerView.prototype.createPlayer2Avatar = function(avatar, avatarPosition) {
-    this.player2Avatar = this.createSpriteElement(avatar);
+PlayerView.prototype.createPlayer2Avatar = function(avatar) {
+    this.player2Avatar = this.createSpriteElement(Display.resourcePath + '/avatar/' + avatar);
     this.setElementPositionInPercent(this.player2Avatar, 75, 25);
-    this.addElementToContainer(this.player2Avatar, avatarPosition);
+    this.addElementToContainer(this.player2Avatar);
 };
 
 PlayerView.prototype.createPlayer1Health = function(healthData) {

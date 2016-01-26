@@ -46,10 +46,10 @@ WinView.prototype.createPlayerStatsText = function(layoutData, statData) {
     this.addElementToContainer(player2BestCategoryText, layoutData.PLAYER_2_BEST_CATEGORY);
 };
 
-WinView.prototype.createPlayAgainButton = function (data) {
-    this.playAgainButton = this.createSpriteElement(data);
+WinView.prototype.createPlayAgainButton = function () {
+    this.playAgainButton = this.createSpriteElement(Display.resourcePath + '/play-again.png');
     this.setElementPositionInPercent(this.playAgainButton, 50, 47);
-    this.addElementToContainer(this.playAgainButton, data);
+    this.addElementToContainer(this.playAgainButton);
 };
 
 WinView.prototype.getInteractiveViewElements = function() {

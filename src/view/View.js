@@ -18,8 +18,8 @@ View.prototype.createTextElement = function(data) {
     return new PIXI.Text(data.text, {font: data.size + "px " + data.font, fill: data.color});
 };
 
-View.prototype.createSpriteElement = function(data) {
-    return new PIXI.Sprite.fromImage(data.path);
+View.prototype.createSpriteElement = function(path) {
+    return new PIXI.Sprite.fromImage(path);
 };
 
 View.prototype.removeElement = function(element) {

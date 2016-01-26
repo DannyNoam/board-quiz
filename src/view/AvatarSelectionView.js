@@ -12,44 +12,41 @@ function AvatarSelectionView() {
 }
 
 AvatarSelectionView.prototype.setupViewElements = function() {
-    var layoutData = PIXI.Container.layoutData.AVATAR_SELECTION;
-    var commonData = PIXI.Container.layoutData.COMMON;
-    
-    this.createLogo(commonData.LOGO);
-    this.createBackButton(layoutData.BACK_BUTTON);
-    this.createSelectDownButton(layoutData.SELECT_DOWN);
-    this.createSelectUpButton(layoutData.SELECT_UP);
-    this.createFindGameButton(layoutData.FIND_GAME);
+    this.createLogo();
+    this.createBackButton();
+    this.createSelectDownButton();
+    this.createSelectUpButton();
+    this.createFindGameButton();
 };
 
 AvatarSelectionView.prototype.createLogo = function (data) {
-    var logo = this.createSpriteElement(data);
+    var logo = this.createSpriteElement(Display.resourcePath + '/logo.jpg');
     this.setElementPositionInPercent(logo, 50, 10);
     this.addElementToContainer(logo);
 };
 
 AvatarSelectionView.prototype.createBackButton = function (data) {
-    this.backButton = this.createSpriteElement(data);
+    this.backButton = this.createSpriteElement(Display.resourcePath + '/go-back.png');
     this.setElementPositionInPercent(this.backButton, 69, 80);
-    this.addElementToContainer(this.backButton, data);
+    this.addElementToContainer(this.backButton);
 };
 
 AvatarSelectionView.prototype.createSelectDownButton = function (data) {
-    this.selectDownButton = this.createSpriteElement(data);
+    this.selectDownButton = this.createSpriteElement(Display.resourcePath + '/down-triangle.png');
     this.setElementPositionInPercent(this.selectDownButton, 24, 85);
-    this.addElementToContainer(this.selectDownButton, data);
+    this.addElementToContainer(this.selectDownButton);
 };
 
 AvatarSelectionView.prototype.createSelectUpButton = function (data) {
-    this.selectUpButton = this.createSpriteElement(data);
+    this.selectUpButton = this.createSpriteElement(Display.resourcePath + '/up-triangle.png');
     this.setElementPositionInPercent(this.selectUpButton, 24, 35);
-    this.addElementToContainer(this.selectUpButton, data);
+    this.addElementToContainer(this.selectUpButton);
 };
 
 AvatarSelectionView.prototype.createFindGameButton = function (data) {
-    this.findGameButton = this.createSpriteElement(data);
+    this.findGameButton = this.createSpriteElement(Display.resourcePath + '/find-game.png');
     this.setElementPositionInPercent(this.findGameButton, 69, 48);
-    this.addElementToContainer(this.findGameButton, data);
+    this.addElementToContainer(this.findGameButton);
 };
 
 AvatarSelectionView.prototype.getInteractiveViewElements = function() {

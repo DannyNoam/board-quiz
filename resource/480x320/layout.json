@@ -1,105 +1,51 @@
-{
-    "COMMON" : {
-        "LOGO" : {"path" : "./resource/480x320/image/logo.jpg", "x": 512, "y": 100}
-    },
-    
-    "MENU" : {
-      "PLAY_BUTTON" : {"path" : "./resource/480x320/image/play-button.jpg", "x":512, "y":295},
-      "HELP_BUTTON" : {"path" : "./resource/480x320/image/help-button.jpg", "x":512, "y":510}
-    },
-    
+{  
     "HELP" : {
-        "INFO" : {"text" : "Just go back, and click 'Play'!", "font" : "Arial", "size" : 25, "color" : "#FFFFFF", "x": 512, "y": 50},
-        "BACK_BUTTON" : {"path" : "./resource/480x320/image/go-back.png", "x" : 512, "y": 500}
-    },
-    
-    "AVATAR_SELECTION" : {
-        "SELECT_UP" : {"path" : "./resource/480x320/image/up-triangle.png", "x": 240, "y": 240},
-        "SELECT_DOWN" : {"path" : "./resource/480x320/image/down-triangle.png", "x": 240, "y": 600},
-        "FIND_GAME" : {"path" : "./resource/480x320/image/find-game.png", "x": 690, "y": 300},
-        "BACK_BUTTON" : {"path" : "./resource/480x320/image/go-back.png", "x" : 690, "y": 520}
-    },
-    
-    "AVATAR" : {
-        "EMOJI_ANGEL" : {"path" : "./resource/480x320/image/avatar/emoji-angel.png", "x" : 240, "y" : 420},
-        "EMOJI_BIG_SMILE" : {"path" : "./resource/480x320/image/avatar/emoji-big-smile.png", "x" : 240, "y" : 420},
-        "EMOJI_COOL" : {"path" : "./resource/480x320/image/avatar/emoji-cool.png", "x" : 240, "y" : 420},
-        "EMOJI_GRIN" : {"path" : "./resource/480x320/image/avatar/emoji-grin.png", "x" : 240, "y" : 420},
-        "EMOJI_HAPPY" : {"path" : "./resource/480x320/image/avatar/emoji-happy.png", "x" : 240, "y" : 420},
-        "EMOJI_KISS" : {"path" : "./resource/480x320/image/avatar/emoji-kiss.png", "x" : 240, "y" : 420},
-        "EMOJI_LAUGHING" : {"path" : "./resource/480x320/image/avatar/emoji-laughing.png", "x" : 240, "y" : 420},
-        "EMOJI_LOVE" : {"path" : "./resource/480x320/image/avatar/emoji-love.png", "x" : 240, "y" : 420},
-        "EMOJI_MONKEY" : {"path" : "./resource/480x320/image/avatar/emoji-monkey.png", "x" : 240, "y" : 420},
-        "EMOJI_POO" : {"path" : "./resource/480x320/image/avatar/emoji-poo.png", "x" : 240, "y" : 420},
-        "EMOJI_SCREAM" : {"path" : "./resource/480x320/image/avatar/emoji-scream.png", "x" : 240, "y" : 420},
-        "EMOJI_SLEEP" : {"path" : "./resource/480x320/image/avatar/emoji-sleep.png", "x" : 240, "y" : 420},
-        "EMOJI_SMILE" : {"path" : "./resource/480x320/image/avatar/emoji-smile.png", "x" : 240, "y" : 420},
-        "EMOJI_SWEET" : {"path" : "./resource/480x320/image/avatar/emoji-sweet.png", "x" : 240, "y" : 420},
-        "EMOJI_WINK" : {"path" : "./resource/480x320/image/avatar/emoji-wink.png", "x" : 240, "y" : 420},
-        "PLAYER_2_UNKNOWN" : {"path" : "./resource/480x320/image/question-mark.png", "x" : 240, "y" : 420}
+        "INFO" : {"text" : "Just go back, and click 'Play'!", "font" : "Arial", "size" : 25, "color" : "#FFFFFF"}
     },
     
     "FIND_GAME" : {
-        "CAPTION" : {"text" : "Finding game...", "size" : 40, "font" : "Helvetica", "color" : "#FFFFFF", "x": 512, "y" : 100},
-        "FOUND_GAME_CAPTION" : {"text" : "Game found!", "size" : 50, "font" : "arial", "color" : "#FFFFFF", "x": 512, "y" : 100},
-        "PLAYER_1_AVATAR" : {"x" : 206, "y" : 400},
-        "PLAYER_2_AVATAR" : {"x" : 824, "y" : 400},
-        "VERSUS" : {"text" : "Vs.", "x" : 512, "y" : 400, "size" : 30, "font" : "Arial", "color" : "#FFFFFF"},
-        "PLAYER_1" : {"text" : "You", "x" : 206, "y" : 600, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "PLAYER_2" : {"text" : "Opponent", "x" : 824, "y" : 600, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"}
+        "CAPTION" : {"text" : "Finding game...", "size" : 40, "font" : "Helvetica", "color" : "#FFFFFF"},
+        "FOUND_GAME_CAPTION" : {"text" : "Game found!", "size" : 50, "font" : "arial", "color" : "#FFFFFF"},
+        "VERSUS" : {"text" : "Vs.", "size" : 30, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAYER_1" : {"text" : "You", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAYER_2" : {"text" : "Opponent", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"}
     },
     
     "PLAYER" : {
-        "PLAYER_1_AVATAR" : {"x" : 206, "y" : 250},
-        "PLAYER_2_AVATAR" : {"x" : 824, "y" : 250},
-        "PLAYER_1_HEALTH" : {"text" : "Health: ", "x": 200, "y" : 50, "size" : 20, "font" : "Arial", "color" : "red"},
-        "PLAYER_2_HEALTH" : {"text" : "Health: ", "x": 800, "y" : 50, "size" : 20, "font" : "Arial", "color" : "red"},
-        "PLAYER_1_TEXT" : {"text" : "Player 1", "x": 206, "y" : 420, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "PLAYER_2_TEXT" : {"text" : "Player 2", "x": 824, "y" : 420, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"}
-    },
-    
-    "DICE" : {
-        "COORDS" : {"x" : 500, "y" : 250},
-        "1" : {"path" : "./resource/480x320/image/dice/dice-face-1.png"},
-        "2" : {"path" : "./resource/480x320/image/dice/dice-face-2.png"},
-        "3" : {"path" : "./resource/480x320/image/dice/dice-face-3.png"},
-        "4" : {"path" : "./resource/480x320/image/dice/dice-face-4.png"},
-        "5" : {"path" : "./resource/480x320/image/dice/dice-face-5.png"},
-        "6" : {"path" : "./resource/480x320/image/dice/dice-face-6.png"}
+        "PLAYER_1_HEALTH" : {"text" : "Health: ", "size" : 20, "font" : "Arial", "color" : "red"},
+        "PLAYER_2_HEALTH" : {"text" : "Health: ", "size" : 20, "font" : "Arial", "color" : "red"},
+        "PLAYER_1_TEXT" : {"text" : "Player 1", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAYER_2_TEXT" : {"text" : "Player 2", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"}
     },
     
     "QUESTION" : {
-        "QUESTION_POSITION" : {"x" : 512, "y" : 485, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "CATEGORY" : {"x" : 512, "y" : 440, "size" : 30, "font" : "Arial", "color" : "#FFFFFF"},
-        "ANSWER_BOX" : {"path" : ""},
-        "ANSWER_1" : {"x" : 206, "y" : 530, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "ANSWER_2" : {"x" : 412, "y" : 530, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "ANSWER_3" : {"x" : 618, "y" : 530, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "ANSWER_4" : {"x" : 824, "y" : 530, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "QUESTION_POSITION" : {"size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "CATEGORY" : {"size" : 30, "font" : "Arial", "color" : "#FFFFFF"},
+        "ANSWER_1" : {"size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "ANSWER_2" : {"size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "ANSWER_3" : {"size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "ANSWER_4" : {"size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
         "RIGHT_ANSWER_COLOUR" : "green",
         "WRONG_ANSWER_COLOUR" : "red",
         "PLAYER_1_ANSWERED" : {"text" : "(Player 1)", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
         "PLAYER_2_ANSWERED" : {"text" : "(Player 2)", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "ANSWERED_1" : {"x" : 206, "y" : 550},
-        "ANSWERED_2" : {"x" : 412, "y" : 550},
-        "ANSWERED_3" : {"x" : 618, "y" : 550},
-        "ANSWERED_4" : {"x" : 824, "y" : 550},
-        "TIMER" : {"x" : 1000, "y" : 620, "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "TIMER_CIRCLE" : {"path" : "./resource/480x320/image/timer-circle.png", "x" : 1000, "y" : 620}
+        "ANSWERED_1" : {"widthPercentage" : 33, "heightPercentage" : 78},
+        "ANSWERED_2" : {"widthPercentage" : 67, "heightPercentage" : 78},
+        "ANSWERED_3" : {"widthPercentage" : 33, "heightPercentage" : 86},
+        "ANSWERED_4" : {"widthPercentage" : 67, "heightPercentage" : 86},
+        "TIMER" : {"size" : 20, "font" : "Arial", "color" : "#FFFFFF"}
     },
     
     "WIN" : {
-        "WIN_TEXT_POSITION" : {"x" : 512, "y" : 450},
         "PLAYER_1_WINS" : {"text" : "Player 1 Wins!", "size" : 50, "font" : "Arial", "color" : "#FFFFFF"},
         "PLAYER_2_WINS" : {"text" : "Player 2 Wins!", "size" : 50, "font" : "Arial", "color" : "#FFFFFF"},
-        "PLAY_AGAIN" : {"path" : "./resource/480x320/image/play-again.png", "x" : 512, "y" : 270},
-        "PLAYER_1_CORRECT_PERCENTAGE" : {"text" : "Correct Answers: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF", "x" : 206, "y" : 500},
-        "PLAYER_2_CORRECT_PERCENTAGE" : {"text" : "Correct Answers: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF", "x" : 824, "y" : 500},
-        "PLAYER_1_BEST_CATEGORY" : {"text" : "Best Category: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF", "x" : 206, "y" : 520},
-        "PLAYER_2_BEST_CATEGORY" : {"text" : "Best Category: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF", "x" : 824, "y" : 520}
+        "PLAYER_1_CORRECT_PERCENTAGE" : {"text" : "Correct Answers: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAYER_2_CORRECT_PERCENTAGE" : {"text" : "Correct Answers: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAYER_1_BEST_CATEGORY" : {"text" : "Best Category: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAYER_2_BEST_CATEGORY" : {"text" : "Best Category: ", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"}
     },
     
     "LOADING" : {
-        "LOADING_TEXT" : {"text" : "Loading...", "size" : 50, "font" : "Arial", "color" : "#FFFFFF", "x" : 512, "y" : 324}
+        "LOADING_TEXT" : {"text" : "Loading...", "size" : 50, "font" : "Arial", "color" : "#FFFFFF"}
     }
 }

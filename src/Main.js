@@ -59,8 +59,8 @@ window.onload = function() {
         var viewLoader = new ViewLoader();
         var container = new PIXI.Container();
         container.interactive = true;
-        var renderer = new PIXI.autoDetectRenderer(window.innerWidth * Display.scale, window.innerHeight * Display.scale, rendererOptions);
-        console.log("Scale is " + Display.scale);
+        var renderer = new PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight, rendererOptions);
+        console.log("Resource path: " + Display.resourcePath);
         renderer.roundPixels = true;
         setDependencies(viewLoader, container, renderer);
         appendGameToDOM(renderer);
@@ -81,7 +81,7 @@ window.onload = function() {
     
     function loadImages() {
         console.log("Display resource path: " + Display.resourcePath);
-        new ImageLoader('./resource/' + Display.resourcePath + '/images.json', beginGame);
+        new ImageLoader(Display.resourcePath + '/images.json', beginGame);
     }
     
     function appendGameToDOM(renderer) {

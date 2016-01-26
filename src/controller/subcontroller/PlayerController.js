@@ -1,6 +1,7 @@
 PlayerController.constructor = PlayerController;
 PlayerController.prototype = Object.create(GameController.prototype);
 PlayerController.prototype.view = new PlayerView();
+PlayerController.prototype.DANGEROUS_LEVEL_HEALTH = 6;
 
 function PlayerController(playerData) {
     Controller.call(this);
@@ -20,10 +21,10 @@ PlayerController.prototype.registerSocketEvents = function() {
         this.clearIntervals();
         this.view.setPlayer1Health(playerData.player1Health);
         this.view.setPlayer2Health(playerData.player2Health);
-        if(playerData.player1Health <= 5) {
+        if(playerData.player1Health <= this.DANGEROUS_LEVEL_HEALTH) {
             this.view.flashPlayer1Health();
         }
-        if(playerData.player2Health <= 5) {
+        if(playerData.player2Health <= this.DANGEROUS_LEVEL_HEALTH) {
             this.view.flashPlayer2Health();
         }
     }.bind(this));

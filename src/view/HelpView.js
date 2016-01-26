@@ -11,17 +11,18 @@ HelpView.prototype.setupViewElements = function() {
     var layoutData = PIXI.Container.layoutData.HELP;
     
     this.createHelpText(layoutData.INFO);
-    this.createBackButton(layoutData.BACK_BUTTON);
+    this.createBackButton();
 };
 
 HelpView.prototype.createHelpText = function (data) {
     var helpText = this.createTextElement(data);
-    this.addElementToContainer(helpText, data);
+    this.addElementToContainer(helpText);
 };
 
 HelpView.prototype.createBackButton = function (data) {
-    this.backButton = this.createSpriteElement(data);
-    this.addElementToContainer(this.backButton, data);
+    this.backButton = this.createSpriteElement(Display.resourcePath + '/go-back.png');
+    this.setElementPositionInPercent(this.backButton, 50, 50);
+    this.addElementToContainer(this.backButton);
 };
 
 HelpView.prototype.getInteractiveViewElements = function() {

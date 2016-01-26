@@ -7,18 +7,11 @@ function AvatarView() {
     PIXI.Container.call(this);
 }
 
-AvatarView.prototype.setupViewElements = function(avatarName) {
-    var layoutData = PIXI.Container.layoutData.AVATAR;
-    var commonData = PIXI.Container.layoutData.COMMON;
-    
-    this.createAvatar(layoutData[avatarName]);
-};
-
-AvatarView.prototype.createAvatar = function (data) {
+AvatarView.prototype.createAvatar = function (avatar) {
     this.removeElement(this.avatar);
-    this.avatar = this.createSpriteElement(data);
+    this.avatar = this.createSpriteElement(Display.resourcePath + '/avatar/' + avatar);
     this.setElementPositionInPercent(this.avatar, 24, 60);
-    this.addElementToContainer(this.avatar, data);
+    this.addElementToContainer(this.avatar);
 };
 
 module.exports = AvatarView;

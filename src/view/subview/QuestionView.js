@@ -16,12 +16,13 @@ function QuestionView() {
 
 QuestionView.prototype.displayCategoryAndQuestion = function(category, question) {
     var questionData = PIXI.Container.layoutData.QUESTION;
+    var answerTextData = PIXI.Container.layoutData.QUESTION.ANSWER;
     this.createCategoryElement(category, PIXI.Container.layoutData.QUESTION.CATEGORY);
     this.createQuestionElement(question.text, PIXI.Container.layoutData.QUESTION.QUESTION_POSITION);
-    this.createAnswerElement1(question.right_answer, PIXI.Container.layoutData.QUESTION[this.ANSWER_PREFIX + this.answerIndices[0]]);
-    this.createAnswerElement2(question.wrong_answer_1, PIXI.Container.layoutData.QUESTION[this.ANSWER_PREFIX + this.answerIndices[1]]);
-    this.createAnswerElement3(question.wrong_answer_2, PIXI.Container.layoutData.QUESTION[this.ANSWER_PREFIX + this.answerIndices[2]]);
-    this.createAnswerElement4(question.wrong_answer_3, PIXI.Container.layoutData.QUESTION[this.ANSWER_PREFIX + this.answerIndices[3]]);
+    this.createAnswerElement1(question.right_answer, answerTextData);
+    this.createAnswerElement2(question.wrong_answer_1, answerTextData);
+    this.createAnswerElement3(question.wrong_answer_2, answerTextData);
+    this.createAnswerElement4(question.wrong_answer_3, answerTextData);
 };
 
 QuestionView.prototype.setAnswerIndices = function(answerIndices) {
@@ -85,7 +86,7 @@ QuestionView.prototype.setWhoAnsweredQuestion = function(answerElement, answer, 
     var questionData = PIXI.Container.layoutData.QUESTION;
     var answerOnScreen = (answer.slice(-1) - 1);
     this.playerWhoAnsweredElement = this.createTextElement(questionData[player + this.ANSWERED_SUFFIX]);
-    this.setElementPositionInPercent(this.playerWhoAnsweredElement, questionData[this.ANSWERED_PREFIX + (answerOnScreen + 1)].x, questionData[this.ANSWERED_PREFIX + (answerOnScreen + 1)].y);
+    this.setElementPositionInPercent(this.playerWhoAnsweredElement, questionData[this.ANSWERED_PREFIX + (answerOnScreen + 1)].widthPercentage, questionData[this.ANSWERED_PREFIX + (answerOnScreen + 1)].heightPercentage);
     this.addElementToContainer(this.playerWhoAnsweredElement, questionData[this.ANSWERED_PREFIX + this.answerIndices[answerOnScreen]]); 
 };
 

@@ -23,7 +23,7 @@ function BucketLoader (callback, errorCallback, context) {
         });
         
         Display.scale = calculateScale(window.devicePixelRatio);
-        Display.resourcePath = Display.bucket.width + 'x' + Display.bucket.height;
+        Display.resourcePath = './resource/' + Display.bucket.width + 'x' + Display.bucket.height + '/scale-' + Display.scale;
         Display.orientation = orientation;
         executeCallback();
     }

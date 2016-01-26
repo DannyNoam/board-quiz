@@ -6,16 +6,13 @@ function DiceView() {
 }
 
 DiceView.prototype.setupDice = function(diceNumber) {
-    var diceImage = PIXI.Container.layoutData.DICE[diceNumber];
-    var dicePositionData = PIXI.Container.layoutData.DICE.COORDS;
-    
-    this.createDiceElement(diceImage, dicePositionData);
+    this.createDiceElement(diceNumber);
 };
 
-DiceView.prototype.createDiceElement = function(diceImage, dicePositionData) {
-    this.diceElement = this.createSpriteElement(diceImage);
+DiceView.prototype.createDiceElement = function(diceNumber) {
+    this.diceElement = this.createSpriteElement(Display.resourcePath + '/dice/dice-face-' + diceNumber + '.png');
     this.setElementPositionInPercent(this.diceElement, 50, 36);
-    this.addElementToContainer(this.diceElement, dicePositionData);
+    this.addElementToContainer(this.diceElement);
 };
 
 DiceView.prototype.cleanView = function() {
