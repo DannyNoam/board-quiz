@@ -4,8 +4,8 @@
     },
     
     "FIND_GAME" : {
-        "CAPTION" : {"text" : "Finding game...", "size" : 70, "font" : "Helvetica", "color" : "#FFFFFF"},
-        "FOUND_GAME_CAPTION" : {"text" : "Game found!", "size" : 70, "font" : "arial", "color" : "#FFFFFF"},
+        "CAPTION" : {"text" : "Finding game...", "size" : 40, "font" : "Helvetica", "color" : "#FFFFFF"},
+        "FOUND_GAME_CAPTION" : {"text" : "Game found!", "size" : 50, "font" : "arial", "color" : "#FFFFFF"},
         "VERSUS" : {"text" : "Vs.", "size" : 30, "font" : "Arial", "color" : "#FFFFFF"},
         "PLAYER_1" : {"text" : "You", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
         "PLAYER_2" : {"text" : "Opponent", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"}
