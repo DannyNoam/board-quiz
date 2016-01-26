@@ -16,13 +16,13 @@ MenuView.prototype.setupViewElements = function() {
 
 MenuView.prototype.createLogo = function () {
     var logo = this.createSpriteElement(Display.resourcePath + '/logo.jpg');
-    this.setElementPositionInPercent(logo, 50,10);
+    this.setElementPositionInPercent(logo, 50, 15);
     this.addElementToContainer(logo);
 };
 
 MenuView.prototype.createPlayButton = function (data) {
     this.playButton = this.createSpriteElement(Display.resourcePath + '/play-button.jpg');
-    this.setElementPositionInPercent(this.playButton, 50, 40);
+    this.setElementPositionInPercent(this.playButton, 50, 50);
     this.addElementToContainer(this.playButton);
 };
 
