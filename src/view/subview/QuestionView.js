@@ -18,10 +18,10 @@ QuestionView.prototype.displayCategoryAndQuestion = function(category, question)
     var questionData = PIXI.Container.layoutData.QUESTION;
     this.createCategoryElement(category, PIXI.Container.layoutData.QUESTION.CATEGORY);
     this.createQuestionElement(question.text, PIXI.Container.layoutData.QUESTION.QUESTION_POSITION);
-    this.createRightAnswerElement(question.right_answer, PIXI.Container.layoutData.QUESTION[this.ANSWER_PREFIX + this.answerIndices[0]]);
-    this.createWrongAnswerElement1(question.wrong_answer_1, PIXI.Container.layoutData.QUESTION[this.ANSWER_PREFIX + this.answerIndices[1]]);
-    this.createWrongAnswerElement2(question.wrong_answer_2, PIXI.Container.layoutData.QUESTION[this.ANSWER_PREFIX + this.answerIndices[2]]);
-    this.createWrongAnswerElement3(question.wrong_answer_3, PIXI.Container.layoutData.QUESTION[this.ANSWER_PREFIX + this.answerIndices[3]]);
+    this.createAnswerElement1(question.right_answer, PIXI.Container.layoutData.QUESTION[this.ANSWER_PREFIX + this.answerIndices[0]]);
+    this.createAnswerElement2(question.wrong_answer_1, PIXI.Container.layoutData.QUESTION[this.ANSWER_PREFIX + this.answerIndices[1]]);
+    this.createAnswerElement3(question.wrong_answer_2, PIXI.Container.layoutData.QUESTION[this.ANSWER_PREFIX + this.answerIndices[2]]);
+    this.createAnswerElement4(question.wrong_answer_3, PIXI.Container.layoutData.QUESTION[this.ANSWER_PREFIX + this.answerIndices[3]]);
 };
 
 QuestionView.prototype.setAnswerIndices = function(answerIndices) {
@@ -31,37 +31,43 @@ QuestionView.prototype.setAnswerIndices = function(answerIndices) {
 QuestionView.prototype.createCategoryElement = function(category, categoryData) {
     categoryData.text = category;
     this.categoryElement = this.createTextElement(categoryData);
+    this.setElementPositionInPercent(this.categoryElement, 50, 63);
     this.addElementToContainer(this.categoryElement, categoryData);
 };
 
 QuestionView.prototype.createQuestionElement = function(question, questionData) {
     questionData.text = question;
     this.questionElement = this.createTextElement(questionData);
+    this.setElementPositionInPercent(this.questionElement, 50, 68);
     this.addElementToContainer(this.questionElement, questionData);
 };
 
-QuestionView.prototype.createRightAnswerElement = function(answer, answerData) {
+QuestionView.prototype.createAnswerElement1 = function(answer, answerData) {
     answerData.text = answer;
-    this.rightAnswer = this.createTextElement(answerData);
-    this.addElementToContainer(this.rightAnswer, answerData);
+    this.answerElement1 = this.createTextElement(answerData);
+    this.setElementPositionInPercent(this.answerElement1, 33, 75);
+    this.addElementToContainer(this.answerElement1, answerData);
 };
 
-QuestionView.prototype.createWrongAnswerElement1 = function(answer, answerData) {
+QuestionView.prototype.createAnswerElement2 = function(answer, answerData) {
     answerData.text = answer;
-    this.wrongAnswer1 = this.createTextElement(answerData);
-    this.addElementToContainer(this.wrongAnswer1, answerData);
+    this.answerElement2 = this.createTextElement(answerData);
+    this.setElementPositionInPercent(this.answerElement2, 67, 75);
+    this.addElementToContainer(this.answerElement2, answerData);
 };
 
-QuestionView.prototype.createWrongAnswerElement2 = function(answer, answerData) {
+QuestionView.prototype.createAnswerElement3 = function(answer, answerData) {
     answerData.text = answer;
-    this.wrongAnswer2 = this.createTextElement(answerData);
-    this.addElementToContainer(this.wrongAnswer2, answerData);
+    this.answerElement3 = this.createTextElement(answerData);
+    this.setElementPositionInPercent(this.answerElement3, 33, 83);
+    this.addElementToContainer(this.answerElement3, answerData);
 };
 
-QuestionView.prototype.createWrongAnswerElement3 = function(answer, answerData) {
+QuestionView.prototype.createAnswerElement4 = function(answer, answerData) {
     answerData.text = answer;
-    this.wrongAnswer3 = this.createTextElement(answerData);
-    this.addElementToContainer(this.wrongAnswer3, answerData);
+    this.answerElement4 = this.createTextElement(answerData);
+    this.setElementPositionInPercent(this.answerElement4, 67, 83);
+    this.addElementToContainer(this.answerElement4, answerData);
 };
 
 QuestionView.prototype.setAnswerToColour = function(answerElement, answer) {
@@ -79,6 +85,11 @@ QuestionView.prototype.setWhoAnsweredQuestion = function(answerElement, answer, 
     var questionData = PIXI.Container.layoutData.QUESTION;
     var answerOnScreen = (answer.slice(-1) - 1);
     this.playerWhoAnsweredElement = this.createTextElement(questionData[player + this.ANSWERED_SUFFIX]);
+    console.log("LOTS OF DATA");
+    console.log(questionData);
+    console.log(this.answerIndices);
+    console.log(answerOnScreen);
+    this.setElementPositionInPercent(this.playerWhoAnsweredElement, questionData[this.ANSWERED_PREFIX + this.answerIndices[answerOnScreen]].x, questionData[this.ANSWERED_PREFIX + this.answerIndices[answerOnScreen]].y);
     this.addElementToContainer(this.playerWhoAnsweredElement, questionData[this.ANSWERED_PREFIX + this.answerIndices[answerOnScreen]]); 
 };
 
@@ -91,14 +102,14 @@ QuestionView.prototype.updateQuestionTimer = function(timeRemaining) {
 };
 
 QuestionView.prototype.turnOffInteractivityForAnswerElements = function() {
-    this.rightAnswer.interactive = false;
-    this.wrongAnswer1.interactive = false;
-    this.wrongAnswer2.interactive = false;
-    this.wrongAnswer3.interactive = false;
+    this.answerElement1.interactive = false;
+    this.answerElement2.interactive = false;
+    this.answerElement3.interactive = false;
+    this.answerElement4.interactive = false;
 };
 
 QuestionView.prototype.getInteractiveViewElements = function() {
-    return [this.rightAnswer, this.wrongAnswer1, this.wrongAnswer2, this.wrongAnswer3];
+    return [this.answerElement1, this.answerElement2, this.answerElement3, this.answerElement4];
 };
 
 QuestionView.prototype.cleanView = function() {

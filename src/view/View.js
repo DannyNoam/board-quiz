@@ -14,11 +14,6 @@ View.prototype.addElementToContainer = function(element) {
     this.addChild(element);
 };
 
-View.prototype.setElementPosition = function(element, positionData) {
-    element.position.x = positionData.x;
-    element.position.y = positionData.y;
-};
-
 View.prototype.createTextElement = function(data) {
     return new PIXI.Text(data.text, {font: data.size + "px " + data.font, fill: data.color});
 };

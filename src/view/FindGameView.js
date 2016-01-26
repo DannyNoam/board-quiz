@@ -19,43 +19,51 @@ FindGameView.prototype.setupViewElements = function(avatar) {
 
 FindGameView.prototype.createFindGameCaption = function (data) {
     this.findGameCaption = this.createTextElement(data);
+    this.setElementPositionInPercent(this.findGameCaption, 50, 15);
     this.addElementToContainer(this.findGameCaption, data);
 };
 
 FindGameView.prototype.createPlayer1Avatar = function (avatar, data) {
     var player1Avatar = this.createSpriteElement(avatar);
+    this.setElementPositionInPercent(player1Avatar, 25, 50);
     this.addElementToContainer(player1Avatar, data);
 };
 
 FindGameView.prototype.createVersusText = function (data) {
     var versus = this.createTextElement(data);
+    this.setElementPositionInPercent(versus, 50, 50);
     this.addElementToContainer(versus, data);
 };
 
 FindGameView.prototype.createPlayer2UnknownAvatar = function (avatar, data) {
-    this.player2UnknownAvatar = this.createSpriteElement(avatar);
-    this.addElementToContainer(this.player2UnknownAvatar, data);
+    var player2UnknownAvatar = this.createSpriteElement(avatar);
+    this.setElementPositionInPercent(player2UnknownAvatar, 75, 50);
+    this.addElementToContainer(player2UnknownAvatar, data);
 };
 
 FindGameView.prototype.createPlayer1Text = function (data) {
     var player1 = this.createTextElement(data);
+    this.setElementPositionInPercent(player1, 25, 74);
     this.addElementToContainer(player1, data);
 };
 
 FindGameView.prototype.createPlayer2Text = function (data) {
     var player2 = this.createTextElement(data);
+    this.setElementPositionInPercent(player2, 75, 74);
     this.addElementToContainer(player2, data);
 };
 
 FindGameView.prototype.createPlayer2ActualAvatar = function (avatar) {
     this.removeElement(this.player2UnknownAvatar);
-    var player2UnknownAvatar = this.createSpriteElement(PIXI.Container.layoutData.AVATAR[avatar]);
-    this.addElementToContainer(player2UnknownAvatar, PIXI.Container.layoutData.FIND_GAME.PLAYER_2_AVATAR);
+    var player2ActualAvatar = this.createSpriteElement(PIXI.Container.layoutData.AVATAR[avatar]);
+    this.setElementPositionInPercent(player2ActualAvatar, 75, 50);
+    this.addElementToContainer(player2ActualAvatar, PIXI.Container.layoutData.FIND_GAME.PLAYER_2_AVATAR);
 };
 
 FindGameView.prototype.createGameFoundCaption = function () {
     this.removeElement(this.findGameCaption);
     var foundGameCaption = this.createTextElement(PIXI.Container.layoutData.FIND_GAME.FOUND_GAME_CAPTION);
+    this.setElementPositionInPercent(foundGameCaption, 50, 15);
     this.addElementToContainer(foundGameCaption, PIXI.Container.layoutData.FIND_GAME.FOUND_GAME_CAPTION);
 };
 

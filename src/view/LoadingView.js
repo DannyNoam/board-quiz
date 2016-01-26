@@ -14,6 +14,7 @@ LoadingView.prototype.setupViewElements = function() {
 LoadingView.prototype.createLoadingText = function (data) {
     console.log("Creating loading text...");
     var loadingText = this.createTextElement(data);
+    this.setElementPositionInPercent(loadingText, 50, 50);
     this.addElementToContainer(loadingText, data);
 };
 

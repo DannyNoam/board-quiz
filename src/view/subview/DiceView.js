@@ -14,6 +14,7 @@ DiceView.prototype.setupDice = function(diceNumber) {
 
 DiceView.prototype.createDiceElement = function(diceImage, dicePositionData) {
     this.diceElement = this.createSpriteElement(diceImage);
+    this.setElementPositionInPercent(this.diceElement, 50, 36);
     this.addElementToContainer(this.diceElement, dicePositionData);
 };
 

@@ -25,31 +25,37 @@ PlayerView.prototype.setupViewElements = function() {
 
 PlayerView.prototype.createPlayer1Avatar = function(avatar, avatarPosition) {
     this.player1Avatar = this.createSpriteElement(avatar);
+    this.setElementPositionInPercent(this.player1Avatar, 25, 25);
     this.addElementToContainer(this.player1Avatar, avatarPosition);
 };
 
 PlayerView.prototype.createPlayer2Avatar = function(avatar, avatarPosition) {
-    this.player1Avatar = this.createSpriteElement(avatar);
-    this.addElementToContainer(this.player1Avatar, avatarPosition);
+    this.player2Avatar = this.createSpriteElement(avatar);
+    this.setElementPositionInPercent(this.player2Avatar, 75, 25);
+    this.addElementToContainer(this.player2Avatar, avatarPosition);
 };
 
 PlayerView.prototype.createPlayer1Health = function(healthData) {
     this.player1HealthText = this.createTextElement(healthData);
+    this.setElementPositionInPercent(this.player1HealthText, 25, 7);
     this.addElementToContainer(this.player1HealthText, healthData);
 };
 
 PlayerView.prototype.createPlayer2Health = function(healthData) {
     this.player2HealthText = this.createTextElement(healthData);
+    this.setElementPositionInPercent(this.player2HealthText, 75, 7);
     this.addElementToContainer(this.player2HealthText, healthData);
 };
 
 PlayerView.prototype.createPlayer1Text = function(playerData) {
     this.player1Text = this.createTextElement(playerData);
+    this.setElementPositionInPercent(this.player1Text, 25, 44);
     this.addElementToContainer(this.player1Text, playerData);
 };
 
 PlayerView.prototype.createPlayer2Text = function(playerData) {
     this.player2Text = this.createTextElement(playerData);
+    this.setElementPositionInPercent(this.player2Text, 75, 44);
     this.addElementToContainer(this.player2Text, playerData);
 };
 
