@@ -14,6 +14,9 @@ function BucketLoader (callback, errorCallback, context) {
     function calculateBestBucket (bucketData) {
         var orientation = calculateOrientation();
         var scale = calculateScale();
+        if(scale === 2) {
+            scale = 1.5;
+        }
         console.log("Orientation is " + orientation);
         bucketData[orientation].forEach(function (bucket) {
             console.log("Bucket height: " + bucket.height * scale);
