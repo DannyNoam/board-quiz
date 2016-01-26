@@ -19,18 +19,18 @@
     },
     
     "QUESTION" : {
-        "QUESTION_POSITION" : {"size" : 35, "font" : "Arial", "color" : "#FFFFFF"},
+        "QUESTION_POSITION" : {"size" : 30, "font" : "Arial", "color" : "#FFFFFF"},
         "CATEGORY" : {"size" : 50, "font" : "Arial", "color" : "#FFFFFF"},
-        "ANSWER" : {"size" : 35, "font" : "Arial", "color" : "#FFFFFF"},
+        "ANSWER" : {"size" : 30, "font" : "Arial", "color" : "#FFFFFF"},
         "RIGHT_ANSWER_COLOUR" : "green",
         "WRONG_ANSWER_COLOUR" : "red",
-        "PLAYER_1_ANSWERED" : {"text" : "(Player 1)", "size" : 35, "font" : "Arial", "color" : "#FFFFFF"},
-        "PLAYER_2_ANSWERED" : {"text" : "(Player 2)", "size" : 35, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAYER_1_ANSWERED" : {"text" : "(Player 1)", "size" : 30, "font" : "Arial", "color" : "#FFFFFF"},
+        "PLAYER_2_ANSWERED" : {"text" : "(Player 2)", "size" : 30, "font" : "Arial", "color" : "#FFFFFF"},
         "ANSWERED_1" : {"widthPercentage" : 33, "heightPercentage" : 78},
         "ANSWERED_2" : {"widthPercentage" : 67, "heightPercentage" : 78},
         "ANSWERED_3" : {"widthPercentage" : 33, "heightPercentage" : 86},
         "ANSWERED_4" : {"widthPercentage" : 67, "heightPercentage" : 86},
-        "TIMER" : {"size" : 35, "font" : "Arial", "color" : "#FFFFFF"}
+        "TIMER" : {"size" : 30, "font" : "Arial", "color" : "#FFFFFF"}
     },
     
     "WIN" : {
