@@ -17,6 +17,8 @@ function QuestionView() {
 QuestionView.prototype.displayCategoryAndQuestion = function(category, question) {
     var questionData = PIXI.Container.layoutData.QUESTION;
     var answerTextData = PIXI.Container.layoutData.QUESTION.ANSWER;
+    console.log("Answer text data: ");
+    console.log(questionData);
     this.createCategoryElement(category, PIXI.Container.layoutData.QUESTION.CATEGORY);
     this.createQuestionElement(question.text, PIXI.Container.layoutData.QUESTION.QUESTION_POSITION);
     this.createAnswerElement1(question.right_answer, answerTextData);

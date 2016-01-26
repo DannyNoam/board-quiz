@@ -21,10 +21,7 @@
     "QUESTION" : {
         "QUESTION_POSITION" : {"size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
         "CATEGORY" : {"size" : 30, "font" : "Arial", "color" : "#FFFFFF"},
-        "ANSWER_1" : {"size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "ANSWER_2" : {"size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "ANSWER_3" : {"size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "ANSWER_4" : {"size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
+        "ANSWER" : {"size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
         "RIGHT_ANSWER_COLOUR" : "green",
         "WRONG_ANSWER_COLOUR" : "red",
         "PLAYER_1_ANSWERED" : {"text" : "(Player 1)", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
