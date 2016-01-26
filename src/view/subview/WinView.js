@@ -34,21 +34,11 @@ WinView.prototype.createPlayerStatsText = function(layoutData, statData) {
     var player2CorrectAnswerPercentageText = this.createTextElement(layoutData.PLAYER_2_CORRECT_PERCENTAGE);
     this.setElementPositionInPercent(player2CorrectAnswerPercentageText, 75, 72);
     this.addElementToContainer(player2CorrectAnswerPercentageText, layoutData.PLAYER_2_CORRECT_PERCENTAGE);
-    
-    layoutData.PLAYER_1_BEST_CATEGORY.text = layoutData.PLAYER_1_BEST_CATEGORY.text + statData.player1BestCategory + "(" + statData.player1BestCategoryPercentage + "%)";
-    var player1BestCategoryText = this.createTextElement(layoutData.PLAYER_1_BEST_CATEGORY);
-    this.setElementPositionInPercent(player1BestCategoryText, 25, 77);
-    this.addElementToContainer(player1BestCategoryText, layoutData.PLAYER_1_BEST_CATEGORY);
-    
-    layoutData.PLAYER_2_BEST_CATEGORY.text = layoutData.PLAYER_2_BEST_CATEGORY.text + statData.player2BestCategory + "(" + statData.player2BestCategoryPercentage + "%)";
-    var player2BestCategoryText = this.createTextElement(layoutData.PLAYER_2_BEST_CATEGORY);
-    this.setElementPositionInPercent(player2BestCategoryText, 75, 77);
-    this.addElementToContainer(player2BestCategoryText, layoutData.PLAYER_2_BEST_CATEGORY);
 };
 
 WinView.prototype.createPlayAgainButton = function () {
     this.playAgainButton = this.createSpriteElement(Display.resourcePath + '/play-again.png');
-    this.setElementPositionInPercent(this.playAgainButton, 50, 47);
+    this.setElementPositionInPercent(this.playAgainButton, 50, 80);
     this.addElementToContainer(this.playAgainButton);
 };
 

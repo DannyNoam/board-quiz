@@ -17,14 +17,41 @@ function QuestionView() {
 QuestionView.prototype.displayCategoryAndQuestion = function(category, question) {
     var questionData = PIXI.Container.layoutData.QUESTION;
     var answerTextData = PIXI.Container.layoutData.QUESTION.ANSWER;
-    console.log("Answer text data: ");
-    console.log(questionData);
     this.createCategoryElement(category, PIXI.Container.layoutData.QUESTION.CATEGORY);
     this.createQuestionElement(question.text, PIXI.Container.layoutData.QUESTION.QUESTION_POSITION);
     this.createAnswerElement1(question.right_answer, answerTextData);
     this.createAnswerElement2(question.wrong_answer_1, answerTextData);
     this.createAnswerElement3(question.wrong_answer_2, answerTextData);
     this.createAnswerElement4(question.wrong_answer_3, answerTextData);
+};
+
+QuestionView.prototype.getAnswerPosition = function(indice) {
+    if(indice === 1) {
+        return {
+            widthPercentage: 33,
+            heightPercentage: 81
+        };
+    }
+    if(indice === 2) {
+        return {
+            widthPercentage: 67,
+            heightPercentage: 81
+        };
+    }
+    
+    if(indice === 3) {
+        return {
+            widthPercentage: 33,
+            heightPercentage: 89
+        };
+    }
+    
+    if(indice === 4) {
+        return {
+            widthPercentage: 67,
+            heightPercentage: 89
+        };
+    }
 };
 
 QuestionView.prototype.setAnswerIndices = function(answerIndices) {
@@ -48,28 +75,32 @@ QuestionView.prototype.createQuestionElement = function(question, questionData) 
 QuestionView.prototype.createAnswerElement1 = function(answer, answerData) {
     answerData.text = answer;
     this.answerElement1 = this.createTextElement(answerData);
-    this.setElementPositionInPercent(this.answerElement1, 33, 81);
+    var answerPosition = this.getAnswerPosition(this.answerIndices[0]);
+    this.setElementPositionInPercent(this.answerElement1, answerPosition.widthPercentage, answerPosition.heightPercentage);
     this.addElementToContainer(this.answerElement1, answerData);
 };
 
 QuestionView.prototype.createAnswerElement2 = function(answer, answerData) {
     answerData.text = answer;
     this.answerElement2 = this.createTextElement(answerData);
-    this.setElementPositionInPercent(this.answerElement2, 67, 81);
+    var answerPosition = this.getAnswerPosition(this.answerIndices[1]);
+    this.setElementPositionInPercent(this.answerElement2, answerPosition.widthPercentage, answerPosition.heightPercentage);
     this.addElementToContainer(this.answerElement2, answerData);
 };
 
 QuestionView.prototype.createAnswerElement3 = function(answer, answerData) {
     answerData.text = answer;
     this.answerElement3 = this.createTextElement(answerData);
-    this.setElementPositionInPercent(this.answerElement3, 33, 89);
+    var answerPosition = this.getAnswerPosition(this.answerIndices[2]);
+    this.setElementPositionInPercent(this.answerElement3, answerPosition.widthPercentage, answerPosition.heightPercentage);
     this.addElementToContainer(this.answerElement3, answerData);
 };
 
 QuestionView.prototype.createAnswerElement4 = function(answer, answerData) {
     answerData.text = answer;
     this.answerElement4 = this.createTextElement(answerData);
-    this.setElementPositionInPercent(this.answerElement4, 67, 89);
+    var answerPosition = this.getAnswerPosition(this.answerIndices[3]);
+    this.setElementPositionInPercent(this.answerElement4, answerPosition.widthPercentage, answerPosition.heightPercentage);
     this.addElementToContainer(this.answerElement4, answerData);
 };
 
@@ -86,9 +117,11 @@ QuestionView.prototype.setAnswerToColour = function(answerElement, answer) {
 
 QuestionView.prototype.setWhoAnsweredQuestion = function(answerElement, answer, player) {
     var questionData = PIXI.Container.layoutData.QUESTION;
+    console.log("Answer:");
+    console.log(answer);
     var answerOnScreen = (answer.slice(-1) - 1);
     this.playerWhoAnsweredElement = this.createTextElement(questionData[player + this.ANSWERED_SUFFIX]);
-    this.setElementPositionInPercent(this.playerWhoAnsweredElement, questionData[this.ANSWERED_PREFIX + (answerOnScreen + 1)].widthPercentage, questionData[this.ANSWERED_PREFIX + (answerOnScreen + 1)].heightPercentage);
+    this.setElementPositionInPercent(this.playerWhoAnsweredElement, questionData[this.ANSWERED_PREFIX + this.answerIndices[(answerOnScreen)]].widthPercentage, questionData[this.ANSWERED_PREFIX + this.answerIndices[(answerOnScreen)]].heightPercentage);
     this.addElementToContainer(this.playerWhoAnsweredElement, questionData[this.ANSWERED_PREFIX + this.answerIndices[answerOnScreen]]); 
 };
 

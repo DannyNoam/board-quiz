@@ -22,10 +22,10 @@ PlayerController.prototype.registerSocketEvents = function() {
         this.view.setPlayer1Health(playerData.player1Health);
         this.view.setPlayer2Health(playerData.player2Health);
         if(playerData.player1Health <= this.DANGEROUS_LEVEL_HEALTH) {
-            this.view.flashPlayer1Health();
+            this.view.flashPlayer1Health(playerData.player1Health);
         }
         if(playerData.player2Health <= this.DANGEROUS_LEVEL_HEALTH) {
-            this.view.flashPlayer2Health();
+            this.view.flashPlayer2Health(playerData.player2Health);
         }
     }.bind(this));
 };

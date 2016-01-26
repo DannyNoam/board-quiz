@@ -77,31 +77,29 @@ PlayerView.prototype.setPlayer2Health = function(health) {
     this.player2HealthText.text = player2HealthData.text + health;
 };
 
-PlayerView.prototype.flashPlayer1Health = function() {
+PlayerView.prototype.flashPlayer1Health = function(health) {
     var playerLayoutData = PIXI.Container.layoutData.PLAYER;
-    var player1Health = this.player1HealthText.text.slice(-1);
     var removed = false;
     this.player2HealthIntervalId = setInterval(function() {
         if(!removed) {
             this.removeElement(this.player1HealthText);
         } else {
             this.createPlayer1Health(playerLayoutData.PLAYER_1_HEALTH);
-            this.setPlayer1Health(player1Health);
+            this.setPlayer1Health(health);
         }
         removed = !removed;
     }.bind(this), 200);
 };
 
-PlayerView.prototype.flashPlayer2Health = function() {
+PlayerView.prototype.flashPlayer2Health = function(health) {
     var playerLayoutData = PIXI.Container.layoutData.PLAYER;
-    var player2Health = this.player1HealthText.text.slice(-1);
     var removed = false;
     this.player1HealthIntervalId = setInterval(function() {
         if(!removed) {
             this.removeElement(this.player2HealthText);
         } else {
             this.createPlayer2Health(playerLayoutData.PLAYER_2_HEALTH);
-            this.setPlayer2Health(player2Health);
+            this.setPlayer2Health(health);
         }
         removed = !removed;
     }.bind(this), 200);
