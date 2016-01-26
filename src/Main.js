@@ -59,7 +59,7 @@ window.onload = function() {
         var viewLoader = new ViewLoader();
         var container = new PIXI.Container();
         container.interactive = true;
-        var renderer = new PIXI.autoDetectRenderer(window.innerWidth, window.innerHeight, rendererOptions);
+        var renderer = new PIXI.autoDetectRenderer(window.innerWidth * Display.scale, window.innerHeight * Display.scale, rendererOptions);
         console.log("Resource path: " + Display.resourcePath);
         renderer.roundPixels = true;
         setDependencies(viewLoader, container, renderer);
