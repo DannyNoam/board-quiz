@@ -85,11 +85,7 @@ QuestionView.prototype.setWhoAnsweredQuestion = function(answerElement, answer, 
     var questionData = PIXI.Container.layoutData.QUESTION;
     var answerOnScreen = (answer.slice(-1) - 1);
     this.playerWhoAnsweredElement = this.createTextElement(questionData[player + this.ANSWERED_SUFFIX]);
-    console.log("LOTS OF DATA");
-    console.log(questionData);
-    console.log(this.answerIndices);
-    console.log(answerOnScreen);
-    this.setElementPositionInPercent(this.playerWhoAnsweredElement, questionData[this.ANSWERED_PREFIX + this.answerIndices[answerOnScreen]].x, questionData[this.ANSWERED_PREFIX + this.answerIndices[answerOnScreen]].y);
+    this.setElementPositionInPercent(this.playerWhoAnsweredElement, questionData[this.ANSWERED_PREFIX + (answerOnScreen + 1)].x, questionData[this.ANSWERED_PREFIX + (answerOnScreen + 1)].y);
     this.addElementToContainer(this.playerWhoAnsweredElement, questionData[this.ANSWERED_PREFIX + this.answerIndices[answerOnScreen]]); 
 };
 
@@ -98,6 +94,7 @@ QuestionView.prototype.updateQuestionTimer = function(timeRemaining) {
     var timerData = PIXI.Container.layoutData.QUESTION.TIMER;
     timerData.text = timeRemaining;
     this.timer = this.createTextElement(timerData);
+    this.setElementPositionInPercent(this.timer, 97, 3);
     this.addElementToContainer(this.timer, timerData);
 };
 
