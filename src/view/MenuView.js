@@ -16,7 +16,7 @@ MenuView.prototype.setupViewElements = function() {
 
 MenuView.prototype.createLogo = function () {
     var logo = this.createSpriteElement(Display.resourcePath + '/logo.jpg');
-    this.setElementPositionInPercent(logo, 50, 15);
+    this.setElementPositionInPercent(logo, 50, 10);
     this.addElementToContainer(logo);
 };
 

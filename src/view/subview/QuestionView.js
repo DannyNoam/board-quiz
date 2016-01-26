@@ -34,42 +34,42 @@ QuestionView.prototype.setAnswerIndices = function(answerIndices) {
 QuestionView.prototype.createCategoryElement = function(category, categoryData) {
     categoryData.text = category;
     this.categoryElement = this.createTextElement(categoryData);
-    this.setElementPositionInPercent(this.categoryElement, 50, 63);
+    this.setElementPositionInPercent(this.categoryElement, 50, 69);
     this.addElementToContainer(this.categoryElement, categoryData);
 };
 
 QuestionView.prototype.createQuestionElement = function(question, questionData) {
     questionData.text = question;
     this.questionElement = this.createTextElement(questionData);
-    this.setElementPositionInPercent(this.questionElement, 50, 68);
+    this.setElementPositionInPercent(this.questionElement, 50, 74);
     this.addElementToContainer(this.questionElement, questionData);
 };
 
 QuestionView.prototype.createAnswerElement1 = function(answer, answerData) {
     answerData.text = answer;
     this.answerElement1 = this.createTextElement(answerData);
-    this.setElementPositionInPercent(this.answerElement1, 33, 75);
+    this.setElementPositionInPercent(this.answerElement1, 33, 81);
     this.addElementToContainer(this.answerElement1, answerData);
 };
 
 QuestionView.prototype.createAnswerElement2 = function(answer, answerData) {
     answerData.text = answer;
     this.answerElement2 = this.createTextElement(answerData);
-    this.setElementPositionInPercent(this.answerElement2, 67, 75);
+    this.setElementPositionInPercent(this.answerElement2, 67, 81);
     this.addElementToContainer(this.answerElement2, answerData);
 };
 
 QuestionView.prototype.createAnswerElement3 = function(answer, answerData) {
     answerData.text = answer;
     this.answerElement3 = this.createTextElement(answerData);
-    this.setElementPositionInPercent(this.answerElement3, 33, 83);
+    this.setElementPositionInPercent(this.answerElement3, 33, 89);
     this.addElementToContainer(this.answerElement3, answerData);
 };
 
 QuestionView.prototype.createAnswerElement4 = function(answer, answerData) {
     answerData.text = answer;
     this.answerElement4 = this.createTextElement(answerData);
-    this.setElementPositionInPercent(this.answerElement4, 67, 83);
+    this.setElementPositionInPercent(this.answerElement4, 67, 89);
     this.addElementToContainer(this.answerElement4, answerData);
 };
 

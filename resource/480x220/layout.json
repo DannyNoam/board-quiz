@@ -26,10 +26,10 @@
         "WRONG_ANSWER_COLOUR" : "red",
         "PLAYER_1_ANSWERED" : {"text" : "(Player 1)", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
         "PLAYER_2_ANSWERED" : {"text" : "(Player 2)", "size" : 20, "font" : "Arial", "color" : "#FFFFFF"},
-        "ANSWERED_1" : {"widthPercentage" : 33, "heightPercentage" : 78},
-        "ANSWERED_2" : {"widthPercentage" : 67, "heightPercentage" : 78},
-        "ANSWERED_3" : {"widthPercentage" : 33, "heightPercentage" : 86},
-        "ANSWERED_4" : {"widthPercentage" : 67, "heightPercentage" : 86},
+        "ANSWERED_1" : {"widthPercentage" : 33, "heightPercentage" : 84},
+        "ANSWERED_2" : {"widthPercentage" : 67, "heightPercentage" : 84},
+        "ANSWERED_3" : {"widthPercentage" : 33, "heightPercentage" : 92},
+        "ANSWERED_4" : {"widthPercentage" : 67, "heightPercentage" : 92},
         "TIMER" : {"size" : 20, "font" : "Arial", "color" : "#FFFFFF"}
     },
     
