@@ -23,9 +23,9 @@ FindGameView.prototype.createFindGameCaption = function (data) {
 };
 
 FindGameView.prototype.createPlayer1Avatar = function (avatar) {
-    var player1Avatar = this.spriteStore.get(avatar);
-    this.setElementPositionInPercent(player1Avatar, 25, 50);
-    this.addElementToContainer(player1Avatar);
+    this.player1Avatar = this.spriteStore.get('player1' + avatar);
+    this.setElementPositionInPercent(this.player1Avatar, 25, 50);
+    this.addElementToContainer(this.player1Avatar);
 };
 
 FindGameView.prototype.createVersusText = function (data) {
@@ -54,7 +54,7 @@ FindGameView.prototype.createPlayer2Text = function (data) {
 
 FindGameView.prototype.createPlayer2ActualAvatar = function (avatar) {
     this.removeElement(this.player2UnknownAvatar);
-    var player2ActualAvatar = this.spriteStore.get(avatar);
+    var player2ActualAvatar = this.spriteStore.get('player2' + avatar);
     this.setElementPositionInPercent(player2ActualAvatar, 75, 50);
     this.addElementToContainer(player2ActualAvatar);
 };

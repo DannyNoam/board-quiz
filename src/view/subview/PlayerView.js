@@ -26,19 +26,19 @@ PlayerView.prototype.setupViewElements = function() {
 };
 
 PlayerView.prototype.createLogo = function () {
-    var logo = this.createSpriteElement(Display.resourcePath + '/logo.jpg');
+    var logo = this.spriteStore.get('logo');
     this.setElementPositionInPercent(logo, 50, 10);
     this.addElementToContainer(logo);
 };
 
 PlayerView.prototype.createPlayer1Avatar = function(avatar) {
-    this.player1Avatar = this.createSpriteElement(Display.resourcePath + '/avatar/' + avatar);
+    this.player1Avatar = this.spriteStore.get('player1' + avatar);
     this.setElementPositionInPercent(this.player1Avatar, 25, 36);
     this.addElementToContainer(this.player1Avatar);
 };
 
 PlayerView.prototype.createPlayer2Avatar = function(avatar) {
-    this.player2Avatar = this.createSpriteElement(Display.resourcePath + '/avatar/' + avatar);
+    this.player2Avatar = this.spriteStore.get('player2' + avatar);
     this.setElementPositionInPercent(this.player2Avatar, 75, 36);
     this.addElementToContainer(this.player2Avatar);
 };

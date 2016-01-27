@@ -9,7 +9,7 @@ function AvatarView() {
 
 AvatarView.prototype.createAvatar = function (avatar) {
     this.removeElement(this.avatar);
-    this.avatar = this.spriteStore.get(avatar);
+    this.avatar = this.spriteStore.get('player1' + avatar);
     this.setElementPositionInPercent(this.avatar, 24, 60);
     this.addElementToContainer(this.avatar);
 };

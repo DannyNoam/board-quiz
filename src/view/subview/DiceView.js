@@ -10,7 +10,7 @@ DiceView.prototype.setupDice = function(diceNumber) {
 };
 
 DiceView.prototype.createDiceElement = function(diceNumber) {
-    this.diceElement = this.createSpriteElement(Display.resourcePath + '/dice/dice-face-' + diceNumber + '.png');
+    this.diceElement = this.spriteStore.get('diceFace' + diceNumber);
     this.setElementPositionInPercent(this.diceElement, 50, 42);
     this.addElementToContainer(this.diceElement);
 };
