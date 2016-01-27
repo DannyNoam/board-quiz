@@ -27,6 +27,7 @@ PlayerController = require('./controller/subcontroller/PlayerController');
 WinView = require('./view/subview/WinView');
 TurnController = require('./controller/TurnController');
 ControllerStore = require('./store/ControllerStore');
+SpriteStore = require('./store/SpriteStore');
 
 window.onload = function() {
     
@@ -48,6 +49,8 @@ window.onload = function() {
     function setLayoutDataInPIXI(layoutData) {
         console.log("Setting layout.");
         PIXI.Container.layoutData = layoutData;
+        var spriteStore = new SpriteStore();
+        View.prototype.spriteStore = spriteStore;
         startRendering();
     }
     
