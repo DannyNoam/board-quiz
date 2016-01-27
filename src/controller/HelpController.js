@@ -18,9 +18,9 @@ HelpController.prototype.setupListeners = function() {
     var backButton = viewElements[this.view.BACK_BUTTON];
     
     this.registerListener(backButton, function() {
-        var menuController = ControllerStore.menuController;
+        var menuController = this.controllerStore.get('menuController');
         menuController.loadView();
-    });
+    }.bind(this));
     
 };
 

@@ -1,4 +1,5 @@
 var SpriteStore = function() {
+    
     var sprites = [];
     
     (function() {

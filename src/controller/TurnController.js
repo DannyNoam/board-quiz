@@ -58,7 +58,7 @@ TurnController.prototype.setupListeners = function() {
         this.playerController.cleanView();
         this.diceController.cleanView();
         this.questionController.cleanView();
-        var avatarSelectionController = ControllerStore.avatarSelectionController;
+        var avatarSelectionController = this.controllerStore.get('avatarSelectionController');
         avatarSelectionController.loadView();
     }.bind(this));
 };

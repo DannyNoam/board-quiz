@@ -18,7 +18,6 @@ AvatarSelectionController.prototype.loadView = function() {
     this.viewLoader.loadView(this.view);
     this.viewLoader.loadView(this.selectedAvatarView);
     this.setupListeners();
-    console.log("View loaded");
 };
 
 AvatarSelectionController.prototype.setupListeners = function() {
@@ -29,9 +28,9 @@ AvatarSelectionController.prototype.setupListeners = function() {
     var findGame = viewElements[this.view.FIND_GAME];
     
     this.registerListener(backButton, function() {
-        var menuController = ControllerStore.menuController;
+        var menuController = this.controllerStore.get("menuController");
         menuController.loadView();
-    });
+    }.bind(this));
     
     this.registerListener(selectUp, function() {
         var UP = 1;
@@ -49,7 +48,7 @@ AvatarSelectionController.prototype.setupListeners = function() {
     
     this.registerListener(findGame, function() {
         var avatar = this.avatars[this.currentAvatarIndex];
-        var findGameController = ControllerStore.findGameController;
+        var findGameController = this.controllerStore.get("findGameController");
         findGameController.loadView(avatar);
     }.bind(this));
 };

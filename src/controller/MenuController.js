@@ -17,16 +17,15 @@ MenuController.prototype.setupListeners = function() {
     var viewElements = this.view.getInteractiveViewElements();  
     var playButton = viewElements[this.view.PLAY_BUTTON];
     var helpButton = viewElements[this.view.HELP_BUTTON];
-    
     this.registerListener(playButton, function() {
-        var avatarSelectionController = ControllerStore.avatarSelectionController;
+        var avatarSelectionController = this.controllerStore.get('avatarSelectionController');
         avatarSelectionController.loadView();
-    });
+    }.bind(this));
     
     this.registerListener(helpButton, function() {
-        var helpController = ControllerStore.helpController;
+        var helpController = this.controllerStore.get('helpController');
         helpController.loadView();
-    });
+    }.bind(this));
 };
 
 module.exports = MenuController;

@@ -24,12 +24,12 @@ FindGameController.prototype.registerSocketEvents = function() {
         this.view.createGameFoundCaption();
         setTimeout(function() {
             this.viewLoader.removeAllViews();
-            var playerController = ControllerStore.playerController;
+            var playerController = this.controllerStore.get('playerController');
             playerController.setPlayerData(playerData);
-            var diceController = ControllerStore.diceController;
-            var questionController = ControllerStore.questionController;
+            var diceController = this.controllerStore.get('diceController');
+            var questionController = this.controllerStore.get('questionController');
             questionController.setPlayerController(playerController);
-            var turnController = ControllerStore.turnController;
+            var turnController = this.controllerStore.get('turnController');
             turnController.setControllerDependencies(playerController, diceController, questionController);
             turnController.initiate();
         }.bind(this), this.TRANSITION_TO_GAME_TIME);
