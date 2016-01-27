@@ -23,7 +23,7 @@ FindGameView.prototype.createFindGameCaption = function (data) {
 };
 
 FindGameView.prototype.createPlayer1Avatar = function (avatar) {
-    var player1Avatar = this.createSpriteElement(Display.resourcePath + '/avatar/' + avatar);
+    var player1Avatar = this.spriteStore.get(avatar);
     this.setElementPositionInPercent(player1Avatar, 25, 50);
     this.addElementToContainer(player1Avatar);
 };
@@ -35,7 +35,7 @@ FindGameView.prototype.createVersusText = function (data) {
 };
 
 FindGameView.prototype.createPlayer2UnknownAvatar = function () {
-    var player2UnknownAvatar = this.createSpriteElement(Display.resourcePath + '/question-mark.png');
+    var player2UnknownAvatar = this.spriteStore.get('questionMark');
     this.setElementPositionInPercent(player2UnknownAvatar, 75, 50);
     this.addElementToContainer(player2UnknownAvatar);
 };
@@ -54,7 +54,7 @@ FindGameView.prototype.createPlayer2Text = function (data) {
 
 FindGameView.prototype.createPlayer2ActualAvatar = function (avatar) {
     this.removeElement(this.player2UnknownAvatar);
-    var player2ActualAvatar = this.createSpriteElement(Display.resourcePath + '/avatar/' + avatar);
+    var player2ActualAvatar = this.spriteStore.get(avatar);
     this.setElementPositionInPercent(player2ActualAvatar, 75, 50);
     this.addElementToContainer(player2ActualAvatar);
 };

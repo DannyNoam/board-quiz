@@ -2,7 +2,7 @@ AvatarSelectionController.constructor = AvatarSelectionController;
 AvatarSelectionController.prototype = Object.create(Controller.prototype);
 AvatarSelectionController.prototype.view = new AvatarSelectionView();
 AvatarSelectionController.prototype.selectedAvatarView = new AvatarView();
-AvatarSelectionController.prototype.avatars = ['emoji-angel.png', 'emoji-big-smile.png', 'emoji-cool.png', 'emoji-grin.png', 'emoji-happy.png', 'emoji-kiss.png', 'emoji-laughing.png', 'emoji-love.png', 'emoji-monkey.png', 'emoji-poo.png', 'emoji-scream.png', 'emoji-sleep.png', 'emoji-smile.png', 'emoji-sleep.png', 'emoji-wink.png'];
+AvatarSelectionController.prototype.avatars = ['emojiAngel', 'emojiBigSmile', 'emojiCool', 'emojiGrin', 'emojiHappy', 'emojiKiss', 'emojiLaughing', 'emojiLove', 'emojiMonkey', 'emojiPoo', 'emojiScream', 'emojiSleep', 'emojiSmile', 'emojiSleep', 'emojiWink'];
 AvatarSelectionController.prototype.currentAvatarIndex = 0;
 AvatarSelectionController.prototype.amISet = "No";
 
