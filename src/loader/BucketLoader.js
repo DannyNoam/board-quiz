@@ -17,10 +17,7 @@ function BucketLoader (callback, errorCallback, context) {
         if(scale === 2) {
             scale = 1.5;
         }
-        console.log("Orientation is " + orientation);
         bucketData[orientation].forEach(function (bucket) {
-            console.log("Bucket height: " + bucket.height * scale);
-            console.log("Window height: " + window.innerHeight);
             if (bucket.height * scale <= window.innerHeight ) {
                 Display.bucket = bucket;
             }

@@ -1,4 +1,33 @@
-Imports = require('./Imports');
+Display = require('./util/Display');
+SocketConstants = require('./constant/SocketConstants');
+View = require('./view/View');
+LoadingView = require('./view/LoadingView');
+BucketLoader = require('./loader/BucketLoader');
+JsonLoader = require('./loader/JsonLoader');
+ImageLoader = require('./loader/ImageLoader');
+ViewLoader = require('./loader/ViewLoader');
+Controller = require('./controller/Controller');
+HelpView = require('./view/HelpView');
+HelpController = require('./controller/HelpController');
+MenuView = require('./view/MenuView');
+MenuController = require('./controller/MenuController');
+AvatarSelectionView = require('./view/AvatarSelectionView');
+AvatarView = require('./view/subview/AvatarView');
+AvatarSelectionController = require('./controller/AvatarSelectionController');
+FindGameView = require('./view/FindGameView');
+FindGameController = require('./controller/FindGameController');
+SoundManager = require('./SoundManager');
+GameController = require('./controller/GameController');
+DiceView = require('./view/subview/DiceView');
+DiceController = require('./controller/subcontroller/DiceController');
+QuestionView = require('./view/subview/QuestionView');
+QuestionController = require('./controller/subcontroller/QuestionController');
+PlayerView = require('./view/subview/PlayerView');
+PlayerController = require('./controller/subcontroller/PlayerController');
+WinView = require('./view/subview/WinView');
+TurnController = require('./controller/TurnController');
+ControllerStore = require('./store/ControllerStore');
+SpriteStore = require('./store/SpriteStore');
 window.onload = function() {
     
     var DEFAULT_WIDTH = 480;
@@ -7,21 +36,22 @@ window.onload = function() {
     var DIV_ID = "game";
     
     (function() {
-        console.log("Initiated bucket loader.");
         new BucketLoader(loadLayout, bucketLoadingFailedMessage);
     })();
     
     function loadLayout() {
-        console.log("Loading layout");
         new JsonLoader('./resource/' + Display.bucket.width + 'x' + Display.bucket.height + '/layout.json', setLayoutDataInPIXI);
     }
     
     function setLayoutDataInPIXI(layoutData) {
-        console.log("Setting layout.");
         PIXI.Container.layoutData = layoutData;
+        setSpriteStoreForView(startRendering);
+    }
+    
+    function setSpriteStoreForView(callback) {
         var spriteStore = new SpriteStore();
         View.prototype.spriteStore = spriteStore;
-        startRendering();
+        callback();
     }
     
     function startRendering() {
@@ -53,8 +83,13 @@ window.onload = function() {
     }
     
     function loadImages() {
-        console.log("Display resource path: " + Display.resourcePath);
-        new ImageLoader(Display.resourcePath + '/images.json', beginGame);
+        new ImageLoader(Display.resourcePath + '/images.json', setControllerStoreInController);
+    }
+    
+    function setControllerStoreInController() {
+        var controllerStore = new ControllerStore();
+        Controller.prototype.controllerStore = controllerStore;
+        beginGame(controllerStore);
     }
     
     function appendGameToDOM(renderer) {
@@ -71,9 +106,7 @@ window.onload = function() {
         requestAnimationFrame(viewLoader.animate);
     }
     
-    function beginGame() {
-        var controllerStore = new ControllerStore();
-        Controller.prototype.controllerStore = controllerStore;
+    function beginGame(controllerStore) {
         var menuController = controllerStore.get('menuController');
         menuController.loadView();
     }

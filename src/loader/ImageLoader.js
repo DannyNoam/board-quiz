@@ -18,7 +18,6 @@ var ImageLoader = function(imageJsonPath, callback) {
         xhr.send();
         xhr.onreadystatechange = function () {
           if (xhr.readyState === REQUEST_FINISHED) {
-              console.log("Finished loading image path: " + imagePath);
               imagesLoaded++;
               checkIfAllImagesLoaded();
           }
@@ -33,10 +32,7 @@ var ImageLoader = function(imageJsonPath, callback) {
     
     function checkIfAllImagesLoaded() {
         if(imagesLoaded === totalImages) {
-            console.log("All images loaded!");
             callback();
-        } else {
-            console.log("Only " + imagesLoaded + " are loaded.");
         }
     }
 };

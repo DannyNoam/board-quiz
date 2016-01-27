@@ -117,8 +117,6 @@ QuestionView.prototype.setAnswerToColour = function(answerElement, answer) {
 
 QuestionView.prototype.setWhoAnsweredQuestion = function(answerElement, answer, player) {
     var questionData = PIXI.Container.layoutData.QUESTION;
-    console.log("Answer:");
-    console.log(answer);
     var answerOnScreen = (answer.slice(-1) - 1);
     this.playerWhoAnsweredElement = this.createTextElement(questionData[player + this.ANSWERED_SUFFIX]);
     this.setElementPositionInPercent(this.playerWhoAnsweredElement, questionData[this.ANSWERED_PREFIX + this.answerIndices[(answerOnScreen)]].widthPercentage, questionData[this.ANSWERED_PREFIX + this.answerIndices[(answerOnScreen)]].heightPercentage);
