@@ -83,10 +83,6 @@ window.onload = function() {
         setControllerStoreInController();
     }
     
-    function loadImages() {
-        new ImageLoader(Display.resourcePath + '/images.json', setControllerStoreInController);
-    }
-    
     function setControllerStoreInController() {
         var controllerStore = new ControllerStore();
         Controller.prototype.controllerStore = controllerStore;
