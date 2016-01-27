@@ -7,7 +7,8 @@ var SocketConstants = {
         'DAMAGE_DEALT' : 'damage-dealt',
         'SHUFFLED_ANSWER_INDICES' : 'shuffled-answer-indices',
         'GAME_FOUND' : 'game-found',
-        'GAME_STATS' : 'game-stats'
+        'GAME_STATS' : 'game-stats',
+        'GAME_STATUS' : 'game-status'
     },
     
     'emit' : {
@@ -20,7 +21,8 @@ var SocketConstants = {
         'NEW_TURN' : 'new-turn',
         'DEAL_DAMAGE' : 'deal-damage',
         'SHUFFLE_ANSWER_INDICES' : 'shuffle-answer-indices',
-        'GAME_ENDED' : 'game-ended'
+        'GAME_ENDED' : 'game-ended',
+        'IS_GAME_FULL' : 'is-game-full'
     }
 };
 

@@ -18,6 +18,8 @@ AvatarSelectionController.prototype.loadView = function() {
     this.viewLoader.loadView(this.view);
     this.viewLoader.loadView(this.selectedAvatarView);
     this.setupListeners();
+    this.registerSocketEvents();
+    this.checkIfGameIsFull();
 };
 
 AvatarSelectionController.prototype.setupListeners = function() {
@@ -51,6 +53,17 @@ AvatarSelectionController.prototype.setupListeners = function() {
         var findGameController = this.controllerStore.get("findGameController");
         findGameController.loadView(avatar);
     }.bind(this));
+};
+
+AvatarSelectionController.prototype.checkIfGameIsFull = function() {
+    this.socket.emit(SocketConstants.emit.IS_GAME_FULL);
+    console.log("Is the game full?");
+};
+
+AvatarSelectionController.prototype.registerSocketEvents = function() {
+    this.socket.on(SocketConstants.on.GAME_STATUS, function(isGameFull) {
+       console.log("Is game full? " + isGameFull); 
+    });
 };
 
 AvatarSelectionController.prototype.setupNextAvatar = function(direction) {

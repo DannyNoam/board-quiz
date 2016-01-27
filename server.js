@@ -4,7 +4,8 @@ var express = require('express'),
     socketIO = require('socket.io'),
     server, io,
     rooms = [],
-    roomNumberSuffix = 0;
+    roomNumberSuffix = 0,
+    isGameFull = false;
 
 var NUMBER_OF_QUESTIONS_PER_CATEGORY = 10,
     PORT = process.env.PORT || 5000,
@@ -20,7 +21,8 @@ var SocketConstants = {
         'DAMAGE_DEALT' : 'damage-dealt',
         'SHUFFLED_ANSWER_INDICES' : 'shuffled-answer-indices',
         'GAME_FOUND' : 'game-found',
-        'GAME_STATS' : 'game-stats'
+        'GAME_STATS' : 'game-stats',
+        'GAME_STATUS' : 'game-status'
     },
     
     'on' : {
@@ -33,7 +35,8 @@ var SocketConstants = {
         'NEW_TURN' : 'new-turn',
         'DEAL_DAMAGE' : 'deal-damage',
         'SHUFFLE_ANSWER_INDICES' : 'shuffle-answer-indices',
-        'GAME_ENDED' : 'game-ended'
+        'GAME_ENDED' : 'game-ended',
+        'IS_GAME_FULL' : 'is-game-full'
     }
 };
 
@@ -56,6 +59,7 @@ io.on(SocketConstants.on.CONNECTION, function (socket) {
           joinRoom(this.roomName);
           cleanUpLobbyForGameFound();
           initiateGame(this.roomName, this.players[PLAYER_1], this.players[PLAYER_2]);
+          isGameFull = true;
       } else {
           joinRoom(this.roomName);
           Lobby.addRoom(this.roomName, this.players[PLAYER_1]);
@@ -70,11 +74,16 @@ io.on(SocketConstants.on.CONNECTION, function (socket) {
   socket.on(SocketConstants.on.DISCONNECT, function (playerData) {
       Lobby.removePlayer(socket.id);
       Lobby.removeRoom(socket.id);
+      isGameFull = false;
   });
     
   socket.on(SocketConstants.on.ROLL_DICE, function() {
       io.to(this.roomName).emit(SocketConstants.emit.DICE_NUMBER, {number: Dice.roll()});
   });
+    
+    socket.on(SocketConstants.on.IS_GAME_FULL, function() {
+      socket.emit(SocketConstants.emit.GAME_STATUS, isGameFull); 
+    });
     
   socket.on(SocketConstants.on.GET_RANDOM_QUESTION, function(data) {
       var questionPrefix = 'QUESTION_';
