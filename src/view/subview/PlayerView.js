@@ -112,7 +112,6 @@ PlayerView.prototype.cleanView = function() {
 PlayerView.prototype.clearIntervals = function() {
     clearInterval(this.player1HealthIntervalId);
     clearInterval(this.player2HealthIntervalId);
-    console.log("Intervals cleared.");
 };
 
 module.exports = PlayerView;
