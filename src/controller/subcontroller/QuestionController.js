@@ -94,24 +94,24 @@ QuestionController.prototype.getViewAnswers = function() {
 
 QuestionController.prototype.setRightAnswerListener = function(answers) {
     this.registerListener(answers.ANSWERED_1, function() {
-        this.soundManager.playCorrectAnswerSound();
+        this.soundController.playCorrectAnswerSound();
         this.emitDealDamageToOpponentToSocket(this.ANSWERED_1);
     }.bind(this));
 };
 
 QuestionController.prototype.setWrongAnswerListeners = function(answers) {
     this.registerListener(answers.ANSWERED_2, function() {
-        this.soundManager.playWrongAnswerSound();
+        this.soundController.playWrongAnswerSound();
         this.emitDealDamageToSelfToSocket(this.ANSWERED_2);
     }.bind(this));
     
     this.registerListener(answers.ANSWERED_3, function() {
-        this.soundManager.playWrongAnswerSound();
+        this.soundController.playWrongAnswerSound();
         this.emitDealDamageToSelfToSocket(this.ANSWERED_3);
     }.bind(this));
     
     this.registerListener(answers.ANSWERED_4, function() {
-        this.soundManager.playWrongAnswerSound();
+        this.soundController.playWrongAnswerSound();
         this.emitDealDamageToSelfToSocket(this.ANSWERED_4);
     }.bind(this));
 };

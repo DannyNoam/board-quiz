@@ -16,7 +16,7 @@ AvatarView = require('./view/subview/AvatarView');
 AvatarSelectionController = require('./controller/AvatarSelectionController');
 FindGameView = require('./view/FindGameView');
 FindGameController = require('./controller/FindGameController');
-SoundManager = require('./SoundManager');
+SoundController = require('./controller/SoundController');
 GameController = require('./controller/GameController');
 DiceView = require('./view/subview/DiceView');
 DiceController = require('./controller/subcontroller/DiceController');
@@ -28,6 +28,7 @@ WinView = require('./view/subview/WinView');
 TurnController = require('./controller/TurnController');
 ControllerStore = require('./store/ControllerStore');
 SpriteStore = require('./store/SpriteStore');
+
 window.onload = function() {
     
     var DEFAULT_WIDTH = 480;
@@ -79,7 +80,7 @@ window.onload = function() {
     
     function setCategoryDataInQuestionController(categoryData) {
         QuestionController.prototype.categoryData = categoryData;
-        loadImages();
+        setControllerStoreInController();
     }
     
     function loadImages() {

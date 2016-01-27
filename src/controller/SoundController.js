@@ -1,4 +1,4 @@
-function SoundManager() {
+function SoundController() {
     (function() {
         this.correctAnswerSound = new Howl({urls: ["resource/sound/correct-answer.mp3"]});
         this.wrongAnswerSound = new Howl({urls: ["resource/sound/wrong-answer.mp3"]});
@@ -23,4 +23,4 @@ function SoundManager() {
     };
 }
 
-module.exports = SoundManager;
+module.exports = SoundController;

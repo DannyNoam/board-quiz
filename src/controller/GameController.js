@@ -26,6 +26,6 @@ GameController.prototype.getOpponent = function() {
     return this.isPlayer1(this.playerData) ? "PLAYER_2" : "PLAYER_1";
 };
 
-GameController.prototype.soundManager = new SoundManager();
+GameController.prototype.soundController = new SoundController();
 
 module.exports = GameController;
