@@ -20,7 +20,9 @@ HelpView.prototype.createHelpText = function (data) {
 };
 
 HelpView.prototype.createBackButton = function (data) {
-    this.backButton = this.createSpriteElement(Display.resourcePath + '/go-back.png');
+    this.backButton = this.spriteStore.get('backButton');
+    console.log("BACK BUTTON");
+    console.log(this.spriteStore);
     this.setElementPositionInPercent(this.backButton, 50, 50);
     this.addElementToContainer(this.backButton);
 };

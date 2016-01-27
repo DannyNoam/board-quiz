@@ -20,31 +20,31 @@ AvatarSelectionView.prototype.setupViewElements = function() {
 };
 
 AvatarSelectionView.prototype.createLogo = function (data) {
-    var logo = this.createSpriteElement(Display.resourcePath + '/logo.jpg');
+    var logo = this.spriteStore.get('logo');
     this.setElementPositionInPercent(logo, 50, 10);
     this.addElementToContainer(logo);
 };
 
 AvatarSelectionView.prototype.createBackButton = function (data) {
-    this.backButton = this.createSpriteElement(Display.resourcePath + '/back-button.jpg');
+    this.backButton = this.spriteStore.get('backButton');
     this.setElementPositionInPercent(this.backButton, 69, 80);
     this.addElementToContainer(this.backButton);
 };
 
 AvatarSelectionView.prototype.createSelectDownButton = function (data) {
-    this.selectDownButton = this.createSpriteElement(Display.resourcePath + '/down-triangle.png');
+    this.selectDownButton = this.spriteStore.get('downTriangle');
     this.setElementPositionInPercent(this.selectDownButton, 24, 85);
     this.addElementToContainer(this.selectDownButton);
 };
 
 AvatarSelectionView.prototype.createSelectUpButton = function (data) {
-    this.selectUpButton = this.createSpriteElement(Display.resourcePath + '/up-triangle.png');
+    this.selectUpButton = this.spriteStore.get('upTriangle');
     this.setElementPositionInPercent(this.selectUpButton, 24, 35);
     this.addElementToContainer(this.selectUpButton);
 };
 
 AvatarSelectionView.prototype.createFindGameButton = function (data) {
-    this.findGameButton = this.createSpriteElement(Display.resourcePath + '/find-game.jpg');
+    this.findGameButton = this.spriteStore.get('findGame');
     this.setElementPositionInPercent(this.findGameButton, 69, 48);
     this.addElementToContainer(this.findGameButton);
 };
