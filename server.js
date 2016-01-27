@@ -147,7 +147,7 @@ socket.on(SocketConstants.on.GAME_ENDED, function(data) {
 var Player = function(id, avatar) {
     var id = id;
     var avatar = avatar;
-    var health = 30;
+    var health = 1;
     var correctAnswers = 0;
     var wrongAnswers = 0;
     var categoryAnswerData = {

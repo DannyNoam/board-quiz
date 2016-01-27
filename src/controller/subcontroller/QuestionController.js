@@ -9,9 +9,8 @@ QuestionController.prototype.ANSWERED_4 = 'ANSWERED_4';
 
 QuestionController.prototype.TIME_TO_ANSWER_QUESTION = 10;
 
-function QuestionController(playerController) {
+function QuestionController() {
     Controller.call(this);
-    this.playerController = playerController;
     this.registerSocketEvents();
 }
 
@@ -20,7 +19,7 @@ QuestionController.prototype.registerSocketEvents = function() {
         this.question = data.question;
         this.category = data.category;
     }.bind(this));
-    
+
     this.socket.on(SocketConstants.on.DAMAGE_DEALT, function(playerData) {
         this.view.setAnswerToColour(this.answers[playerData.answer], playerData.answer);
         this.view.setAnswerToColour(this.answers[this.ANSWERED_1], this.ANSWERED_1);
@@ -32,13 +31,17 @@ QuestionController.prototype.registerSocketEvents = function() {
             this.socket.emit(SocketConstants.emit.NEW_TURN);
         }
     }.bind(this));
-    
+
     this.socket.on(SocketConstants.on.SHUFFLED_ANSWER_INDICES, function(data) {
         this.view.setAnswerIndices(data);
         this.view.displayCategoryAndQuestion(this.category, this.question);
         this.setupListeners();
         this.viewLoader.loadView(this.view);
     }.bind(this));
+};
+
+QuestionController.prototype.setPlayerController = function(playerController) {
+    this.playerController = playerController;
 };
 
 QuestionController.prototype.loadView = function() {

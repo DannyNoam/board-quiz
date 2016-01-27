@@ -4,7 +4,6 @@ HelpController.prototype.view = new HelpView();
 
 function HelpController() {
     Controller.call(this);
-    this.loadView();
 }
 
 HelpController.prototype.loadView = function() {
@@ -19,7 +18,8 @@ HelpController.prototype.setupListeners = function() {
     var backButton = viewElements[this.view.BACK_BUTTON];
     
     this.registerListener(backButton, function() {
-        var menuController = new MenuController();
+        var menuController = ControllerStore.menuController;
+        menuController.loadView();
     });
     
 };

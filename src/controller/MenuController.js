@@ -4,7 +4,6 @@ MenuController.prototype.view = new MenuView();
 
 function MenuController() {
     Controller.call(this);
-    this.loadView();
 }
 
 MenuController.prototype.loadView = function() {
@@ -20,11 +19,13 @@ MenuController.prototype.setupListeners = function() {
     var helpButton = viewElements[this.view.HELP_BUTTON];
     
     this.registerListener(playButton, function() {
-        var avatarSelectionController = new AvatarSelectionController();
+        var avatarSelectionController = ControllerStore.avatarSelectionController;
+        avatarSelectionController.loadView();
     });
     
     this.registerListener(helpButton, function() {
-        var helpController = new HelpController();
+        var helpController = ControllerStore.helpController;
+        helpController.loadView();
     });
 };
 

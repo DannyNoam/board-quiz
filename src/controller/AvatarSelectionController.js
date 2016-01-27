@@ -4,20 +4,21 @@ AvatarSelectionController.prototype.view = new AvatarSelectionView();
 AvatarSelectionController.prototype.selectedAvatarView = new AvatarView();
 AvatarSelectionController.prototype.avatars = ['emoji-angel.png', 'emoji-big-smile.png', 'emoji-cool.png', 'emoji-grin.png', 'emoji-happy.png', 'emoji-kiss.png', 'emoji-laughing.png', 'emoji-love.png', 'emoji-monkey.png', 'emoji-poo.png', 'emoji-scream.png', 'emoji-sleep.png', 'emoji-smile.png', 'emoji-sleep.png', 'emoji-wink.png'];
 AvatarSelectionController.prototype.currentAvatarIndex = 0;
+AvatarSelectionController.prototype.amISet = "No";
 
 function AvatarSelectionController() {
     Controller.call(this);
-    this.cleanView();
-    this.loadView();
 }
 
 AvatarSelectionController.prototype.loadView = function() {
+    this.cleanView();
     this.viewLoader.removeAllViews();
     this.view.setupViewElements();
     this.selectedAvatarView.createAvatar(this.avatars[this.currentAvatarIndex]);
     this.viewLoader.loadView(this.view);
     this.viewLoader.loadView(this.selectedAvatarView);
     this.setupListeners();
+    console.log("View loaded");
 };
 
 AvatarSelectionController.prototype.setupListeners = function() {
@@ -28,7 +29,8 @@ AvatarSelectionController.prototype.setupListeners = function() {
     var findGame = viewElements[this.view.FIND_GAME];
     
     this.registerListener(backButton, function() {
-        var menuController = new MenuController();
+        var menuController = ControllerStore.menuController;
+        menuController.loadView();
     });
     
     this.registerListener(selectUp, function() {
@@ -47,7 +49,8 @@ AvatarSelectionController.prototype.setupListeners = function() {
     
     this.registerListener(findGame, function() {
         var avatar = this.avatars[this.currentAvatarIndex];
-        var findGameController = new FindGameController(avatar);
+        var findGameController = ControllerStore.findGameController;
+        findGameController.loadView(avatar);
     }.bind(this));
 };
 

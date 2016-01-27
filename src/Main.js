@@ -26,6 +26,7 @@ PlayerView = require('./view/subview/PlayerView');
 PlayerController = require('./controller/subcontroller/PlayerController');
 WinView = require('./view/subview/WinView');
 TurnController = require('./controller/TurnController');
+ControllerStore = require('./store/ControllerStore');
 
 window.onload = function() {
     
@@ -99,7 +100,8 @@ window.onload = function() {
     }
     
     function beginGame() {
-        var menuController = new MenuController(); 
+        var menuController = ControllerStore.menuController;
+        menuController.loadView();
     }
     
     function addLoadingViewToScreen(viewLoader) {

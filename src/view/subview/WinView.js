@@ -19,21 +19,21 @@ WinView.prototype.setupViewElements = function(playerWhoWon) {
 };
 
 WinView.prototype.createWinText = function (data, positionData) {
-    var winText = this.createTextElement(data);
-    this.setElementPositionInPercent(winText, 50, 66);
-    this.addElementToContainer(winText, positionData);
+    this.winText = this.createTextElement(data);
+    this.setElementPositionInPercent(this.winText, 50, 66);
+    this.addElementToContainer(this.winText, positionData);
 };
 
 WinView.prototype.createPlayerStatsText = function(layoutData, statData) {
     layoutData.PLAYER_1_CORRECT_PERCENTAGE.text = layoutData.PLAYER_1_CORRECT_PERCENTAGE.text + statData.player1CorrectAnswerPercentage;
-    var player1CorrectAnswerPercentageText = this.createTextElement(layoutData.PLAYER_1_CORRECT_PERCENTAGE);
-    this.setElementPositionInPercent(player1CorrectAnswerPercentageText, 25, 72);
-    this.addElementToContainer(player1CorrectAnswerPercentageText, layoutData.PLAYER_1_CORRECT_PERCENTAGE);
+    this.player1CorrectAnswerPercentageText = this.createTextElement(layoutData.PLAYER_1_CORRECT_PERCENTAGE);
+    this.setElementPositionInPercent(this.player1CorrectAnswerPercentageText, 25, 72);
+    this.addElementToContainer(this.player1CorrectAnswerPercentageText, layoutData.PLAYER_1_CORRECT_PERCENTAGE);
     
     layoutData.PLAYER_2_CORRECT_PERCENTAGE.text = layoutData.PLAYER_2_CORRECT_PERCENTAGE.text + statData.player2CorrectAnswerPercentage;
-    var player2CorrectAnswerPercentageText = this.createTextElement(layoutData.PLAYER_2_CORRECT_PERCENTAGE);
-    this.setElementPositionInPercent(player2CorrectAnswerPercentageText, 75, 72);
-    this.addElementToContainer(player2CorrectAnswerPercentageText, layoutData.PLAYER_2_CORRECT_PERCENTAGE);
+    this.player2CorrectAnswerPercentageText = this.createTextElement(layoutData.PLAYER_2_CORRECT_PERCENTAGE);
+    this.setElementPositionInPercent(this.player2CorrectAnswerPercentageText, 75, 72);
+    this.addElementToContainer(this.player2CorrectAnswerPercentageText, layoutData.PLAYER_2_CORRECT_PERCENTAGE);
 };
 
 WinView.prototype.createPlayAgainButton = function () {
@@ -44,6 +44,12 @@ WinView.prototype.createPlayAgainButton = function () {
 
 WinView.prototype.getInteractiveViewElements = function() {
     return [this.playAgainButton];
+};
+
+WinView.prototype.cleanView = function() {
+    this.removeElement(this.player1CorrectAnswerPercentageText);
+    this.removeElement(this.player2CorrectAnswerPercentageText);
+    this.removeElement(this.winText);
 };
 
 module.exports = WinView;

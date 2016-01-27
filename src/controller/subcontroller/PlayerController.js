@@ -3,9 +3,8 @@ PlayerController.prototype = Object.create(GameController.prototype);
 PlayerController.prototype.view = new PlayerView();
 PlayerController.prototype.DANGEROUS_LEVEL_HEALTH = 6;
 
-function PlayerController(playerData) {
+function PlayerController() {
     Controller.call(this);
-    this.setPlayerData(playerData);
     this.registerSocketEvents();
 }
 

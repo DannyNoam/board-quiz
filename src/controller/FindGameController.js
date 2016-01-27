@@ -4,33 +4,36 @@ FindGameController.prototype.view = new FindGameView();
 FindGameController.prototype.avatar = null;
 FindGameController.prototype.TRANSITION_TO_GAME_TIME = 3000;
 
-function FindGameController(avatar) {
+function FindGameController() {
     Controller.call(this);
-    this.cleanView();
-    this.avatar = avatar;
-    this.loadView();
+    this.registerSocketEvents();
 }
 
-FindGameController.prototype.loadView = function() {
+FindGameController.prototype.loadView = function(avatar) {
+    this.avatar = avatar;
+    this.cleanView();
     this.viewLoader.removeAllViews();
     this.view.setupViewElements(this.avatar);
     this.viewLoader.loadView(this.view);
-    this.setupServerInteraction();
+    this.socket.emit(SocketConstants.emit.FINDING_GAME, {avatar: this.avatar});
 };
 
-FindGameController.prototype.setupServerInteraction = function() {
+FindGameController.prototype.registerSocketEvents = function() {
     this.socket.on(SocketConstants.on.GAME_FOUND, function(playerData) {
         this.assignAvatars(playerData);
         this.view.createGameFoundCaption();
         setTimeout(function() {
             this.viewLoader.removeAllViews();
-            var playerController = new PlayerController(playerData);
-            var diceController = new DiceController();
-            var questionController = new QuestionController(playerController);
-            var turnController = new TurnController(playerController, diceController, questionController);
+            var playerController = ControllerStore.playerController;
+            playerController.setPlayerData(playerData);
+            var diceController = ControllerStore.diceController;
+            var questionController = ControllerStore.questionController;
+            questionController.setPlayerController(playerController);
+            var turnController = ControllerStore.turnController;
+            turnController.setControllerDependencies(playerController, diceController, questionController);
+            turnController.initiate();
         }.bind(this), this.TRANSITION_TO_GAME_TIME);
     }.bind(this));
-    this.socket.emit(SocketConstants.emit.FINDING_GAME, {avatar: this.avatar});
 };
 
 FindGameController.prototype.assignAvatars = function(data) {
