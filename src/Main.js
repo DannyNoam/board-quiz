@@ -26,6 +26,8 @@ PlayerView = require('./view/subview/PlayerView');
 PlayerController = require('./controller/subcontroller/PlayerController');
 WinView = require('./view/subview/WinView');
 TurnController = require('./controller/TurnController');
+GameFullView = require('./view/GameFullView');
+GameFullController = require('./controller/GameFullController');
 ControllerStore = require('./store/ControllerStore');
 SpriteStore = require('./store/SpriteStore');
 

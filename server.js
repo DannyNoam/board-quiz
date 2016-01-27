@@ -23,7 +23,8 @@ var SocketConstants = {
         'SHUFFLED_ANSWER_INDICES' : 'shuffled-answer-indices',
         'GAME_FOUND' : 'game-found',
         'GAME_STATS' : 'game-stats',
-        'GAME_STATUS' : 'game-status'
+        'GAME_STATUS' : 'game-status',
+        'SET_SOCKET_PLAYING' : 'set-socket-playing'
     },
     
     'on' : {
@@ -37,7 +38,8 @@ var SocketConstants = {
         'DEAL_DAMAGE' : 'deal-damage',
         'SHUFFLE_ANSWER_INDICES' : 'shuffle-answer-indices',
         'GAME_ENDED' : 'game-ended',
-        'IS_GAME_FULL' : 'is-game-full'
+        'IS_GAME_FULL' : 'is-game-full',
+        'SET_SOCKET_PLAYING' : 'set-socket-playing'
     }
 };
 
@@ -49,9 +51,9 @@ var setupServer = (function() {
 })();
 
 io.on(SocketConstants.on.CONNECTION, function (socket) {
-    if(!isGameFull) {
-
+    
       socket.on(SocketConstants.on.FINDING_GAME, function (playerData) {
+          socket.playing = true;
           players[PLAYER_1] = new Player(socket.id, playerData.avatar);
           if(Lobby.getNumberOfPlayersWaiting() > 0) {
               this.roomName = Lobby.getFirstRoom().name;
@@ -74,7 +76,9 @@ io.on(SocketConstants.on.CONNECTION, function (socket) {
       socket.on(SocketConstants.on.DISCONNECT, function (playerData) {
           Lobby.removePlayer(socket.id);
           Lobby.removeRoom(socket.id);
-          isGameFull = false;
+          if(socket.playing) {
+              isGameFull = false;
+          }
       });
 
       socket.on(SocketConstants.on.ROLL_DICE, function() {
@@ -82,7 +86,11 @@ io.on(SocketConstants.on.CONNECTION, function (socket) {
       });
 
         socket.on(SocketConstants.on.IS_GAME_FULL, function() {
-          socket.emit(SocketConstants.emit.GAME_STATUS, isGameFull); 
+            if(!socket.playing) {
+                socket.emit(SocketConstants.emit.GAME_STATUS, isGameFull);
+            } else {
+                socket.emit(SocketConstants.emit.GAME_STATUS, false);
+            }
         });
 
       socket.on(SocketConstants.on.GET_RANDOM_QUESTION, function(data) {
@@ -95,6 +103,10 @@ io.on(SocketConstants.on.CONNECTION, function (socket) {
       socket.on(SocketConstants.on.NEW_TURN, function() {
           io.to(this.roomName).emit(SocketConstants.emit.INIT_NEW_TURN, {player1Health: players[PLAYER_1].getHealth(), player2Health: players[PLAYER_2].getHealth()});
       }.bind(this));
+    
+    socket.on(SocketConstants.on.SET_SOCKET_PLAYING, function() {
+        socket.playing = true;
+    });
 
       socket.on(SocketConstants.on.DEAL_DAMAGE, function(data) {
           var playerToDamage = players[data.player_to_damage];
@@ -128,6 +140,7 @@ io.on(SocketConstants.on.CONNECTION, function (socket) {
           var player1Avatar = player1.getAvatar();
           var player2Avatar = player2.getAvatar();
           io.to(roomName).emit(SocketConstants.emit.GAME_FOUND, {roomName: roomName, player1Id: player1Id, player2Id: player2Id, player1Avatar: player1Avatar, player2Avatar: player2Avatar});
+          io.to(roomName).emit(SocketConstants.emit.SET_SOCKET_PLAYING);
       }
 
       function joinRoom(roomName) {
@@ -150,8 +163,6 @@ io.on(SocketConstants.on.CONNECTION, function (socket) {
               player.increaseCategoryWrongAnswer(data.category);
           }
       }
-    }
-    
 });
 
 var Player = function(id, avatar) {

@@ -44,5 +44,9 @@
     
     "LOADING" : {
         "LOADING_TEXT" : {"text" : "Loading...", "size" : 50, "font" : "Arial", "color" : "#FFFFFF"}
+    },
+    
+    "GAME_FULL" : {
+        "GAME_FULL_TEXT" : {"text" : "Game is currently full. Please try again shortly.", "size" : 50, "font" : "Arial", "color" : "#FFFFFF"}
     }
 }

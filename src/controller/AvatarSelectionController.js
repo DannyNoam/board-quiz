@@ -13,12 +13,7 @@ function AvatarSelectionController() {
 AvatarSelectionController.prototype.loadView = function() {
     this.cleanView();
     this.viewLoader.removeAllViews();
-    this.view.setupViewElements();
-    this.selectedAvatarView.createAvatar(this.avatars[this.currentAvatarIndex]);
-    this.viewLoader.loadView(this.view);
-    this.viewLoader.loadView(this.selectedAvatarView);
-    this.setupListeners();
-    this.registerSocketEvents();
+        this.isGameFull();
     this.checkIfGameIsFull();
 };
 
@@ -57,13 +52,23 @@ AvatarSelectionController.prototype.setupListeners = function() {
 
 AvatarSelectionController.prototype.checkIfGameIsFull = function() {
     this.socket.emit(SocketConstants.emit.IS_GAME_FULL);
-    console.log("Is the game full?");
 };
 
-AvatarSelectionController.prototype.registerSocketEvents = function() {
-    this.socket.on(SocketConstants.on.GAME_STATUS, function(isGameFull) {
-       console.log("Is game full? " + isGameFull); 
-    });
+AvatarSelectionController.prototype.isGameFull = function() {
+    this.socket.on(SocketConstants.on.GAME_STATUS, function(gameStatus) {
+       if(!gameStatus) {
+           console.log("Game is not full!");
+            this.view.setupViewElements();
+            this.selectedAvatarView.createAvatar(this.avatars[this.currentAvatarIndex]);
+            this.viewLoader.loadView(this.view);
+            this.viewLoader.loadView(this.selectedAvatarView);
+            this.setupListeners();
+       } else {
+           console.log("Game is full");
+           var gameFullController = this.controllerStore.get("gameFullController");
+           gameFullController.loadView();
+       }
+    }.bind(this));
 };
 
 AvatarSelectionController.prototype.setupNextAvatar = function(direction) {

@@ -11,6 +11,7 @@ var ControllerStore = function() {
         controllers.playerController = new PlayerController();
         controllers.questionController = new QuestionController();
         controllers.turnController = new TurnController();
+        controllers.gameFullController = new GameFullController();
     })();
     
     return {
