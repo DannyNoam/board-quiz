@@ -48,5 +48,9 @@
     
     "GAME_FULL" : {
         "GAME_FULL_TEXT" : {"text" : "Game is currently full. Please try again shortly.", "size" : 50, "font" : "Arial", "color" : "#FFFFFF"}
+    },
+    
+    "DISCONNECTION" : {
+        "DISCONNECTION_TEXT" : {"text" : "Your opponent disconnected.", "size" : 50, "font" : "Arial", "color" : "#FFFFFF"}
     }
 }

@@ -8,7 +8,8 @@ var SocketConstants = {
         'SHUFFLED_ANSWER_INDICES' : 'shuffled-answer-indices',
         'GAME_FOUND' : 'game-found',
         'GAME_STATS' : 'game-stats',
-        'GAME_STATUS' : 'game-status'
+        'GAME_STATUS' : 'game-status',
+        'PLAYER_DISCONNECTED' : 'player-disconnected'
     },
     
     'emit' : {

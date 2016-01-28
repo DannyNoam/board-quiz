@@ -24,7 +24,8 @@ var SocketConstants = {
         'GAME_FOUND' : 'game-found',
         'GAME_STATS' : 'game-stats',
         'GAME_STATUS' : 'game-status',
-        'SET_SOCKET_PLAYING' : 'set-socket-playing'
+        'SET_SOCKET_PLAYING' : 'set-socket-playing',
+        'PLAYER_DISCONNECTED' : 'player-disconnected'
     },
     
     'on' : {
@@ -79,6 +80,7 @@ io.on(SocketConstants.on.CONNECTION, function (socket) {
       if(socket.playing) {
           isGameFull = false;
       }
+      io.to(this.roomName).emit(SocketConstants.emit.PLAYER_DISCONNECTED);
     });
 
     socket.on(SocketConstants.on.ROLL_DICE, function() {
@@ -105,7 +107,7 @@ io.on(SocketConstants.on.CONNECTION, function (socket) {
     }.bind(this));
 
     socket.on(SocketConstants.on.SET_SOCKET_PLAYING, function() {
-    socket.playing = true;
+        socket.playing = true;
     });
 
     socket.on(SocketConstants.on.DEAL_DAMAGE, function(data) {

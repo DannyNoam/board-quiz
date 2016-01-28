@@ -40,14 +40,30 @@ TurnController.prototype.registerSocketEvents = function() {
     this.socket.on(SocketConstants.on.GAME_STATS, function(data) {
         this.loadWinView(data.winner, data);
     }.bind(this));
+    
+    this.socket.on(SocketConstants.on.PLAYER_DISCONNECTED, function() {
+        var player = this.getPlayer();
+        this.socket.emit(SocketConstants.emit.GAME_ENDED, {winner: player});
+        var disconnectionController = this.controllerStore.get('disconnectionController');
+        disconnectionController.loadView();
+    }.bind(this));
 };
 
 TurnController.prototype.loadWinView = function(player, data) {
     this.diceController.cleanView();
     this.questionController.cleanView();
+    this.playerController.cleanView();
     this.winView.cleanView();
     this.winView.createWinnerText(player, data);
     this.viewLoader.loadView(this.winView);
+};
+
+TurnController.prototype.loadDisconnectionView = function() {
+    this.diceController.cleanView();
+    this.questionController.cleanView();
+    this.disconnectionView.cleanView();
+    this.disconnectionView.setupViewElements();
+    this.viewLoader.loadView(this.disconnectionView);
 };
 
 TurnController.prototype.setupListeners = function() {
